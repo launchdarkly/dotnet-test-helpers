@@ -22,7 +22,7 @@ workflows:
       - test-windows-netframework:
           name: .NET Framework 4.5.2
           test-target-framework: net452
-      - test-windows-netframework-4-6-1:
+      - test-windows-netframework:
           name: .NET Framework 4.6.1
           test-target-framework: net461
 
