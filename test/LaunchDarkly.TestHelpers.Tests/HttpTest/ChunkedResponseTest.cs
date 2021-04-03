@@ -8,7 +8,7 @@ using static LaunchDarkly.TestHelpers.HttpTest.TestUtil;
 
 namespace LaunchDarkly.TestHelpers.HttpTest
 {
-#if !NETFRAMEWORK
+#if !NET452
     public class ChunkedResponseTest
     {
         [Fact]

@@ -8,16 +8,17 @@ While this code may be useful in other projects, it is primarily geared toward L
 
 ## Compatibility
 
-This version of the project is built for two target frameworks:
+This version of the project is built for three target frameworks:
 
-* .NET Standard 2.0: Usable in .NET Core 2+, .NET 5+, .NET Framework 4.6+, and Xamarin.
+* .NET Standard 2.0: Usable in .NET Core 2+, .NET 5+, and Xamarin.
 * .NET Framework 4.5.2: Usable in .NET Framework 4.5.2.
+* .NET Framework 4.6.1: Usable in .NET Framework 4.6.1 and above.
 
 ## Contents
 
 The namespace `LaunchDarkly.TestHelpers.HttpTest` provides a simple abstraction for setting up embedded HTTP test servers that return programmed responses, and verifying that the expected requests have been made in tests.
 
-* The underlying implementation of the `HttpTest` classes in the .NET Standard 2.0 build is [EmbedIO](https://github.com/unosquare/embedio). EmbedIO does not support .NET Framework, so the `HttpTest` implementation in .NET Framework is based instead on [WireMock.Net](https://github.com/WireMock-Net/WireMock.Net), which has somewhat more limited capabilities: in particular, it does not support chunked responses.
+* The underlying implementation of the `HttpTest` classes in the .NET Standard 2.0 build is [EmbedIO](https://github.com/unosquare/embedio). EmbedIO does not support .NET Framework, so the `HttpTest` implementation in .NET Framework 4.5.2 is based instead on [WireMock.Net](https://github.com/WireMock-Net/WireMock.Net), which has somewhat more limited capabilities: in particular, it does not support chunked responses. In .NET Framework 4.6.1 and above, this limitation does not apply because .NET Framework 4.6.1 is able to use .NET Standard 2.0 libraries.
 
 ## Contributing
 

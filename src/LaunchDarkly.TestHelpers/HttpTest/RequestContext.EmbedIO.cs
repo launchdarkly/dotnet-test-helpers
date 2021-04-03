@@ -1,4 +1,4 @@
-﻿#if NETSTANDARD
+﻿#if USE_EMBEDIO
 
 using System.Threading;
 using System.Threading.Tasks;

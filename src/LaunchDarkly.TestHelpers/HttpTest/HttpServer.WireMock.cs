@@ -1,4 +1,4 @@
-﻿#if NETFRAMEWORK
+﻿#if USE_WIREMOCK
 
 using System;
 using System.Threading;
