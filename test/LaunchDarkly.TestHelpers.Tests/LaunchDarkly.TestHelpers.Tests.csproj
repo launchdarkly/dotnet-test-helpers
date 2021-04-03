@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- The TESTFRAMEWORK variable allows us to override the target frameworks with a
+         single framework that we are testing; this allows us to test with older .NET SDK
+         versions that would error out if they saw any newer target frameworks listed
+         here, even if we weren't running those. -->
+    <TestFramework Condition="'$(TESTFRAMEWORK)' == ''">netcoreapp2.1;net452;net461</TestFramework>
+    <TargetFrameworks>$(TESTFRAMEWORK)</TargetFrameworks>
+    <AssemblyName>LaunchDarkly.TestHelpers.Tests</AssemblyName>
+    <PackageId>LaunchDarkly.TestHelpers.Tests</PackageId>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <RootNamespace>LaunchDarkly.TestHelpers</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\LaunchDarkly.TestHelpers\LaunchDarkly.TestHelpers.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+  </ItemGroup>
+
+</Project>

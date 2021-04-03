@@ -1,0 +1,18 @@
+
+publications:
+  - url: https://nuget.org/packages/LaunchDarkly.EventSource
+    description: NuGet
+
+circleci:
+  windows:
+    context: org-global
+
+template:
+  name: dotnet-windows
+  env:
+    LD_RELEASE_TEST_TARGET_FRAMEWORK: net461
+    LD_RELEASE_DOCS_TARGET_FRAMEWORK: netstandard2.0
+
+documentation:
+  githubPages: true
+  title: LaunchDarkly .NET Test Helpers
