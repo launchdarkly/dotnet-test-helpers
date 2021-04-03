@@ -44,6 +44,9 @@ jobs:
       - run: dotnet test test/LaunchDarkly.TestHelpers.Tests/LaunchDarkly.TestHelpers.Tests.csproj
 
   test-windows-netframework:
+    parameters:
+      test-target-framework:
+        type: string
     executor:
       name: win/vs2019
       shell: powershell.exe
