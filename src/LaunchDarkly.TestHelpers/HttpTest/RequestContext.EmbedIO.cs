@@ -28,13 +28,14 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             {
                 Method = ctx.Request.HttpMethod.ToUpper(),
                 Path = ctx.RequestedPath,
-                Query = ctx.Request.Url.Query,
-                Headers = ctx.Request.Headers
+                Query = ctx.Request.Url.Query ?? "",
+                Headers = ctx.Request.Headers,
+                Body = ""
             };
 
             if (ctx.Request.HasEntityBody)
             {
-                requestInfo.Body = await ctx.GetRequestBodyAsStringAsync();
+                requestInfo.Body = await ctx.GetRequestBodyAsStringAsync() ?? "";
             }
             return new EmbedIORequestContext(ctx, requestInfo);
         }

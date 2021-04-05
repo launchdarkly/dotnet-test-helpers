@@ -14,6 +14,26 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         {
             await WithServerAndClient(Handlers.Status(200), async (server, client) =>
             {
+                var req = new HttpRequestMessage(HttpMethod.Get, server.Uri.ToString() + "request/path");
+                req.Headers.Add("header-name", "header-value");
+
+                var resp = await client.SendAsync(req);
+                Assert.Equal(200, (int)resp.StatusCode);
+
+                var received = server.Recorder.RequireRequest();
+                Assert.Equal("GET", received.Method);
+                Assert.Equal("/request/path", received.Path);
+                Assert.Equal("", received.Query);
+                Assert.Equal("header-value", received.Headers["header-name"]);
+                Assert.Equal("", received.Body);
+            });
+        }
+
+        [Fact]
+        public async Task RequestWithQueryString()
+        {
+            await WithServerAndClient(Handlers.Status(200), async (server, client) =>
+            {
                 var req = new HttpRequestMessage(HttpMethod.Get, server.Uri.ToString() + "request/path?a=b");
                 req.Headers.Add("header-name", "header-value");
 
@@ -25,7 +45,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 Assert.Equal("/request/path", received.Path);
                 Assert.Equal("?a=b", received.Query);
                 Assert.Equal("header-value", received.Headers["header-name"]);
-                Assert.Null(received.Body);
+                Assert.Equal("", received.Body);
             });
         }
 
