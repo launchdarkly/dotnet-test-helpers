@@ -2,6 +2,7 @@
 
 using System;
 using System.Net;
+using System.Text;
 using System.Threading;
 using EmbedIO;
 using EmbedIO.Routing;
@@ -48,7 +49,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 server.OnAny("/", async internalContext =>
                 {
                     var ctx = await EmbedIORequestContext.FromHttpContext(internalContext);
-                    await handler(ctx).ConfigureAwait(false);
+                    await Dispatch(ctx, handler);
                 });
 
                 try

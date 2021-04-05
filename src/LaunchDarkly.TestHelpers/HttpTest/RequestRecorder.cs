@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace LaunchDarkly.TestHelpers.HttpTest
 {
     /// <summary>
-    /// An object that delegates requests to another handler while recording all requests.
+    /// An object that records all requests.
     /// </summary>
     /// <remarks>
     /// Normally you won't need to use this class directly, because <see cref="HttpServer"/>
@@ -17,7 +17,6 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         public static readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(5);
 
         private readonly BlockingCollection<RequestInfo> _requests = new BlockingCollection<RequestInfo>();
-        private readonly Handler _target;
 
         /// <summary>
         /// Returns the stable <see cref="Handler"/> that is the external entry point to this
@@ -30,11 +29,6 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// The number of requests currently in the queue.
         /// </summary>
         public int Count => _requests.Count;
-
-        internal RequestRecorder(Handler target)
-        {
-            _target = target;
-        }
 
         /// <summary>
         /// Consumes and returns the first request in the queue, blocking until one is available.
@@ -66,11 +60,12 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             }
         }
 
+#pragma warning disable CS1998 // async method with no awaits
         private async Task DoRequestAsync(IRequestContext ctx)
         {
             _requests.Add(ctx.RequestInfo);
-            await _target(ctx);
         }
+#pragma warning restore CS1998
 
         public static implicit operator Handler(RequestRecorder me) => me.Handler;
     }

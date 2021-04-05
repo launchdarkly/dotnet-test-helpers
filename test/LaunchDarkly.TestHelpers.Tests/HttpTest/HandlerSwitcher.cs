@@ -10,8 +10,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         [Fact]
         public async Task SwitchHandlers()
         {
-            var switchable = Handlers.Switchable(Handlers.Status(200));
-            await WithServerAndClient(switchable, async (server, client) =>
+            await WithServerAndClient(Handlers.Switchable(out var switchable), async (server, client) =>
             {
                 var resp1 = await client.GetAsync(server.Uri);
                 Assert.Equal(200, (int)resp1.StatusCode);

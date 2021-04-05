@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Specialized;
-using System.Linq;
+using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -40,76 +40,135 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         }
 
         [Fact]
-        public async Task ResponseHandlerWithoutBody()
-        {
-            var headers = new NameValueCollection();
-            headers.Add("header-name", "header-value");
-            await WithServerAndClient(Handlers.Response(419, headers), async (server, client) =>
+        public async Task DefaultHandler() =>
+            await WithServerAndClient(Handlers.Default, async (server, client) =>
+            {
+                var resp = await client.GetAsync(server.Uri);
+                Assert.Equal(200, (int)resp.StatusCode);
+                AssertNoHeader(resp, "content-type");
+                Assert.Equal("", await resp.Content.ReadAsStringAsync());
+            });
+
+        [Fact]
+        public async Task StatusHandler() =>
+            await WithServerAndClient(Handlers.Status(419), async (server, client) =>
             {
                 var resp = await client.GetAsync(server.Uri);
                 Assert.Equal(419, (int)resp.StatusCode);
-                Assert.Equal("header-value", resp.Headers.GetValues("header-name").First());
+                AssertNoHeader(resp, "content-type");
                 Assert.Equal("", await resp.Content.ReadAsStringAsync());
+            });
+
+        [Fact]
+        public async Task SetHeader()
+        {
+            var handler = Handlers.Default.Then(Handlers.Header("header-name", "old-value"))
+                .Then(Handlers.Header("header-name", "new-value"));
+            await WithServerAndClient(handler, async (server, client) =>
+            {
+                var resp = await client.GetAsync(server.Uri);
+                AssertHeader(resp, "header-name", "new-value");
             });
         }
 
         [Fact]
-        public async Task ResponseHandlerWithBody()
+        public async Task AddHeader()
         {
-            var headers = new NameValueCollection();
-            headers.Add("header-name", "header-value");
+            var handler = Handlers.Default.Then(Handlers.Header("header-name", "old-value"))
+                .Then(Handlers.AddHeader("header-name", "new-value"));
+            await WithServerAndClient(handler, async (server, client) =>
+            {
+                var resp = await client.GetAsync(server.Uri);
+                AssertHeader(resp, "header-name", "old-value", "new-value");
+            });
+        }
+
+        [Fact]
+        public async Task Body()
+        {
             byte[] data = new byte[] { 1, 2, 3 };
-            await WithServerAndClient(Handlers.Response(200, headers, "application/weird", data), async (server, client) =>
+            await WithServerAndClient(Handlers.Body("application/weird", data), async (server, client) =>
             {
                 var resp = await client.GetAsync(server.Uri);
                 Assert.Equal(200, (int)resp.StatusCode);
-                // resp.Content.Headers.ContentType will be null if .NET doesn't recognize this content type
-                Assert.Equal("application/weird", resp.Content.Headers.GetValues("content-type").First());
-                Assert.Equal("header-value", resp.Headers.GetValues("header-name").First());
+                AssertHeader(resp, "content-type", "application/weird");
                 Assert.Equal(data, await resp.Content.ReadAsByteArrayAsync());
             });
         }
 
         [Fact]
-        public async Task StringResponseHandlerWithBody()
+        public async Task BodyString()
         {
-            var headers = new NameValueCollection();
-            headers.Add("header-name", "header-value");
             string body = "hello";
-            await WithServerAndClient(Handlers.StringResponse(200, headers, "text/weird", body), async (server, client) =>
+            await WithServerAndClient(Handlers.BodyString("text/weird", body), async (server, client) =>
             {
                 var resp = await client.GetAsync(server.Uri);
                 Assert.Equal(200, (int)resp.StatusCode);
-                Assert.Equal("text/weird; charset=utf-8", resp.Content.Headers.GetValues("content-type").First());
-                Assert.Equal("header-value", resp.Headers.GetValues("header-name").First());
+                AssertHeader(resp, "content-type", "text/weird; charset=utf-8");
                 Assert.Equal(body, await resp.Content.ReadAsStringAsync());
             });
         }
 
         [Fact]
-        public async Task JsonResponseHandler()
+        public async Task BodyJson()
         {
-            await WithServerAndClient(Handlers.JsonResponse("true"), async (server, client) =>
+            await WithServerAndClient(Handlers.BodyJson("true"), async (server, client) =>
             {
                 var resp = await client.GetAsync(server.Uri);
                 Assert.Equal(200, (int)resp.StatusCode);
-                Assert.Equal("application/json; charset=utf-8", resp.Content.Headers.ContentType.ToString());
+                AssertHeader(resp, "content-type", "application/json; charset=utf-8");
                 Assert.Equal("true", await resp.Content.ReadAsStringAsync());
             });
         }
 
         [Fact]
-        public async Task JsonResponseHandlerWithHeaders()
+        public async Task ChainStatusAndHeadersAndBody()
         {
-            var headers = new NameValueCollection();
-            headers.Add("header-name", "header-value");
-            await WithServerAndClient(Handlers.JsonResponse("true", headers), async (server, client) =>
+            var handler = Handlers.Status(201)
+                .Then(Handlers.Header("name1", "value1"))
+                .Then(Handlers.Header("name2", "value2"))
+                .Then(Handlers.BodyString("text/plain", "hello"));
+            await WithServerAndClient(handler, async (server, client) =>
             {
                 var resp = await client.GetAsync(server.Uri);
+                Assert.Equal(201, (int)resp.StatusCode);
+                AssertHeader(resp, "name1", "value1");
+                AssertHeader(resp, "name2", "value2");
+                AssertHeader(resp, "content-type", "text/plain; charset=utf-8");
+                Assert.Equal("hello", await resp.Content.ReadAsStringAsync());
+            });
+        }
+
+        [Fact]
+        public async Task ChunkedResponse()
+        {
+            Handler handler = Handlers.StartChunks("text/plain")
+                .Then(Handlers.WriteChunkString("chunk1,"))
+                .Then(Handlers.WriteChunkString("chunk2"))
+                .Then(Handlers.Delay(Timeout.InfiniteTimeSpan));
+
+            var expected = "chunk1,chunk2";
+
+            await WithServerAndClient(handler, async (server, client) =>
+            {
+                var req = new HttpRequestMessage(HttpMethod.Get, server.Uri);
+                var resp = await client.SendAsync(req, HttpCompletionOption.ResponseHeadersRead);
                 Assert.Equal(200, (int)resp.StatusCode);
-                Assert.Equal("application/json; charset=utf-8", resp.Content.Headers.ContentType.ToString());
-                Assert.Equal("header-value", resp.Headers.GetValues("header-name").First());
-                Assert.Equal("true", await resp.Content.ReadAsStringAsync());
+                Assert.Equal("text/plain; charset=utf-8", resp.Content.Headers.ContentType.ToString());
+                var stream = await resp.Content.ReadAsStreamAsync();
+                var received = new StringBuilder();
+                while (true)
+                {
+                    var buf = new byte[100];
+                    int n = await stream.ReadAsync(buf, 0, buf.Length);
+                    Assert.True(n > 0, "should not have reached end of response");
+                    received.Append(Encoding.UTF8.GetString(buf, 0, n));
+                    if (received.Length >= expected.Length)
+                    {
+                        Assert.Equal(expected, received.ToString());
+                        break;
+                    }
+                }
             });
         }
     }

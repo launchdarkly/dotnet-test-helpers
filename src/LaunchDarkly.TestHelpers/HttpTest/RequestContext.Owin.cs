@@ -68,7 +68,10 @@ namespace LaunchDarkly.TestHelpers.HttpTest
 
 		public async Task WriteChunkedDataAsync(byte[] data)
 		{
-			await _ctx.Response.WriteAsync(data, CancellationToken);
+			if (data != null && data.Length != 0)
+			{
+				await _ctx.Response.WriteAsync(data, CancellationToken);
+			}
 		}
 
         public async Task WriteFullResponseAsync(string contentType, byte[] data)

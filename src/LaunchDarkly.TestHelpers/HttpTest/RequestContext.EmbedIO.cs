@@ -73,7 +73,10 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 _ctx.Response.SendChunked = true;
                 _chunked = true;
             }
-            await _ctx.Response.OutputStream.WriteAsync(data, 0, data.Length);
+            if (data != null && data.Length != 0)
+            {
+                await _ctx.Response.OutputStream.WriteAsync(data, 0, data.Length);
+            }
         }
 
         public async Task WriteFullResponseAsync(string contentType, byte[] data)

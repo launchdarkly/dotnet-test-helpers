@@ -58,7 +58,8 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// the result is undefined.
         /// </para>
         /// </remarks>
-        /// <param name="data">the data to write</param>
+        /// <param name="data">the data to write; if null or zero-length, it will only turn on
+        /// chunked mode and not write any data</param>
         /// <returns>an asynchronous task</returns>
         /// <exception cref="System.NotSupportedException">if called in .NET Framework 4.5.x</exception>
         Task WriteChunkedDataAsync(byte[] data);

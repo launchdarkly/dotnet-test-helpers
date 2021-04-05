@@ -80,7 +80,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             public override async Task Invoke(IOwinContext owinCtx)
             {
                 var context = OwinRequestContext.FromOwinContext(owinCtx, _cancellationToken);
-                await _handler(context);
+                await Dispatch(context, _handler);
             }
         }
     }

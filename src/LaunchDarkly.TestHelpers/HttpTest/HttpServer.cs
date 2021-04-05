@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace LaunchDarkly.TestHelpers.HttpTest
 {
@@ -35,15 +36,15 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// <summary>
         /// Returns the <see cref="RequestRecorder"/> that captures all requests to this server.
         /// </summary>
-        public RequestRecorder Recorder => _baseHandler;
+        public RequestRecorder Recorder => _recorder;
 
         private readonly PlatformDependent _impl;
-        private readonly RequestRecorder _baseHandler;
+        private readonly RequestRecorder _recorder;
 
-        private HttpServer(PlatformDependent impl, RequestRecorder baseHandler, Uri uri)
+        private HttpServer(PlatformDependent impl, RequestRecorder recorder, Uri uri)
         {
             _impl = impl;
-            _baseHandler = baseHandler;
+            _recorder = recorder;
             Uri = uri;
         }
 
@@ -66,9 +67,22 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// <returns></returns>
         public static HttpServer Start(Handler handler)
         {
-            var recorder = Handlers.RecordAndDelegateTo(handler);
-            var impl = StartWebServerOnAvailablePort(out var uri, recorder);
+            var rootHandler = Handlers.Record(out var recorder).Then(handler);
+            var impl = StartWebServerOnAvailablePort(out var uri, rootHandler);
             return new HttpServer(impl, recorder, uri);
+        }
+
+        private static async Task Dispatch(IRequestContext ctx, Handler handler)
+        {
+            try
+            {
+                await handler(ctx).ConfigureAwait(false);
+            }
+            catch (Exception e)
+            {
+                ctx.SetStatus(500);
+                await Handlers.BodyString("text/plain", "Internal error from test server: " + e.ToString())(ctx);
+            };
         }
     }
 }
