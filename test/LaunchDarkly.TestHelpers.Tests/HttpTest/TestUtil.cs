@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Specialized;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -25,8 +26,13 @@ namespace LaunchDarkly.TestHelpers.HttpTest
 
         public static void AssertHeader(HttpResponseMessage resp, string headerName, params string[] expectedValues)
         {
+            // HTTP implementations are inconsistent in terms of how they parse multiple header
+            // values - could be returned as multiple values or as a comma-delimited string
             Assert.True(HeadersFor(resp, headerName).TryGetValues(headerName, out var values));
-            Assert.Equal(string.Join(", ", expectedValues), string.Join(", ", values));
+            var normalizedValues = values.SelectMany(s =>
+                s.Trim().Split(',').Select(s1 => s1.Trim())
+            ).ToArray();
+            Assert.Equal(expectedValues, normalizedValues);
         }
 
         private static HttpHeaders HeadersFor(HttpResponseMessage resp, string headerName)
