@@ -82,7 +82,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         {
             // The server might take a moment to start asynchronously, so we'll check that it's
             // listening before we return.
-            var deadline = DateTime.Now.AddSeconds(1);
+            var deadline = DateTime.Now.AddSeconds(10);
             while (DateTime.Now < deadline)
             {
                 using (var tcpClient = new TcpClient())
