@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -60,6 +61,13 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// <returns>a <see cref="Handler"/></returns>
         public static Handler Status(int statusCode) =>
             Sync(ctx => ctx.SetStatus(statusCode));
+
+        /// <summary>
+        /// Creates a <see cref="Handler"/> that sets the HTTP response status.
+        /// </summary>
+        /// <param name="statusCode">the status code</param>
+        /// <returns>a <see cref="Handler"/></returns>
+        public static Handler Status(HttpStatusCode statusCode) => Status((int)statusCode);
 
         /// <summary>
         /// Creates a <see cref="Handler"/> that sets a response header.
@@ -167,21 +175,22 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// <seealso cref="WriteChunk(byte[])"/>
         public static Handler WriteChunkString(string data, Encoding encoding = null) =>
             async ctx => await ctx.WriteChunkedDataAsync(
-                data == null ? new byte[0] :
-                    (encoding ?? Encoding.UTF8).GetBytes(data)
-                );
+                data == null ? null : (encoding ?? Encoding.UTF8).GetBytes(data));
 
         /// <summary>
         /// Creates a <see cref="Handler"/> that sleeps for the specified amount of time.
         /// </summary>
-        /// <remarks>
-        /// If the delay is <see cref="Timeout.InfiniteTimeSpan"/>, it will hold the connection open
-        /// indefinitely until the server is closed. This may be useful in testing timeout logic.
-        /// </remarks>
         /// <param name="delay">how long to delay</param>
         /// <returns>a <see cref="Handler"/></returns>
         public static Handler Delay(TimeSpan delay) =>
             async ctx => await Task.Delay(delay, ctx.CancellationToken);
+
+        /// <summary>
+        /// Creates a <see cref="Handler"/> that sleeps indefinitely, holding the conneciton open,
+        /// until the server is closed.
+        /// </summary>
+        /// <returns>a <see cref="Handler"/></returns>
+        public static Handler Hang() => Delay(Timeout.InfiniteTimeSpan);
 
         /// <summary>
         /// Creates a <see cref="RequestRecorder"/> that captures requests.
@@ -224,6 +233,19 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         }
 
         /// <summary>
+        /// Creates a <see cref="Handler"/> that delegates to each of the specified handlers in sequence
+        /// as each request is received.
+        /// </summary>
+        /// <remarks>
+        /// Any requests that happen after the last handler in the list has been used will receive a
+        /// 500 error.
+        /// </remarks>
+        /// <param name="handlers">a list of handlers</param>
+        /// <returns>a <see cref="Handler"/></returns>
+        public static Handler Sequential(params Handler[] handlers) =>
+            new SequentialHandler(handlers).Handler;
+
+        /// <summary>
         /// Creates a <see cref="HandlerSwitcher"/> for changing handler behavior dynamically.
         /// It is initially set to delegate to <see cref="Handlers.Default"/>.
         /// </summary>
@@ -247,6 +269,47 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 action(ctx);
             };
 #pragma warning restore CS1998
+
+        /// <summary>
+        /// Shortcut handlers for simulating a Server-Sent Events stream.
+        /// </summary>
+        public static class SSE
+        {
+            /// <summary>
+            /// Starts a chunked stream with the standard content type "text/event-stream.
+            /// </summary>
+            /// <returns>a <see cref="Handler"/></returns>
+            public static Handler Start() => StartChunks("text/event-stream");
+
+            /// <summary>
+            /// Writes an SSE comment line.
+            /// </summary>
+            /// <param name="text">the content that should appear after the colon</param>
+            /// <returns>a <see cref="Handler"/></returns>
+            public static Handler Comment(string text) => WriteChunkString(":" + text + "\n");
+
+            /// <summary>
+            /// Writes an SSE event terminated by two newlines.
+            /// </summary>
+            /// <param name="content">the full event</param>
+            /// <returns>a <see cref="Handler"/></returns>
+            public static Handler Event(string content) => WriteChunkString(content + "\n\n");
+
+            /// <summary>
+            /// Writes an SSE event created from individual fields.
+            /// </summary>
+            /// <param name="message">the "event" field</param>
+            /// <param name="data">the "data" field</param>
+            /// <returns>a <see cref="Handler"/></returns>
+            public static Handler Event(string message, string data) =>
+                Event("event: " + message + "\ndata: " + data);
+
+            /// <summary>
+            /// Waits indefinitely without closing the stream. Equivalent to <see cref="Hang"/>.
+            /// </summary>
+            /// <returns>a <see cref="Handler"/></returns>
+            public static Handler LeaveOpen() => Hang();
+        }
 
         private static string ContentTypeWithEncoding(string contentType, Encoding encoding) =>
             contentType is null || contentType.Contains("charset=") ? contentType :
