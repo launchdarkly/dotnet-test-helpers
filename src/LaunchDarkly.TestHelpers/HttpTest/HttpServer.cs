@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Net;
+using System.Net.Sockets;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace LaunchDarkly.TestHelpers.HttpTest
@@ -69,7 +72,31 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         {
             var rootHandler = Handlers.Record(out var recorder).Then(handler);
             var impl = StartWebServerOnAvailablePort(out var uri, rootHandler);
+
+            EnsureServerIsListening(uri);
+            
             return new HttpServer(impl, recorder, uri);
+        }
+
+        private static void EnsureServerIsListening(Uri uri)
+        {
+            // The server might take a moment to start asynchronously, so we'll check that it's
+            // listening before we return.
+            var deadline = DateTime.Now.AddSeconds(1);
+            while (DateTime.Now < deadline)
+            {
+                using (var tcpClient = new TcpClient())
+                {
+                    try
+                    {
+                        tcpClient.Connect(IPAddress.Loopback, uri.Port);
+                        return;
+                    }
+                    catch { }
+                }
+                Thread.Sleep(TimeSpan.FromMilliseconds(10));
+            }
+            throw new InvalidOperationException("Timed out waiting for test server to start listening");
         }
 
         private static async Task Dispatch(IRequestContext ctx, Handler handler)
