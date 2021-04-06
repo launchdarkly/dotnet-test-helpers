@@ -36,6 +36,8 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             _target = target;
         }
 
+#pragma warning disable CS1591 // no doc comment for this implicit conversion
         public static implicit operator Handler(HandlerSwitcher me) => me.Handler;
+#pragma warning restore CS1591
     }
 }

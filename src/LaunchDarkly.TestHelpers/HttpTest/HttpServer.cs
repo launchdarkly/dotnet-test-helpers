@@ -66,8 +66,8 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// <param name="handler">A function that will handle all requests to this server. Use
         /// the factory methods in <see cref="Handlers"/> for standard handlers. If you will need
         /// to change the behavior of the handler during the lifetime of the server, use
-        /// <see cref="Handlers.Changeable(Handler)"/>.</param>
-        /// <returns></returns>
+        /// <see cref="Handlers.Switchable(out HandlerSwitcher)"/>.</param>
+        /// <returns>the started server instance</returns>
         public static HttpServer Start(Handler handler)
         {
             var rootHandler = Handlers.Record(out var recorder).Then(handler);

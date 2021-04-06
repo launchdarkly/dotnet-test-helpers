@@ -14,6 +14,9 @@ namespace LaunchDarkly.TestHelpers.HttpTest
     /// </remarks>
     public class RequestRecorder
     {
+        /// <summary>
+        /// The default timeout for <see cref="RequireRequest()"/>: 5 seconds.
+        /// </summary>
         public static readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(5);
 
         private readonly BlockingCollection<RequestInfo> _requests = new BlockingCollection<RequestInfo>();
@@ -32,10 +35,10 @@ namespace LaunchDarkly.TestHelpers.HttpTest
 
         /// <summary>
         /// Consumes and returns the first request in the queue, blocking until one is available.
-        /// Throws an exception if the timeout expires.
         /// </summary>
         /// <param name="timeout">the maximum length of time to wait</param>
         /// <returns>the request information</returns>
+        /// <exception cref="TimeoutException">if the timeout expires</exception>
         public RequestInfo RequireRequest(TimeSpan timeout)
         {
             if (!_requests.TryTake(out var req, timeout))
@@ -50,13 +53,20 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// using <see cref="DefaultTimeout"/>.
         /// </summary>
         /// <returns>the request information</returns>
+        /// <exception cref="TimeoutException">if the timeout expires</exception>
         public RequestInfo RequireRequest() => RequireRequest(DefaultTimeout);
 
+        /// <summary>
+        /// Asserts that there are no requests in the queue and none are received within
+        /// the specified timeout.
+        /// </summary>
+        /// <param name="timeout">the maximum length of time to wait</param>
+        /// <exception cref="InvalidOperationException">if a request was received</exception>
         public void RequireNoRequests(TimeSpan timeout)
         {
             if (_requests.TryTake(out var _, timeout))
             {
-                throw new Exception("received an unexpected request");
+                throw new InvalidOperationException("received an unexpected request");
             }
         }
 
@@ -67,6 +77,8 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         }
 #pragma warning restore CS1998
 
+#pragma warning disable CS1591 // no doc comment for this implicit conversion
         public static implicit operator Handler(RequestRecorder me) => me.Handler;
+#pragma warning restore CS1591
     }
 }

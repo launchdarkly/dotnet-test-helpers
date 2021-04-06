@@ -79,7 +79,9 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             return this;
         }
 
+#pragma warning disable CS1591 // no doc comment for this implicit conversion
         public static implicit operator Handler(SimpleRouter me) => me.Handler;
+#pragma warning restore CS1591
 
         private async Task DoRequestAsync(IRequestContext ctx)
         {

@@ -20,14 +20,13 @@ namespace LaunchDarkly.TestHelpers.HttpTest
     /// </summary>
     public static class Handlers
     {
-#pragma warning disable CS1998 // allow async methods with no await
+        //#pragma warning disable CS1998 // allow async methods with no await
 
         /// <summary>
         /// A <c>Handler</c> that does nothing but set the status to 200. Useful as a start when
         /// chaining with <see cref="Then(Handler, Handler)"/>.
         /// </summary>
-        public static Handler Default =>
-            async ctx => { };
+        public static Handler Default => Sync(ctx => { });
 
         /// <summary>
         /// Chains another handler to be executed immediately after this one.
@@ -60,7 +59,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// <param name="statusCode">the status code</param>
         /// <returns>a <see cref="Handler"/></returns>
         public static Handler Status(int statusCode) =>
-            async ctx => ctx.SetStatus(statusCode);
+            Sync(ctx => ctx.SetStatus(statusCode));
 
         /// <summary>
         /// Creates a <see cref="Handler"/> that sets a response header.
@@ -76,7 +75,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// <returns>a <see cref="Handler"/></returns>
         /// <seealso cref="AddHeader(string, string)"/>
         public static Handler Header(string name, string value) =>
-            async ctx => ctx.SetHeader(name, value);
+            Sync(ctx => ctx.SetHeader(name, value));
 
         /// <summary>
         /// Creates a <see cref="Handler"/> that adds a response header, without overwriting
@@ -87,7 +86,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// <returns>a <see cref="Handler"/></returns>
         /// <seealso cref="Header(string, string)"/>
         public static Handler AddHeader(string name, string value) =>
-            async ctx => ctx.AddHeader(name, value);
+            Sync(ctx => ctx.AddHeader(name, value));
 
         /// <summary>
         /// Creates a <see cref="Handler"/> that sends the specified response body.
@@ -96,21 +95,19 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// <param name="body">response body (null is equivalent to an empty array)</param>
         /// <returns>a <see cref="Handler"/></returns>
         /// <seealso cref="BodyString(string, string, Encoding)"/>
-        /// <seealso cref="BodyJson(string)"/>
+        /// <seealso cref="BodyJson(string, Encoding)"/>
         public static Handler Body(string contentType, byte[] body) =>
             async ctx => await ctx.WriteFullResponseAsync(contentType, body ?? new byte[0]);
 
         /// <summary>
         /// Creates a <see cref="Handler"/> that sends the specified response body.
         /// </summary>
-        /// <param name="statusCode">the HTTP status code</param>
-        /// <param name="headers">response headers (may be null)</param>
         /// <param name="contentType">response content type (used only if body is not null)</param>
         /// <param name="body">response body (may be null)</param>
         /// <param name="encoding">response encoding (defaults to UTF8)</param>
         /// <returns>a <see cref="Handler"/></returns>
         /// <seealso cref="Body(string, byte[])"/>
-        /// <seealso cref="BodyJson(string)"/>
+        /// <seealso cref="BodyJson(string, Encoding)"/>
         public static Handler BodyString(string contentType, string body, Encoding encoding = null) =>
             Body(
                 ContentTypeWithEncoding(contentType, encoding),
@@ -155,7 +152,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// </summary>
         /// <param name="data">the chunk data</param>
         /// <returns>a <see cref="Handler"/></returns>
-        /// <seealso cref="StartChunks(string)"/>
+        /// <seealso cref="StartChunks(string, Encoding)"/>
         /// <seealso cref="WriteChunkString(string, Encoding)"/>
         public static Handler WriteChunk(byte[] data) =>
             async ctx => await ctx.WriteChunkedDataAsync(data);
@@ -166,7 +163,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// <param name="data">the chunk data as a string</param>
         /// <param name="encoding">response encoding (defaults to UTF8)</param>
         /// <returns>a <see cref="Handler"/></returns>
-        /// <seealso cref="StartChunks(string)"/>
+        /// <seealso cref="StartChunks(string, Encoding)"/>
         /// <seealso cref="WriteChunk(byte[])"/>
         public static Handler WriteChunkString(string data, Encoding encoding = null) =>
             async ctx => await ctx.WriteChunkedDataAsync(
@@ -244,6 +241,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// <param name="action">the action to run</param>
         /// <returns>a <see cref="Handler"/></returns>
         public static Handler Sync(Action<IRequestContext> action) =>
+#pragma warning disable CS1998 // async method without await
             async ctx =>
             {
                 action(ctx);
