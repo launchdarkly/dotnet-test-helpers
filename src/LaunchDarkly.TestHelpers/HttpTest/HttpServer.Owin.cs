@@ -10,12 +10,12 @@ using Microsoft.Owin.Hosting;
 
 namespace LaunchDarkly.TestHelpers.HttpTest
 {
-	// The .NET Framework 4.5 implementation of HttpServer uses Microsoft.AspNet.WebApi.OwinSelfHost,
+    // The .NET Framework 4.5 implementation of HttpServer uses Microsoft.AspNet.WebApi.OwinSelfHost,
     // an ASP.NET framework that is Windows-specific.
 
-	public sealed partial class HttpServer
-	{
-		private struct PlatformDependent
+    public sealed partial class HttpServer
+    {
+        private struct PlatformDependent
         {
             internal IDisposable Server;
             internal CancellationTokenSource Canceller;
