@@ -32,6 +32,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             var requestInfo = new RequestInfo
             {
                 Method = owinCtx.Request.Method,
+                Uri = owinCtx.Request.Uri,
                 Path = owinCtx.Request.Path.ToString(),
                 Query = owinCtx.Request.QueryString.HasValue ?
                     ("?" + owinCtx.Request.QueryString.Value) : "",

@@ -1,4 +1,6 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -35,6 +37,28 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                         var resp2 = await client.GetAsync(server2.Uri);
                         Assert.Equal(419, (int)resp2.StatusCode);
                     }
+                }
+            }
+        }
+
+        [Fact]
+        public async Task ServerCanBeUsedAsFakeProxy()
+        {
+            var proxyResp = Handlers.Status(200).Then(Handlers.BodyString("text/plain", "hello"));
+            using (var fakeProxy = HttpServer.Start(proxyResp))
+            {
+                var proxyParam = new WebProxy(fakeProxy.Uri);
+                using (var client = new HttpClient(new HttpClientHandler { Proxy = proxyParam }, true))
+                {
+                    var fakeTargetUri = new Uri("http://example/not/real");
+                    var resp = await client.GetAsync(fakeTargetUri);
+                    Assert.Equal(200, (int)resp.StatusCode);
+                    Assert.Equal("hello", await resp.Content.ReadAsStringAsync());
+
+                    var request = fakeProxy.Recorder.RequireRequest();
+                    Assert.Equal("GET", request.Method);
+                    Assert.Equal(fakeTargetUri, request.Uri);
+                    Assert.Equal("/not/real", request.Path);
                 }
             }
         }

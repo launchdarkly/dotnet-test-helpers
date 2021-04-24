@@ -1,4 +1,5 @@
-﻿using System.Collections.Specialized;
+﻿using System;
+using System.Collections.Specialized;
 
 namespace LaunchDarkly.TestHelpers.HttpTest
 {
@@ -11,6 +12,13 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// The request method, always in uppercase.
         /// </summary>
         public string Method { get; set; }
+
+        /// <summary>
+        /// The full request URI. This isn't normally useful in tests, but if you're using an
+        /// HttpServer as a fake proxy server then you can expect this to match the original
+        /// request URI.
+        /// </summary>
+        public Uri Uri { get; set; }
 
         /// <summary>
         /// The URL path, not including query string.

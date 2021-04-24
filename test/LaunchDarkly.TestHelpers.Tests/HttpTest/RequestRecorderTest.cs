@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
@@ -14,7 +15,8 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         {
             await WithServerAndClient(Handlers.Status(200), async (server, client) =>
             {
-                var req = new HttpRequestMessage(HttpMethod.Get, server.Uri.ToString() + "request/path");
+                var requestedUri = new Uri(server.Uri, "/request/path");
+                var req = new HttpRequestMessage(HttpMethod.Get, requestedUri);
                 req.Headers.Add("header-name", "header-value");
 
                 var resp = await client.SendAsync(req);
@@ -22,6 +24,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
 
                 var received = server.Recorder.RequireRequest();
                 Assert.Equal("GET", received.Method);
+                Assert.Equal(requestedUri, received.Uri);
                 Assert.Equal("/request/path", received.Path);
                 Assert.Equal("", received.Query);
                 Assert.Equal("header-value", received.Headers["header-name"]);
@@ -34,7 +37,8 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         {
             await WithServerAndClient(Handlers.Status(200), async (server, client) =>
             {
-                var req = new HttpRequestMessage(HttpMethod.Get, server.Uri.ToString() + "request/path?a=b");
+                var requestedUri = new Uri(server.Uri, "/request/path?a=b");
+                var req = new HttpRequestMessage(HttpMethod.Get, requestedUri);
                 req.Headers.Add("header-name", "header-value");
 
                 var resp = await client.SendAsync(req);
@@ -42,6 +46,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
 
                 var received = server.Recorder.RequireRequest();
                 Assert.Equal("GET", received.Method);
+                Assert.Equal(requestedUri, received.Uri);
                 Assert.Equal("/request/path", received.Path);
                 Assert.Equal("?a=b", received.Query);
                 Assert.Equal("header-value", received.Headers["header-name"]);

@@ -1,5 +1,6 @@
 ﻿#if USE_EMBEDIO
 
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using EmbedIO;
@@ -24,9 +25,15 @@ namespace LaunchDarkly.TestHelpers.HttpTest
 
         internal static async Task<EmbedIORequestContext> FromHttpContext(IHttpContext ctx)
         {
+            // The computation of Uri below is meant to handle both the usual case where the request
+            // does not provide an absolute URI, in which case ctx.Request.Url is the computed full URI,
+            // and the special case where the server is a fake proxy server and the request URI is a
+            // full absolute URI.
             var requestInfo = new RequestInfo
             {
                 Method = ctx.Request.HttpMethod.ToUpper(),
+                Uri = ctx.Request.RawUrl.StartsWith("http") ?
+                    new Uri(ctx.Request.RawUrl) : ctx.Request.Url,
                 Path = ctx.RequestedPath,
                 Query = ctx.Request.Url.Query ?? "",
                 Headers = ctx.Request.Headers,
