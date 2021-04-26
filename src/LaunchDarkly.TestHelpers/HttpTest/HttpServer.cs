@@ -29,7 +29,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
     /// </code>
     /// </example>
     /// </remarks>
-    public sealed partial class HttpServer : IDisposable
+    public sealed class HttpServer : IDisposable
     {
         /// <summary>
         /// The base URI of the server.
@@ -41,12 +41,19 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// </summary>
         public RequestRecorder Recorder => _recorder;
 
-        private readonly PlatformDependent _impl;
+        private readonly HttpListener _listener;
+        private readonly CancellationTokenSource _canceller;
         private readonly RequestRecorder _recorder;
 
-        private HttpServer(PlatformDependent impl, RequestRecorder recorder, Uri uri)
+        private HttpServer(
+            HttpListener listener,
+            CancellationTokenSource canceller,
+            RequestRecorder recorder,
+            Uri uri
+            )
         {
-            _impl = impl;
+            _listener = listener;
+            _canceller = canceller;
             _recorder = recorder;
             Uri = uri;
         }
@@ -54,7 +61,12 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// <summary>
         /// Shuts down the server.
         /// </summary>
-        public void Dispose() => DisposeInternal();
+        public void Dispose()
+        {
+            _canceller.Cancel();
+            _listener.Stop();
+            _listener.Close();
+        }
 
         /// <summary>
         /// Starts a new test server.
@@ -70,12 +82,70 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// <returns>the started server instance</returns>
         public static HttpServer Start(Handler handler)
         {
+            // HttpListener doesn't seem to have a per-request cancellation token, so we'll create
+            // one for the entire server to ensure that handlers will exit if it's being stopped.
+            var canceller = new CancellationTokenSource();
+
             var rootHandler = Handlers.Record(out var recorder).Then(handler);
-            var impl = StartWebServerOnAvailablePort(out var uri, rootHandler);
+            var listener = StartWebServerOnAvailablePort(canceller.Token, rootHandler, out var uri);
 
             EnsureServerIsListening(uri);
             
-            return new HttpServer(impl, recorder, uri);
+            return new HttpServer(listener, canceller, recorder, uri);
+        }
+
+        private static HttpListener StartWebServerOnAvailablePort(
+            CancellationToken cancellationToken,
+            Handler rootHandler,
+            out Uri serverUriOut
+            )
+        {
+            var port = FindNextPort();
+
+            var listener = new HttpListener();
+            listener.Prefixes.Add(string.Format("http://*:{0}/", port));
+            listener.Start();
+            Task.Run(async () =>
+            {
+                while (!cancellationToken.IsCancellationRequested && listener.IsListening)
+                {
+                    try
+                    {
+                        var listenerCtx = await listener.GetContextAsync().ConfigureAwait(false);
+                        var ctx = RequestContextImpl.FromHttpListenerContext(listenerCtx, cancellationToken);
+#pragma warning disable CS4014 // deliberately not awaiting this async task
+                        Task.Run(async () =>
+                        {
+                            await Dispatch(ctx, rootHandler);
+                            listenerCtx.Response.Close();
+                        });
+#pragma warning restore CS4014
+
+                    }
+                    catch
+                    {
+                        // an exception almost certainly means the listener has been shut down
+                        break;
+                    }
+                }
+            });
+
+            serverUriOut = new Uri(string.Format("http://localhost:{0}/", port));
+
+            return listener;
+        }
+
+        private static int FindNextPort()
+        {
+            // http://stackoverflow.com/questions/138043/find-the-next-tcp-port-in-net
+            var tcpListener = new TcpListener(IPAddress.Loopback, 0);
+            try
+            {
+                tcpListener.Start();
+
+                return ((IPEndPoint)tcpListener.LocalEndpoint).Port;
+            }
+            finally { tcpListener.Stop(); }
         }
 
         private static void EnsureServerIsListening(Uri uri)

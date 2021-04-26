@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <Version>1.0.0-alpha.2</Version>
-    <TargetFrameworks>netstandard2.0;net452;net461</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <AssemblyName>LaunchDarkly.TestHelpers</AssemblyName>
     <DebugType>portable</DebugType>
@@ -18,20 +18,10 @@
     <RepositoryUrl>https://github.com/launchdarkly/dotnet-test-helpers</RepositoryUrl>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(TargetFramework)' != 'net452' ">
-    <DefineConstants>USE_EMBEDIO</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net452' ">
-    <DefineConstants>USE_OWIN</DefineConstants>
-  </PropertyGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' != 'net452' ">
-    <PackageReference Include="EmbedIO" Version="3.4.3" />
-  </ItemGroup>
-
   <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
-    <PackageReference Include="Microsoft.AspNet.WebApi.OwinSelfHost" Version="5.2.7" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
 
   <PropertyGroup>

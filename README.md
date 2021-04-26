@@ -1,6 +1,8 @@
 # LaunchDarkly .NET Test Helpers
 
-[![Circle CI](https://circleci.com/gh/launchdarkly/dotnet-test-helpers.svg?style=svg)](https://circleci.com/gh/launchdarkly/dotnet-test-helpers) [![Documentation](https://img.shields.io/static/v1?label=go.dev&message=reference&color=00add8)](https://pkg.go.dev/github.com/launchdarkly/go-test-helpers)
+[![NuGet](https://img.shields.io/nuget/v/LaunchDarkly.TestHelpers.svg?style=flat-square)](https://www.nuget.org/packages/LaunchDarkly.TestHelpers/)
+[![CircleCI](https://circleci.com/gh/launchdarkly/dotnet-test-helpers.svg?style=shield)](https://circleci.com/gh/launchdarkly/dotnet-test-helpers)
+[![Documentation](https://img.shields.io/static/v1?label=GitHub+Pages&message=API+reference&color=00add8)](https://launchdarkly.github.io/dotnet-testhelpers)
 
 This project centralizes some test support code that is used by LaunchDarkly's .NET and Xamarin SDKs and related components, and that may be useful in other .NET projects.
 
@@ -8,17 +10,16 @@ While this code may be useful in other projects, it is primarily geared toward L
 
 ## Compatibility
 
-This version of the project is built for three target frameworks:
+This version of the project is built for two target frameworks:
 
 * .NET Standard 2.0: Usable in .NET Core 2+, .NET 5+, and Xamarin.
-* .NET Framework 4.5.2: Usable in .NET Framework 4.5.2.
-* .NET Framework 4.6.1: Usable in .NET Framework 4.6.1 and above.
+* .NET Framework 4.5.2: Usable in .NET Framework 4.5.2 and above.
 
 ## Contents
 
-The namespace `LaunchDarkly.TestHelpers.HttpTest` provides a simple abstraction for setting up embedded HTTP test servers that return programmed responses, and verifying that the expected requests have been made in tests.
+The NuGet package name is `LaunchDarkly.TestHelpers`.
 
-* The underlying implementation of the `HttpTest` classes in the .NET Standard 2.0 build is [EmbedIO](https://github.com/unosquare/embedio). EmbedIO does not support .NET Framework 4.5.x, so the `HttpTest` implementation in .NET Framework 4.5.2 is based instead on the Windows-specific package [`Microsoft.AspNet.WebApi.OwinSelfHost`](https://docs.microsoft.com/en-us/aspnet/web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api).
+The namespace `LaunchDarkly.TestHelpers.HttpTest` provides a simple abstraction for setting up embedded HTTP test servers that return programmed responses, and verifying that the expected requests have been made in tests. (The underlying implementation is `System.Net.HttpListener`. There are other HTTP mock server libraries for .NET, most of which also use `System.Net.HttpListener` either directly or indirectly, but they were generally not suitable for LaunchDarkly's testing needs due to either platform compatibility limitations or their API design.)
 
 ## Contributing
 
