@@ -7,6 +7,14 @@ workflows:
   version: 2
   test:
     jobs:
+      # Even though LaunchDarkly.TestHelpers only has two build targets-- .NET Standard 2.0
+      # and .NET Framework 4.5.2-- we run the tests in a variety of runtime platforms. That's
+      # because there can be subtle differences in how APIs like System.Net.HttpListener
+      # behave across platforms, so we want to make sure these tools work consistently in all
+      # of them. The oldest one, .NET Core 2.0, is no longer a supported platform in current
+      # LaunchDarkly tools; we still test it because in some of our projects, .NET Core 2.0
+      # might be the only way to specifically test the .NET Standard 2.0 implementation of a
+      # package (e.g. if there is also a different build target for .NET Core 2.1).
       - test-netcore:
           name: .NET Core 2.0
           docker-image: microsoft/dotnet:2.0-sdk-jessie
