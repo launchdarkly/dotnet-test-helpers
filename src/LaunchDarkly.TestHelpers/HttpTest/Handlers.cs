@@ -21,8 +21,6 @@ namespace LaunchDarkly.TestHelpers.HttpTest
     /// </summary>
     public static class Handlers
     {
-        //#pragma warning disable CS1998 // allow async methods with no await
-
         /// <summary>
         /// A <c>Handler</c> that does nothing but set the status to 200. Useful as a start when
         /// chaining with <see cref="Then(Handler, Handler)"/>.
