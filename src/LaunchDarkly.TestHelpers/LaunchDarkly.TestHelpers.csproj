@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Version>1.0.0-alpha.2</Version>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <AssemblyName>LaunchDarkly.TestHelpers</AssemblyName>
+    <DebugType>portable</DebugType>
+    <OutputType>Library</OutputType>
+    <LangVersion>7.3</LangVersion>
+    <PackageId>LaunchDarkly.TestHelpers</PackageId>
+    <Company>LaunchDarkly</Company>
+    <Authors>LaunchDarkly</Authors>
+    <Owners>LaunchDarkly</Owners>
+    <Copyright>Copyright 2021 Catamorphic, Co.</Copyright>
+    <Description>LaunchDarkly .NET test helpers</Description>
+    <PackageProjectUrl>https://github.com/launchdarkly/dotnet-test-helpers</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/launchdarkly/dotnet-test-helpers</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\LaunchDarkly.TestHelpers.xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>

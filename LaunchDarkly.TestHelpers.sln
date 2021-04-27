@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.809.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaunchDarkly.TestHelpers", "src\LaunchDarkly.TestHelpers\LaunchDarkly.TestHelpers.csproj", "{CD9185D5-886C-42A3-ACBF-3EE2803EB042}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaunchDarkly.TestHelpers.Tests", "test\LaunchDarkly.TestHelpers.Tests\LaunchDarkly.TestHelpers.Tests.csproj", "{056D3D23-D960-43F3-964B-2631950F5CD1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD9185D5-886C-42A3-ACBF-3EE2803EB042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD9185D5-886C-42A3-ACBF-3EE2803EB042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD9185D5-886C-42A3-ACBF-3EE2803EB042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD9185D5-886C-42A3-ACBF-3EE2803EB042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{056D3D23-D960-43F3-964B-2631950F5CD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{056D3D23-D960-43F3-964B-2631950F5CD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{056D3D23-D960-43F3-964B-2631950F5CD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{056D3D23-D960-43F3-964B-2631950F5CD1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7920CFA5-38A7-46F3-8643-C817D2069F81}
+	EndGlobalSection
+EndGlobal
