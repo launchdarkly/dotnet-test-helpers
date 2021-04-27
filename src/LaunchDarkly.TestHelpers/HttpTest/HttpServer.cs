@@ -116,8 +116,9 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 }
                 catch (HttpListenerException)
                 {
-                    // For unknown reasons, sometimes the logic used in FindNextPort will return a port that's
-                    // not really available after all
+                    // Ssometimes the logic used in FindNextPort will return a port that's not really available after
+                    // all-- possibly due to a delay in cleaning up the temporary listener that FindNextPort creates.
+                    // There's not a great solution for this as far as I know, we just have to try another port.
                     port++;
                     continue;
                 }
