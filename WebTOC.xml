@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpTOC>
 
-  <HelpTOCNode Id="822d82d3-5c80-4458-858b-4d406a95fa32" Title="Namespaces" Url="html/R_Project_Documentation.htm">
-    <HelpTOCNode Id="ab4c661d-95b8-41d8-ba57-810fe65b8ec8" Title="LaunchDarkly.TestHelpers.HttpTest" Url="html/N_LaunchDarkly_TestHelpers_HttpTest.htm">
+  <HelpTOCNode Id="54696582-177a-4883-bf75-b97019bac377" Title="Namespaces" Url="html/R_Project_Documentation.htm">
+    <HelpTOCNode Id="e7f0c4a4-9ddb-453d-b9d5-756a58a7a0a9" Title="LaunchDarkly.TestHelpers.HttpTest" Url="html/N_LaunchDarkly_TestHelpers_HttpTest.htm">
       <HelpTOCNode Title="Handler Delegate" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_Handler.htm" />
-      <HelpTOCNode Id="ea8ee214-9496-4b8a-9919-73576c8e69ed" Title="Handlers Class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_Handlers.htm">
-        <HelpTOCNode Id="b7a11ccc-5e77-4842-a3de-ad8865a58a67" Title="Handlers Properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_Handlers.htm">
+      <HelpTOCNode Id="da80f4c0-fae3-4677-a9d7-ba9ced29a884" Title="Handlers Class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_Handlers.htm">
+        <HelpTOCNode Id="33efe7d8-8a4b-45a2-a1c1-3c8e4e914bff" Title="Handlers Properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_Handlers.htm">
           <HelpTOCNode Title="Default Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_Handlers_Default.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="f446cf77-8aed-4217-9c38-3a0b012751a9" Title="Handlers Methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_Handlers.htm">
+        <HelpTOCNode Id="045165be-c2bf-41f5-8775-a5b25777dd98" Title="Handlers Methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_Handlers.htm">
           <HelpTOCNode Title="AddHeader Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_AddHeader.htm" />
           <HelpTOCNode Title="Body Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Body.htm" />
           <HelpTOCNode Title="BodyJson Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_BodyJson.htm" />
@@ -20,7 +20,7 @@
           <HelpTOCNode Title="Router Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Router.htm" />
           <HelpTOCNode Title="Sequential Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Sequential.htm" />
           <HelpTOCNode Title="StartChunks Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_StartChunks.htm" />
-          <HelpTOCNode Id="1ce9450f-a566-494c-ba35-a6c519cfec96" Title="Status Method " Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_Handlers_Status.htm">
+          <HelpTOCNode Id="9906249c-fb34-4eb2-b7f2-bb7cfe784e21" Title="Status Method " Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_Handlers_Status.htm">
             <HelpTOCNode Title="Status Method (Int32)" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Status.htm" />
             <HelpTOCNode Title="Status Method (HttpStatusCode)" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Status_1.htm" />
           </HelpTOCNode>
@@ -31,10 +31,10 @@
           <HelpTOCNode Title="WriteChunkString Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_WriteChunkString.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="a43aaf99-5f03-4964-b8b9-02c85154a716" Title="Handlers.SSE Class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE.htm">
-        <HelpTOCNode Id="f286fd65-1c61-48fc-a852-0f39e4af621c" Title="SSE Methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE.htm">
+      <HelpTOCNode Id="61e84cc2-0b5f-4f10-bf2f-1fc5712a503f" Title="Handlers.SSE Class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE.htm">
+        <HelpTOCNode Id="bf7ad3bb-27da-4253-958e-5acfc40cb546" Title="SSE Methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE.htm">
           <HelpTOCNode Title="Comment Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Comment.htm" />
-          <HelpTOCNode Id="4828f88d-a440-4416-a53e-8a8fbc3e1f2d" Title="Event Method " Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Event.htm">
+          <HelpTOCNode Id="03f57497-e354-44fe-92ba-cb6216c0656d" Title="Event Method " Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Event.htm">
             <HelpTOCNode Title="Event Method (String)" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Event.htm" />
             <HelpTOCNode Title="Event Method (String, String)" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Event_1.htm" />
           </HelpTOCNode>
@@ -42,32 +42,32 @@
           <HelpTOCNode Title="Start Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Start.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="612655e3-8d04-4118-826a-194fe93a8b7c" Title="HandlerSwitcher Class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher.htm">
-        <HelpTOCNode Id="deac90d0-d276-4ed0-8e9d-4163f6119abb" Title="HandlerSwitcher Properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher.htm">
+      <HelpTOCNode Id="b6bdf3f4-ca6a-4db9-acd4-05af75c86f0c" Title="HandlerSwitcher Class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher.htm">
+        <HelpTOCNode Id="ac9e47c5-ebf7-428d-a26e-dc706fe087a6" Title="HandlerSwitcher Properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher.htm">
           <HelpTOCNode Title="Handler Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher_Handler.htm" />
           <HelpTOCNode Title="Target Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher_Target.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="HandlerSwitcher Methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher.htm" />
-        <HelpTOCNode Id="7ca8b502-f5d1-43e7-9657-2fb7fe307657" Title="HandlerSwitcher Type Conversions" Url="html/Operators_T_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher.htm">
+        <HelpTOCNode Id="3a8c8a17-17c7-42b3-9046-4441f3e175be" Title="HandlerSwitcher Type Conversions" Url="html/Operators_T_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher.htm">
           <HelpTOCNode Title="Implicit Conversion (HandlerSwitcher to Handler)" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher_op_Implicit.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="17e024e4-c9ca-492f-a957-1bc5e4cf5585" Title="HttpServer Class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_HttpServer.htm">
-        <HelpTOCNode Id="8714ed7b-5425-48f6-9bd9-00f85726457c" Title="HttpServer Properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_HttpServer.htm">
+      <HelpTOCNode Id="b40d1aef-9227-42a4-99bb-57d59f4dcace" Title="HttpServer Class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_HttpServer.htm">
+        <HelpTOCNode Id="f0df7308-acf3-4419-a8f6-4db089f40956" Title="HttpServer Properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_HttpServer.htm">
           <HelpTOCNode Title="Recorder Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_HttpServer_Recorder.htm" />
           <HelpTOCNode Title="Uri Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_HttpServer_Uri.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="cad28123-04bb-44ee-bf03-64f0d965603f" Title="HttpServer Methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_HttpServer.htm">
+        <HelpTOCNode Id="b093a55c-446d-47c1-9fad-ef2150b59606" Title="HttpServer Methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_HttpServer.htm">
           <HelpTOCNode Title="Dispose Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_HttpServer_Dispose.htm" />
           <HelpTOCNode Title="Start Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_HttpServer_Start.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="0c56cb28-98fb-4f08-996e-ce2ba81f6fa3" Title="IRequestContext Interface" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_IRequestContext.htm">
-        <HelpTOCNode Id="18614155-21fa-4087-b4f0-ebf63eae49f9" Title="IRequestContext Properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_IRequestContext.htm">
+      <HelpTOCNode Id="ae15f336-a2d4-41d4-9691-9bcf0f3cf4b4" Title="IRequestContext Interface" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_IRequestContext.htm">
+        <HelpTOCNode Id="fca0607f-b021-4c92-a726-2bc2a26d7544" Title="IRequestContext Properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_IRequestContext.htm">
           <HelpTOCNode Title="CancellationToken Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_CancellationToken.htm" />
           <HelpTOCNode Title="RequestInfo Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_RequestInfo.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="7bff337c-2c43-484f-b1b4-9f7394292b4e" Title="IRequestContext Methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_IRequestContext.htm">
+        <HelpTOCNode Id="315d3dbf-82fa-4190-ab4c-3baf5391d6dd" Title="IRequestContext Methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_IRequestContext.htm">
           <HelpTOCNode Title="AddHeader Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_AddHeader.htm" />
           <HelpTOCNode Title="SetHeader Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_SetHeader.htm" />
           <HelpTOCNode Title="SetStatus Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_SetStatus.htm" />
@@ -75,8 +75,8 @@
           <HelpTOCNode Title="WriteFullResponseAsync Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_WriteFullResponseAsync.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="5b4f18d4-e41c-4113-a8df-03a1b0173ded" Title="RequestInfo Structure" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_RequestInfo.htm">
-        <HelpTOCNode Id="78a44a43-5b0f-4933-8bd5-0484e98a50c5" Title="RequestInfo Properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_RequestInfo.htm">
+      <HelpTOCNode Id="e019ddc7-2bdb-41b9-90a8-b85eeeaa506a" Title="RequestInfo Structure" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_RequestInfo.htm">
+        <HelpTOCNode Id="0986ee4c-b604-4d47-bdf6-1ae748a23b19" Title="RequestInfo Properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_RequestInfo.htm">
           <HelpTOCNode Title="Body Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Body.htm" />
           <HelpTOCNode Title="Headers Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Headers.htm" />
           <HelpTOCNode Title="Method Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Method.htm" />
@@ -86,42 +86,42 @@
         </HelpTOCNode>
         <HelpTOCNode Title="RequestInfo Methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_RequestInfo.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="f6a731e0-a2fb-4bc4-8970-4c8b3bf4e0ac" Title="RequestRecorder Class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder.htm">
+      <HelpTOCNode Id="296da6f2-92f8-4622-ba80-e8f5b59ecfe0" Title="RequestRecorder Class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder.htm">
         <HelpTOCNode Title="RequestRecorder Constructor " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder__ctor.htm" />
-        <HelpTOCNode Id="78585826-7e5b-4f20-928a-6c858ab0eaa8" Title="RequestRecorder Properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder.htm">
+        <HelpTOCNode Id="b973442b-3319-45cc-b5b9-66a1165ebbcf" Title="RequestRecorder Properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder.htm">
           <HelpTOCNode Title="Count Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Count.htm" />
           <HelpTOCNode Title="Handler Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Handler.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="ce3f1182-5431-4205-bf92-bebdba680814" Title="RequestRecorder Methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder.htm">
+        <HelpTOCNode Id="d3faf3f8-9433-4f2a-923e-02938df8529a" Title="RequestRecorder Methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder.htm">
           <HelpTOCNode Title="RequireNoRequests Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireNoRequests.htm" />
-          <HelpTOCNode Id="72f91db0-29f3-4ae7-8a70-40027f3fed96" Title="RequireRequest Method " Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireRequest.htm">
+          <HelpTOCNode Id="116bf757-e2d7-45b1-960e-c62d755eec22" Title="RequireRequest Method " Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireRequest.htm">
             <HelpTOCNode Title="RequireRequest Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireRequest.htm" />
             <HelpTOCNode Title="RequireRequest Method (TimeSpan)" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireRequest_1.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
-        <HelpTOCNode Id="3f8a8085-baae-4222-8530-cae605e92d50" Title="RequestRecorder Type Conversions" Url="html/Operators_T_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder.htm">
+        <HelpTOCNode Id="29ea2a1b-f2ac-4aa4-9472-6681d01595ec" Title="RequestRecorder Type Conversions" Url="html/Operators_T_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder.htm">
           <HelpTOCNode Title="Implicit Conversion (RequestRecorder to Handler)" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_op_Implicit.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="c97c9215-33c0-4783-a864-b9cafff23b53" Title="RequestRecorder Fields" Url="html/Fields_T_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder.htm">
+        <HelpTOCNode Id="e3cc0a10-d9b3-44a7-b3ae-0bfc78a3d628" Title="RequestRecorder Fields" Url="html/Fields_T_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder.htm">
           <HelpTOCNode Title="DefaultTimeout Field" Url="html/F_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_DefaultTimeout.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="95f0a9a1-d12e-427b-a0b2-b9080e5488f1" Title="SimpleRouter Class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter.htm">
+      <HelpTOCNode Id="bd234c21-b9ca-44fc-af57-810d9313e8ec" Title="SimpleRouter Class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter.htm">
         <HelpTOCNode Title="SimpleRouter Constructor " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter__ctor.htm" />
-        <HelpTOCNode Id="e362c0df-a8ae-4a84-8731-9419d61c1d98" Title="SimpleRouter Properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter.htm">
+        <HelpTOCNode Id="5111ae01-2389-42db-a658-53a9efa5db54" Title="SimpleRouter Properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter.htm">
           <HelpTOCNode Title="Handler Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_Handler.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="b36d6c22-8e92-4d34-863c-190366144969" Title="SimpleRouter Methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter.htm">
-          <HelpTOCNode Id="7d9920f4-9832-49ba-9bcc-2ec58a2ef8f9" Title="AddPath Method " Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddPath.htm">
+        <HelpTOCNode Id="dfbe6698-c860-49cb-98d1-80f9b04a3765" Title="SimpleRouter Methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter.htm">
+          <HelpTOCNode Id="3d2a91c1-f8cb-485c-adcb-309723de2bf7" Title="AddPath Method " Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddPath.htm">
             <HelpTOCNode Title="AddPath Method (String, Handler)" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddPath_1.htm" />
             <HelpTOCNode Title="AddPath Method (HttpMethod, String, Handler)" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddPath.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="c95f5096-a879-4038-a9bf-9e63a234ae2f" Title="AddRegex Method " Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddRegex.htm">
+          <HelpTOCNode Id="8d14c759-5226-4a48-9102-b6b66e5cd710" Title="AddRegex Method " Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddRegex.htm">
             <HelpTOCNode Title="AddRegex Method (String, Handler)" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddRegex_1.htm" />
             <HelpTOCNode Title="AddRegex Method (HttpMethod, String, Handler)" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddRegex.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
-        <HelpTOCNode Id="ed6c3296-a829-43b9-8b92-01b39fa53565" Title="SimpleRouter Type Conversions" Url="html/Operators_T_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter.htm">
+        <HelpTOCNode Id="b22f79aa-c225-4c72-92c2-2ca3ade4684f" Title="SimpleRouter Type Conversions" Url="html/Operators_T_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter.htm">
           <HelpTOCNode Title="Implicit Conversion (SimpleRouter to Handler)" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_op_Implicit.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
