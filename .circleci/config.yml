@@ -8,6 +8,10 @@ workflows:
   test:
     jobs:
       - test-netcore:
+          name: .NET Core 2.0
+          docker-image: mcr.microsoft.com/dotnet/core/sdk:2.1-focal
+          test-target-framework: microsoft/dotnet:2.0-sdk-jessie
+      - test-netcore:
           name: .NET Core 2.1
           docker-image: mcr.microsoft.com/dotnet/core/sdk:2.1-focal
           test-target-framework: netcoreapp2.1

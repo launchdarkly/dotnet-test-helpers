@@ -5,7 +5,7 @@
          single framework that we are testing; this allows us to test with older .NET SDK
          versions that would error out if they saw any newer target frameworks listed
          here, even if we weren't running those. -->
-    <TestFramework Condition="'$(TESTFRAMEWORK)' == ''">netcoreapp2.1;net452</TestFramework>
+    <TestFramework Condition="'$(TESTFRAMEWORK)' == ''">netcoreapp2.0;netcoreapp2.1;net452</TestFramework>
     <TargetFrameworks>$(TESTFRAMEWORK)</TargetFrameworks>
     <AssemblyName>LaunchDarkly.TestHelpers.Tests</AssemblyName>
     <PackageId>LaunchDarkly.TestHelpers.Tests</PackageId>
