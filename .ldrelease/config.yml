@@ -1,6 +1,6 @@
 
 publications:
-  - url: https://nuget.org/packages/LaunchDarkly.EventSource
+  - url: https://nuget.org/packages/LaunchDarkly.TestHelpers
     description: NuGet
 
 circleci:
