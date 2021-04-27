@@ -184,7 +184,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             async ctx => await Task.Delay(delay, ctx.CancellationToken);
 
         /// <summary>
-        /// Creates a <see cref="Handler"/> that sleeps indefinitely, holding the conneciton open,
+        /// Creates a <see cref="Handler"/> that sleeps indefinitely, holding the connection open,
         /// until the server is closed.
         /// </summary>
         /// <returns>a <see cref="Handler"/></returns>
