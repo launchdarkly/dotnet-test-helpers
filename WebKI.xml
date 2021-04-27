@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="AddHeader method">
+    <HelpKINode Title="Handlers.AddHeader Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_AddHeader.htm" />
+    <HelpKINode Title="IRequestContext.AddHeader Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_AddHeader.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AddPath method" Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddPath.htm" />
+  <HelpKINode Title="AddRegex method" Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddRegex.htm" />
+  <HelpKINode Title="Body method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Body.htm" />
+  <HelpKINode Title="Body property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Body.htm" />
+  <HelpKINode Title="BodyJson method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_BodyJson.htm" />
+  <HelpKINode Title="BodyString method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_BodyString.htm" />
+  <HelpKINode Title="CancellationToken property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_CancellationToken.htm" />
+  <HelpKINode Title="Comment method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Comment.htm" />
+  <HelpKINode Title="Count property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Count.htm" />
+  <HelpKINode Title="Default property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_Handlers_Default.htm" />
+  <HelpKINode Title="DefaultTimeout field" Url="html/F_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_DefaultTimeout.htm" />
+  <HelpKINode Title="Delay method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Delay.htm" />
+  <HelpKINode Title="Dispose method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_HttpServer_Dispose.htm" />
+  <HelpKINode Title="Event method" Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Event.htm" />
+  <HelpKINode Title="Handler delegate" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_Handler.htm" />
+  <HelpKINode Title="Handler property">
+    <HelpKINode Title="HandlerSwitcher.Handler Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher_Handler.htm" />
+    <HelpKINode Title="RequestRecorder.Handler Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Handler.htm" />
+    <HelpKINode Title="SimpleRouter.Handler Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_Handler.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Handlers class">
+    <HelpKINode Title="Handlers Class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_Handlers.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_Handlers.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_Handlers.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Handlers.AddHeader method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_AddHeader.htm" />
+  <HelpKINode Title="Handlers.Body method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Body.htm" />
+  <HelpKINode Title="Handlers.BodyJson method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_BodyJson.htm" />
+  <HelpKINode Title="Handlers.BodyString method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_BodyString.htm" />
+  <HelpKINode Title="Handlers.Default property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_Handlers_Default.htm" />
+  <HelpKINode Title="Handlers.Delay method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Delay.htm" />
+  <HelpKINode Title="Handlers.Hang method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Hang.htm" />
+  <HelpKINode Title="Handlers.Header method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Header.htm" />
+  <HelpKINode Title="Handlers.Record method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Record.htm" />
+  <HelpKINode Title="Handlers.Router method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Router.htm" />
+  <HelpKINode Title="Handlers.Sequential method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Sequential.htm" />
+  <HelpKINode Title="Handlers.SSE class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE.htm" />
+  <HelpKINode Title="Handlers.SSE.Comment method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Comment.htm" />
+  <HelpKINode Title="Handlers.SSE.Event method" Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Event.htm" />
+  <HelpKINode Title="Handlers.SSE.LeaveOpen method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_LeaveOpen.htm" />
+  <HelpKINode Title="Handlers.SSE.Start method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Start.htm" />
+  <HelpKINode Title="Handlers.StartChunks method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_StartChunks.htm" />
+  <HelpKINode Title="Handlers.Status method" Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_Handlers_Status.htm" />
+  <HelpKINode Title="Handlers.Switchable method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Switchable.htm" />
+  <HelpKINode Title="Handlers.Sync method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Sync.htm" />
+  <HelpKINode Title="Handlers.Then method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Then.htm" />
+  <HelpKINode Title="Handlers.WriteChunk method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_WriteChunk.htm" />
+  <HelpKINode Title="Handlers.WriteChunkString method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_WriteChunkString.htm" />
+  <HelpKINode Title="HandlerSwitcher class">
+    <HelpKINode Title="HandlerSwitcher Class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher.htm" />
+    <HelpKINode Title="type conversions" Url="html/Operators_T_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher.htm" />
+  </HelpKINode>
+  <HelpKINode Title="HandlerSwitcher to Handler conversion" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher_op_Implicit.htm" />
+  <HelpKINode Title="HandlerSwitcher.Handler property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher_Handler.htm" />
+  <HelpKINode Title="HandlerSwitcher.Target property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher_Target.htm" />
+  <HelpKINode Title="Hang method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Hang.htm" />
+  <HelpKINode Title="Header method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Header.htm" />
+  <HelpKINode Title="Headers property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Headers.htm" />
+  <HelpKINode Title="HttpServer class">
+    <HelpKINode Title="HttpServer Class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_HttpServer.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_HttpServer.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_HttpServer.htm" />
+  </HelpKINode>
+  <HelpKINode Title="HttpServer.Dispose method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_HttpServer_Dispose.htm" />
+  <HelpKINode Title="HttpServer.Recorder property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_HttpServer_Recorder.htm" />
+  <HelpKINode Title="HttpServer.Start method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_HttpServer_Start.htm" />
+  <HelpKINode Title="HttpServer.Uri property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_HttpServer_Uri.htm" />
+  <HelpKINode Title="IRequestContext interface">
+    <HelpKINode Title="IRequestContext Interface" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_IRequestContext.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_IRequestContext.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_IRequestContext.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IRequestContext.AddHeader method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_AddHeader.htm" />
+  <HelpKINode Title="IRequestContext.CancellationToken property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_CancellationToken.htm" />
+  <HelpKINode Title="IRequestContext.RequestInfo property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_RequestInfo.htm" />
+  <HelpKINode Title="IRequestContext.SetHeader method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_SetHeader.htm" />
+  <HelpKINode Title="IRequestContext.SetStatus method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_SetStatus.htm" />
+  <HelpKINode Title="IRequestContext.WriteChunkedDataAsync method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_WriteChunkedDataAsync.htm" />
+  <HelpKINode Title="IRequestContext.WriteFullResponseAsync method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_WriteFullResponseAsync.htm" />
+  <HelpKINode Title="LaunchDarkly.TestHelpers.HttpTest namespace" Url="html/N_LaunchDarkly_TestHelpers_HttpTest.htm" />
+  <HelpKINode Title="LaunchDarkly.TestHelpers.HttpTest.Handler delegate" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_Handler.htm" />
+  <HelpKINode Title="LaunchDarkly.TestHelpers.HttpTest.Handlers class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_Handlers.htm" />
+  <HelpKINode Title="LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE.htm" />
+  <HelpKINode Title="LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher.htm" />
+  <HelpKINode Title="LaunchDarkly.TestHelpers.HttpTest.HttpServer class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_HttpServer.htm" />
+  <HelpKINode Title="LaunchDarkly.TestHelpers.HttpTest.IRequestContext interface" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_IRequestContext.htm" />
+  <HelpKINode Title="LaunchDarkly.TestHelpers.HttpTest.RequestInfo structure" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_RequestInfo.htm" />
+  <HelpKINode Title="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder.htm" />
+  <HelpKINode Title="LaunchDarkly.TestHelpers.HttpTest.SimpleRouter class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter.htm" />
+  <HelpKINode Title="LeaveOpen method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_LeaveOpen.htm" />
+  <HelpKINode Title="Method property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Method.htm" />
+  <HelpKINode Title="Path property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Path.htm" />
+  <HelpKINode Title="Query property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Query.htm" />
+  <HelpKINode Title="Record method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Record.htm" />
+  <HelpKINode Title="Recorder property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_HttpServer_Recorder.htm" />
+  <HelpKINode Title="RequestInfo property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_RequestInfo.htm" />
+  <HelpKINode Title="RequestInfo structure">
+    <HelpKINode Title="RequestInfo Structure" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_RequestInfo.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_RequestInfo.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_RequestInfo.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RequestInfo.Body property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Body.htm" />
+  <HelpKINode Title="RequestInfo.Headers property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Headers.htm" />
+  <HelpKINode Title="RequestInfo.Method property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Method.htm" />
+  <HelpKINode Title="RequestInfo.Path property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Path.htm" />
+  <HelpKINode Title="RequestInfo.Query property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Query.htm" />
+  <HelpKINode Title="RequestInfo.Uri property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Uri.htm" />
+  <HelpKINode Title="RequestRecorder class">
+    <HelpKINode Title="RequestRecorder Class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder.htm" />
+    <HelpKINode Title="constructor" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder.htm" />
+    <HelpKINode Title="type conversions" Url="html/Operators_T_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RequestRecorder to Handler conversion" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_op_Implicit.htm" />
+  <HelpKINode Title="RequestRecorder.Count property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Count.htm" />
+  <HelpKINode Title="RequestRecorder.DefaultTimeout field" Url="html/F_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_DefaultTimeout.htm" />
+  <HelpKINode Title="RequestRecorder.Handler property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Handler.htm" />
+  <HelpKINode Title="RequestRecorder.RequestRecorder constructor" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder__ctor.htm" />
+  <HelpKINode Title="RequestRecorder.RequireNoRequests method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireNoRequests.htm" />
+  <HelpKINode Title="RequestRecorder.RequireRequest method" Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireRequest.htm" />
+  <HelpKINode Title="RequireNoRequests method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireNoRequests.htm" />
+  <HelpKINode Title="RequireRequest method" Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireRequest.htm" />
+  <HelpKINode Title="Router method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Router.htm" />
+  <HelpKINode Title="Sequential method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Sequential.htm" />
+  <HelpKINode Title="SetHeader method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_SetHeader.htm" />
+  <HelpKINode Title="SetStatus method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_SetStatus.htm" />
+  <HelpKINode Title="SimpleRouter class">
+    <HelpKINode Title="SimpleRouter Class" Url="html/T_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter.htm" />
+    <HelpKINode Title="constructor" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter.htm" />
+    <HelpKINode Title="type conversions" Url="html/Operators_T_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SimpleRouter to Handler conversion" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_op_Implicit.htm" />
+  <HelpKINode Title="SimpleRouter.AddPath method" Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddPath.htm" />
+  <HelpKINode Title="SimpleRouter.AddRegex method" Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddRegex.htm" />
+  <HelpKINode Title="SimpleRouter.Handler property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_Handler.htm" />
+  <HelpKINode Title="SimpleRouter.SimpleRouter constructor" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter__ctor.htm" />
+  <HelpKINode Title="SSE class">
+    <HelpKINode Title="methods" Url="html/Methods_T_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Start method">
+    <HelpKINode Title="Handlers.SSE.Start Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Start.htm" />
+    <HelpKINode Title="HttpServer.Start Method " Url="html/M_LaunchDarkly_TestHelpers_HttpTest_HttpServer_Start.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StartChunks method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_StartChunks.htm" />
+  <HelpKINode Title="Status method" Url="html/Overload_LaunchDarkly_TestHelpers_HttpTest_Handlers_Status.htm" />
+  <HelpKINode Title="Switchable method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Switchable.htm" />
+  <HelpKINode Title="Sync method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Sync.htm" />
+  <HelpKINode Title="Target property" Url="html/P_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher_Target.htm" />
+  <HelpKINode Title="Then method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_Then.htm" />
+  <HelpKINode Title="Uri property">
+    <HelpKINode Title="HttpServer.Uri Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_HttpServer_Uri.htm" />
+    <HelpKINode Title="RequestInfo.Uri Property " Url="html/P_LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Uri.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WriteChunk method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_WriteChunk.htm" />
+  <HelpKINode Title="WriteChunkedDataAsync method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_WriteChunkedDataAsync.htm" />
+  <HelpKINode Title="WriteChunkString method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_Handlers_WriteChunkString.htm" />
+  <HelpKINode Title="WriteFullResponseAsync method" Url="html/M_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_WriteFullResponseAsync.htm" />
+</HelpKI>
