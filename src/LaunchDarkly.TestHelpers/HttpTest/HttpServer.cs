@@ -65,7 +65,11 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         {
             _canceller.Cancel();
             _listener.Stop();
-            _listener.Close();
+            try
+            {
+                _listener.Close();
+            }
+            catch { } // .NET Core 2.0 has a bug that can cause a spurious exception here
         }
 
         /// <summary>
