@@ -106,37 +106,50 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         {
             var port = FindNextPort();
 
-            var listener = new HttpListener();
-            listener.Prefixes.Add(string.Format("http://*:{0}/", port));
-            listener.Start();
-            Task.Run(async () =>
+            while (true)
             {
-                while (!cancellationToken.IsCancellationRequested && listener.IsListening)
+                var listener = new HttpListener();
+                listener.Prefixes.Add(string.Format("http://*:{0}/", port));
+                try
                 {
-                    try
+                    listener.Start();
+                }
+                catch (HttpListenerException)
+                {
+                    // For unknown reasons, sometimes the logic used in FindNextPort will return a port that's
+                    // not really available after all
+                    port++;
+                    continue;
+                }
+                Task.Run(async () =>
+                {
+                    while (!cancellationToken.IsCancellationRequested && listener.IsListening)
                     {
-                        var listenerCtx = await listener.GetContextAsync().ConfigureAwait(false);
-                        var ctx = RequestContextImpl.FromHttpListenerContext(listenerCtx, cancellationToken);
+                        try
+                        {
+                            var listenerCtx = await listener.GetContextAsync().ConfigureAwait(false);
+                            var ctx = RequestContextImpl.FromHttpListenerContext(listenerCtx, cancellationToken);
 #pragma warning disable CS4014 // deliberately not awaiting this async task
                         Task.Run(async () =>
-                        {
-                            await Dispatch(ctx, rootHandler);
-                            listenerCtx.Response.Close();
-                        });
+                            {
+                                await Dispatch(ctx, rootHandler);
+                                listenerCtx.Response.Close();
+                            });
 #pragma warning restore CS4014
 
                     }
-                    catch
-                    {
+                        catch
+                        {
                         // an exception almost certainly means the listener has been shut down
                         break;
+                        }
                     }
-                }
-            });
+                });
 
-            serverUriOut = new Uri(string.Format("http://localhost:{0}/", port));
+                serverUriOut = new Uri(string.Format("http://localhost:{0}/", port));
 
-            return listener;
+                return listener;
+            }
         }
 
         private static int FindNextPort()
