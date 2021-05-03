@@ -11,11 +11,24 @@ namespace LaunchDarkly.TestHelpers.HttpTest
     public class StreamingTest
     {
         [Fact]
-        public async Task BasicChunkedResponse()
+        public async Task BasicChunkedResponseWithNoCharsetInHeader()
         {
             string[] chunks = new string[] { "first.", "second.", "third" };
             await DoStreamingTest(
                 Handlers.StartChunks("text/plain"),
+                chunks.Select(c => Handlers.WriteChunkString(c)).ToArray(),
+                Handlers.Hang(),
+                "text/plain",
+                chunks
+                );
+        }
+
+        [Fact]
+        public async Task BasicChunkedResponseWithCharsetInHeader()
+        {
+            string[] chunks = new string[] { "first.", "second.", "third" };
+            await DoStreamingTest(
+                Handlers.StartChunks("text/plain", Encoding.UTF8),
                 chunks.Select(c => Handlers.WriteChunkString(c)).ToArray(),
                 Handlers.Hang(),
                 "text/plain; charset=utf-8",

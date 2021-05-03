@@ -110,7 +110,8 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// </summary>
         /// <param name="contentType">response content type (used only if body is not null)</param>
         /// <param name="body">response body (may be null)</param>
-        /// <param name="encoding">response encoding (defaults to UTF8)</param>
+        /// <param name="encoding">character encoding; if not specified, no charset will be included
+        /// in the Content-Type header, but UTF8 will be used to encode the string</param>
         /// <returns>a <see cref="Handler"/></returns>
         /// <seealso cref="Body(string, byte[])"/>
         /// <seealso cref="BodyJson(string, Encoding)"/>
@@ -142,7 +143,8 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// </code>
         /// </example>
         /// <param name="contentType">the content type</param>
-        /// <param name="encoding">response encoding (defaults to UTF8)</param>
+        /// <param name="encoding">character encoding to include in the Content-Type header;
+        /// if not specified, Content-Type will not specify an encoding</param>
         /// <returns>a <see cref="Handler"/></returns>
         /// <seealso cref="WriteChunk(byte[])"/>
         /// <seealso cref="WriteChunkString(string, Encoding)"/>
@@ -167,7 +169,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// Creates a <see cref="Handler"/> that writes a chunk of response data.
         /// </summary>
         /// <param name="data">the chunk data as a string</param>
-        /// <param name="encoding">response encoding (defaults to UTF8)</param>
+        /// <param name="encoding">character encoding to use for this chunk (defaults to UTF8)</param>
         /// <returns>a <see cref="Handler"/></returns>
         /// <seealso cref="StartChunks(string, Encoding)"/>
         /// <seealso cref="WriteChunk(byte[])"/>
@@ -274,10 +276,11 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         public static class SSE
         {
             /// <summary>
-            /// Starts a chunked stream with the standard content type "text/event-stream.
+            /// Starts a chunked stream with the standard content type "text/event-stream",
+            /// and the charset UTF-8.
             /// </summary>
             /// <returns>a <see cref="Handler"/></returns>
-            public static Handler Start() => StartChunks("text/event-stream");
+            public static Handler Start() => StartChunks("text/event-stream", Encoding.UTF8);
 
             /// <summary>
             /// Writes an SSE comment line.
@@ -310,7 +313,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         }
 
         private static string ContentTypeWithEncoding(string contentType, Encoding encoding) =>
-            contentType is null || contentType.Contains("charset=") ? contentType :
-                contentType + "; charset=" + (encoding ?? Encoding.UTF8).WebName;
+            contentType is null || encoding is null || contentType.Contains("charset=") ? contentType :
+                contentType + "; charset=" + encoding.WebName;
     }
 }

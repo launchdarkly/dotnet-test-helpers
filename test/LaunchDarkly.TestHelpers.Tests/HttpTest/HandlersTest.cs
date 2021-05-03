@@ -108,10 +108,23 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         }
 
         [Fact]
-        public async Task BodyString()
+        public async Task BodyStringWithNoCharsetInHeader()
         {
             string body = "hello";
             await WithServerAndClient(Handlers.BodyString("text/weird", body), async (server, client) =>
+            {
+                var resp = await client.GetAsync(server.Uri);
+                Assert.Equal(200, (int)resp.StatusCode);
+                AssertHeader(resp, "content-type", "text/weird");
+                Assert.Equal(body, await resp.Content.ReadAsStringAsync());
+            });
+        }
+
+        [Fact]
+        public async Task BodyStringWithCharsetInHeader()
+        {
+            string body = "hello";
+            await WithServerAndClient(Handlers.BodyString("text/weird", body, Encoding.UTF8), async (server, client) =>
             {
                 var resp = await client.GetAsync(server.Uri);
                 Assert.Equal(200, (int)resp.StatusCode);
@@ -121,9 +134,21 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         }
 
         [Fact]
-        public async Task BodyJson()
+        public async Task BodyJsonWithoutCharsetInHeader()
         {
             await WithServerAndClient(Handlers.BodyJson("true"), async (server, client) =>
+            {
+                var resp = await client.GetAsync(server.Uri);
+                Assert.Equal(200, (int)resp.StatusCode);
+                AssertHeader(resp, "content-type", "application/json");
+                Assert.Equal("true", await resp.Content.ReadAsStringAsync());
+            });
+        }
+
+        [Fact]
+        public async Task BodyJsonWithCharsetInHeader()
+        {
+            await WithServerAndClient(Handlers.BodyJson("true", Encoding.UTF8), async (server, client) =>
             {
                 var resp = await client.GetAsync(server.Uri);
                 Assert.Equal(200, (int)resp.StatusCode);
@@ -145,7 +170,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 Assert.Equal(201, (int)resp.StatusCode);
                 AssertHeader(resp, "name1", "value1");
                 AssertHeader(resp, "name2", "value2");
-                AssertHeader(resp, "content-type", "text/plain; charset=utf-8");
+                AssertHeader(resp, "content-type", "text/plain");
                 Assert.Equal("hello", await resp.Content.ReadAsStringAsync());
             });
         }
