@@ -1,0 +1,828 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: LaunchDarkly.TestHelpers.HttpTest
+  name: LaunchDarkly.TestHelpers.HttpTest
+  href: api/LaunchDarkly.TestHelpers.HttpTest.html
+  commentId: N:LaunchDarkly.TestHelpers.HttpTest
+  fullName: LaunchDarkly.TestHelpers.HttpTest
+  nameWithType: LaunchDarkly.TestHelpers.HttpTest
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handler
+  name: Handler
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handler.html
+  commentId: T:LaunchDarkly.TestHelpers.HttpTest.Handler
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handler
+  nameWithType: Handler
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handler.#ctor(System.Object,System.IntPtr)
+  name: Handler(Object, IntPtr)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handler.html#LaunchDarkly_TestHelpers_HttpTest_Handler__ctor_System_Object_System_IntPtr_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handler.#ctor(System.Object,System.IntPtr)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handler.Handler(System.Object, System.IntPtr)
+  nameWithType: Handler.Handler(Object, IntPtr)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handler.#ctor*
+  name: Handler
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handler.html#LaunchDarkly_TestHelpers_HttpTest_Handler__ctor_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handler.#ctor
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handler.Handler
+  nameWithType: Handler.Handler
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handler.BeginInvoke(LaunchDarkly.TestHelpers.HttpTest.IRequestContext,System.AsyncCallback,System.Object)
+  name: BeginInvoke(IRequestContext, AsyncCallback, Object)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handler.html#LaunchDarkly_TestHelpers_HttpTest_Handler_BeginInvoke_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_System_AsyncCallback_System_Object_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handler.BeginInvoke(LaunchDarkly.TestHelpers.HttpTest.IRequestContext,System.AsyncCallback,System.Object)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handler.BeginInvoke(LaunchDarkly.TestHelpers.HttpTest.IRequestContext, System.AsyncCallback, System.Object)
+  nameWithType: Handler.BeginInvoke(IRequestContext, AsyncCallback, Object)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handler.BeginInvoke*
+  name: BeginInvoke
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handler.html#LaunchDarkly_TestHelpers_HttpTest_Handler_BeginInvoke_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handler.BeginInvoke
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handler.BeginInvoke
+  nameWithType: Handler.BeginInvoke
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handler.EndInvoke(System.IAsyncResult)
+  name: EndInvoke(IAsyncResult)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handler.html#LaunchDarkly_TestHelpers_HttpTest_Handler_EndInvoke_System_IAsyncResult_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handler.EndInvoke(System.IAsyncResult)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handler.EndInvoke(System.IAsyncResult)
+  nameWithType: Handler.EndInvoke(IAsyncResult)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handler.EndInvoke*
+  name: EndInvoke
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handler.html#LaunchDarkly_TestHelpers_HttpTest_Handler_EndInvoke_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handler.EndInvoke
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handler.EndInvoke
+  nameWithType: Handler.EndInvoke
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handler.Invoke(LaunchDarkly.TestHelpers.HttpTest.IRequestContext)
+  name: Invoke(IRequestContext)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handler.html#LaunchDarkly_TestHelpers_HttpTest_Handler_Invoke_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handler.Invoke(LaunchDarkly.TestHelpers.HttpTest.IRequestContext)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handler.Invoke(LaunchDarkly.TestHelpers.HttpTest.IRequestContext)
+  nameWithType: Handler.Invoke(IRequestContext)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handler.Invoke*
+  name: Invoke
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handler.html#LaunchDarkly_TestHelpers_HttpTest_Handler_Invoke_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handler.Invoke
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handler.Invoke
+  nameWithType: Handler.Invoke
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers
+  name: Handlers
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html
+  commentId: T:LaunchDarkly.TestHelpers.HttpTest.Handlers
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers
+  nameWithType: Handlers
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.AddHeader(System.String,System.String)
+  name: AddHeader(String, String)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_AddHeader_System_String_System_String_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.AddHeader(System.String,System.String)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.AddHeader(System.String, System.String)
+  nameWithType: Handlers.AddHeader(String, String)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.AddHeader*
+  name: AddHeader
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_AddHeader_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.AddHeader
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.AddHeader
+  nameWithType: Handlers.AddHeader
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Body(System.String,System.Byte[])
+  name: Body(String, Byte[])
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Body_System_String_System_Byte___
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.Body(System.String,System.Byte[])
+  name.vb: Body(String, Byte())
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Body(System.String, System.Byte[])
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.Handlers.Body(System.String, System.Byte())
+  nameWithType: Handlers.Body(String, Byte[])
+  nameWithType.vb: Handlers.Body(String, Byte())
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Body*
+  name: Body
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Body_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.Body
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Body
+  nameWithType: Handlers.Body
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.BodyJson(System.String,System.Text.Encoding)
+  name: BodyJson(String, Encoding)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_BodyJson_System_String_System_Text_Encoding_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.BodyJson(System.String,System.Text.Encoding)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.BodyJson(System.String, System.Text.Encoding)
+  nameWithType: Handlers.BodyJson(String, Encoding)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.BodyJson*
+  name: BodyJson
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_BodyJson_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.BodyJson
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.BodyJson
+  nameWithType: Handlers.BodyJson
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.BodyString(System.String,System.String,System.Text.Encoding)
+  name: BodyString(String, String, Encoding)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_BodyString_System_String_System_String_System_Text_Encoding_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.BodyString(System.String,System.String,System.Text.Encoding)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.BodyString(System.String, System.String, System.Text.Encoding)
+  nameWithType: Handlers.BodyString(String, String, Encoding)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.BodyString*
+  name: BodyString
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_BodyString_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.BodyString
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.BodyString
+  nameWithType: Handlers.BodyString
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Default
+  name: Default
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Default
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.Handlers.Default
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Default
+  nameWithType: Handlers.Default
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Default*
+  name: Default
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Default_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.Default
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Default
+  nameWithType: Handlers.Default
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Delay(System.TimeSpan)
+  name: Delay(TimeSpan)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Delay_System_TimeSpan_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.Delay(System.TimeSpan)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Delay(System.TimeSpan)
+  nameWithType: Handlers.Delay(TimeSpan)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Delay*
+  name: Delay
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Delay_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.Delay
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Delay
+  nameWithType: Handlers.Delay
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Hang
+  name: Hang()
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Hang
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.Hang
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Hang()
+  nameWithType: Handlers.Hang()
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Hang*
+  name: Hang
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Hang_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.Hang
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Hang
+  nameWithType: Handlers.Hang
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Header(System.String,System.String)
+  name: Header(String, String)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Header_System_String_System_String_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.Header(System.String,System.String)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Header(System.String, System.String)
+  nameWithType: Handlers.Header(String, String)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Header*
+  name: Header
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Header_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.Header
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Header
+  nameWithType: Handlers.Header
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Record(LaunchDarkly.TestHelpers.HttpTest.RequestRecorder@)
+  name: Record(out RequestRecorder)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Record_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder__
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.Record(LaunchDarkly.TestHelpers.HttpTest.RequestRecorder@)
+  name.vb: Record(ByRef RequestRecorder)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Record(out LaunchDarkly.TestHelpers.HttpTest.RequestRecorder)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.Handlers.Record(ByRef LaunchDarkly.TestHelpers.HttpTest.RequestRecorder)
+  nameWithType: Handlers.Record(out RequestRecorder)
+  nameWithType.vb: Handlers.Record(ByRef RequestRecorder)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Record*
+  name: Record
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Record_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.Record
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Record
+  nameWithType: Handlers.Record
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Router(LaunchDarkly.TestHelpers.HttpTest.SimpleRouter@)
+  name: Router(out SimpleRouter)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Router_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter__
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.Router(LaunchDarkly.TestHelpers.HttpTest.SimpleRouter@)
+  name.vb: Router(ByRef SimpleRouter)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Router(out LaunchDarkly.TestHelpers.HttpTest.SimpleRouter)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.Handlers.Router(ByRef LaunchDarkly.TestHelpers.HttpTest.SimpleRouter)
+  nameWithType: Handlers.Router(out SimpleRouter)
+  nameWithType.vb: Handlers.Router(ByRef SimpleRouter)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Router*
+  name: Router
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Router_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.Router
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Router
+  nameWithType: Handlers.Router
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Sequential(LaunchDarkly.TestHelpers.HttpTest.Handler[])
+  name: Sequential(Handler[])
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Sequential_LaunchDarkly_TestHelpers_HttpTest_Handler___
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.Sequential(LaunchDarkly.TestHelpers.HttpTest.Handler[])
+  name.vb: Sequential(Handler())
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Sequential(LaunchDarkly.TestHelpers.HttpTest.Handler[])
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.Handlers.Sequential(LaunchDarkly.TestHelpers.HttpTest.Handler())
+  nameWithType: Handlers.Sequential(Handler[])
+  nameWithType.vb: Handlers.Sequential(Handler())
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Sequential*
+  name: Sequential
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Sequential_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.Sequential
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Sequential
+  nameWithType: Handlers.Sequential
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE
+  name: Handlers.SSE
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.html
+  commentId: T:LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE
+  nameWithType: Handlers.SSE
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Comment(System.String)
+  name: Comment(String)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Comment_System_String_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Comment(System.String)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Comment(System.String)
+  nameWithType: Handlers.SSE.Comment(String)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Comment*
+  name: Comment
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Comment_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Comment
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Comment
+  nameWithType: Handlers.SSE.Comment
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Event(System.String)
+  name: Event(String)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Event_System_String_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Event(System.String)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Event(System.String)
+  nameWithType: Handlers.SSE.Event(String)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Event(System.String,System.String)
+  name: Event(String, String)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Event_System_String_System_String_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Event(System.String,System.String)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Event(System.String, System.String)
+  nameWithType: Handlers.SSE.Event(String, String)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Event*
+  name: Event
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Event_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Event
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Event
+  nameWithType: Handlers.SSE.Event
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.LeaveOpen
+  name: LeaveOpen()
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_LeaveOpen
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.LeaveOpen
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.LeaveOpen()
+  nameWithType: Handlers.SSE.LeaveOpen()
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.LeaveOpen*
+  name: LeaveOpen
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_LeaveOpen_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.LeaveOpen
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.LeaveOpen
+  nameWithType: Handlers.SSE.LeaveOpen
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Start
+  name: Start()
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Start
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Start
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Start()
+  nameWithType: Handlers.SSE.Start()
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Start*
+  name: Start
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_SSE_Start_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Start
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.Start
+  nameWithType: Handlers.SSE.Start
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.StartChunks(System.String,System.Text.Encoding)
+  name: StartChunks(String, Encoding)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_StartChunks_System_String_System_Text_Encoding_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.StartChunks(System.String,System.Text.Encoding)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.StartChunks(System.String, System.Text.Encoding)
+  nameWithType: Handlers.StartChunks(String, Encoding)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.StartChunks*
+  name: StartChunks
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_StartChunks_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.StartChunks
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.StartChunks
+  nameWithType: Handlers.StartChunks
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Status(System.Int32)
+  name: Status(Int32)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Status_System_Int32_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.Status(System.Int32)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Status(System.Int32)
+  nameWithType: Handlers.Status(Int32)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Status(System.Net.HttpStatusCode)
+  name: Status(HttpStatusCode)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Status_System_Net_HttpStatusCode_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.Status(System.Net.HttpStatusCode)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Status(System.Net.HttpStatusCode)
+  nameWithType: Handlers.Status(HttpStatusCode)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Status*
+  name: Status
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Status_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.Status
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Status
+  nameWithType: Handlers.Status
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Switchable(LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher@)
+  name: Switchable(out HandlerSwitcher)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Switchable_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher__
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.Switchable(LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher@)
+  name.vb: Switchable(ByRef HandlerSwitcher)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Switchable(out LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.Handlers.Switchable(ByRef LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher)
+  nameWithType: Handlers.Switchable(out HandlerSwitcher)
+  nameWithType.vb: Handlers.Switchable(ByRef HandlerSwitcher)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Switchable*
+  name: Switchable
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Switchable_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.Switchable
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Switchable
+  nameWithType: Handlers.Switchable
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Sync(System.Action{LaunchDarkly.TestHelpers.HttpTest.IRequestContext})
+  name: Sync(Action<IRequestContext>)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Sync_System_Action_LaunchDarkly_TestHelpers_HttpTest_IRequestContext__
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.Sync(System.Action{LaunchDarkly.TestHelpers.HttpTest.IRequestContext})
+  name.vb: Sync(Action(Of IRequestContext))
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Sync(System.Action<LaunchDarkly.TestHelpers.HttpTest.IRequestContext>)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.Handlers.Sync(System.Action(Of LaunchDarkly.TestHelpers.HttpTest.IRequestContext))
+  nameWithType: Handlers.Sync(Action<IRequestContext>)
+  nameWithType.vb: Handlers.Sync(Action(Of IRequestContext))
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Sync*
+  name: Sync
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Sync_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.Sync
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Sync
+  nameWithType: Handlers.Sync
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Then(LaunchDarkly.TestHelpers.HttpTest.Handler,LaunchDarkly.TestHelpers.HttpTest.Handler)
+  name: Then(Handler, Handler)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Then_LaunchDarkly_TestHelpers_HttpTest_Handler_LaunchDarkly_TestHelpers_HttpTest_Handler_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.Then(LaunchDarkly.TestHelpers.HttpTest.Handler,LaunchDarkly.TestHelpers.HttpTest.Handler)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Then(LaunchDarkly.TestHelpers.HttpTest.Handler, LaunchDarkly.TestHelpers.HttpTest.Handler)
+  nameWithType: Handlers.Then(Handler, Handler)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Then*
+  name: Then
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Then_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.Then
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Then
+  nameWithType: Handlers.Then
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.WriteChunk(System.Byte[])
+  name: WriteChunk(Byte[])
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_WriteChunk_System_Byte___
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.WriteChunk(System.Byte[])
+  name.vb: WriteChunk(Byte())
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.WriteChunk(System.Byte[])
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.Handlers.WriteChunk(System.Byte())
+  nameWithType: Handlers.WriteChunk(Byte[])
+  nameWithType.vb: Handlers.WriteChunk(Byte())
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.WriteChunk*
+  name: WriteChunk
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_WriteChunk_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.WriteChunk
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.WriteChunk
+  nameWithType: Handlers.WriteChunk
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.WriteChunkString(System.String,System.Text.Encoding)
+  name: WriteChunkString(String, Encoding)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_WriteChunkString_System_String_System_Text_Encoding_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.WriteChunkString(System.String,System.Text.Encoding)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.WriteChunkString(System.String, System.Text.Encoding)
+  nameWithType: Handlers.WriteChunkString(String, Encoding)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.WriteChunkString*
+  name: WriteChunkString
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_WriteChunkString_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.WriteChunkString
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.WriteChunkString
+  nameWithType: Handlers.WriteChunkString
+- uid: LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher
+  name: HandlerSwitcher
+  href: api/LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.html
+  commentId: T:LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher
+  fullName: LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher
+  nameWithType: HandlerSwitcher
+- uid: LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.Handler
+  name: Handler
+  href: api/LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.html#LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher_Handler
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.Handler
+  fullName: LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.Handler
+  nameWithType: HandlerSwitcher.Handler
+- uid: LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.Handler*
+  name: Handler
+  href: api/LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.html#LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher_Handler_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.Handler
+  fullName: LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.Handler
+  nameWithType: HandlerSwitcher.Handler
+- uid: LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.op_Implicit(LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher)~LaunchDarkly.TestHelpers.HttpTest.Handler
+  name: Implicit(HandlerSwitcher to Handler)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.html#LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher_op_Implicit_LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher__LaunchDarkly_TestHelpers_HttpTest_Handler
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.op_Implicit(LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher)~LaunchDarkly.TestHelpers.HttpTest.Handler
+  name.vb: Widening(HandlerSwitcher to Handler)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.Implicit(LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher to LaunchDarkly.TestHelpers.HttpTest.Handler)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.Widening(LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher to LaunchDarkly.TestHelpers.HttpTest.Handler)
+  nameWithType: HandlerSwitcher.Implicit(HandlerSwitcher to Handler)
+  nameWithType.vb: HandlerSwitcher.Widening(HandlerSwitcher to Handler)
+- uid: LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.op_Implicit*
+  name: Implicit
+  href: api/LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.html#LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher_op_Implicit_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.op_Implicit
+  name.vb: Widening
+  fullName: LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.Implicit
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.Widening
+  nameWithType: HandlerSwitcher.Implicit
+  nameWithType.vb: HandlerSwitcher.Widening
+- uid: LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.Target
+  name: Target
+  href: api/LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.html#LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher_Target
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.Target
+  fullName: LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.Target
+  nameWithType: HandlerSwitcher.Target
+- uid: LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.Target*
+  name: Target
+  href: api/LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.html#LaunchDarkly_TestHelpers_HttpTest_HandlerSwitcher_Target_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.Target
+  fullName: LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.Target
+  nameWithType: HandlerSwitcher.Target
+- uid: LaunchDarkly.TestHelpers.HttpTest.HttpServer
+  name: HttpServer
+  href: api/LaunchDarkly.TestHelpers.HttpTest.HttpServer.html
+  commentId: T:LaunchDarkly.TestHelpers.HttpTest.HttpServer
+  fullName: LaunchDarkly.TestHelpers.HttpTest.HttpServer
+  nameWithType: HttpServer
+- uid: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Dispose
+  name: Dispose()
+  href: api/LaunchDarkly.TestHelpers.HttpTest.HttpServer.html#LaunchDarkly_TestHelpers_HttpTest_HttpServer_Dispose
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.HttpServer.Dispose
+  fullName: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Dispose()
+  nameWithType: HttpServer.Dispose()
+- uid: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Dispose*
+  name: Dispose
+  href: api/LaunchDarkly.TestHelpers.HttpTest.HttpServer.html#LaunchDarkly_TestHelpers_HttpTest_HttpServer_Dispose_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.HttpServer.Dispose
+  fullName: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Dispose
+  nameWithType: HttpServer.Dispose
+- uid: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Recorder
+  name: Recorder
+  href: api/LaunchDarkly.TestHelpers.HttpTest.HttpServer.html#LaunchDarkly_TestHelpers_HttpTest_HttpServer_Recorder
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.HttpServer.Recorder
+  fullName: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Recorder
+  nameWithType: HttpServer.Recorder
+- uid: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Recorder*
+  name: Recorder
+  href: api/LaunchDarkly.TestHelpers.HttpTest.HttpServer.html#LaunchDarkly_TestHelpers_HttpTest_HttpServer_Recorder_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.HttpServer.Recorder
+  fullName: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Recorder
+  nameWithType: HttpServer.Recorder
+- uid: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Start(LaunchDarkly.TestHelpers.HttpTest.Handler)
+  name: Start(Handler)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.HttpServer.html#LaunchDarkly_TestHelpers_HttpTest_HttpServer_Start_LaunchDarkly_TestHelpers_HttpTest_Handler_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.HttpServer.Start(LaunchDarkly.TestHelpers.HttpTest.Handler)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Start(LaunchDarkly.TestHelpers.HttpTest.Handler)
+  nameWithType: HttpServer.Start(Handler)
+- uid: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Start*
+  name: Start
+  href: api/LaunchDarkly.TestHelpers.HttpTest.HttpServer.html#LaunchDarkly_TestHelpers_HttpTest_HttpServer_Start_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.HttpServer.Start
+  fullName: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Start
+  nameWithType: HttpServer.Start
+- uid: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Uri
+  name: Uri
+  href: api/LaunchDarkly.TestHelpers.HttpTest.HttpServer.html#LaunchDarkly_TestHelpers_HttpTest_HttpServer_Uri
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.HttpServer.Uri
+  fullName: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Uri
+  nameWithType: HttpServer.Uri
+- uid: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Uri*
+  name: Uri
+  href: api/LaunchDarkly.TestHelpers.HttpTest.HttpServer.html#LaunchDarkly_TestHelpers_HttpTest_HttpServer_Uri_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.HttpServer.Uri
+  fullName: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Uri
+  nameWithType: HttpServer.Uri
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext
+  name: IRequestContext
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html
+  commentId: T:LaunchDarkly.TestHelpers.HttpTest.IRequestContext
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext
+  nameWithType: IRequestContext
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.AddHeader(System.String,System.String)
+  name: AddHeader(String, String)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_AddHeader_System_String_System_String_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.AddHeader(System.String,System.String)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.AddHeader(System.String, System.String)
+  nameWithType: IRequestContext.AddHeader(String, String)
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.AddHeader*
+  name: AddHeader
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_AddHeader_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.AddHeader
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.AddHeader
+  nameWithType: IRequestContext.AddHeader
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.CancellationToken
+  name: CancellationToken
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_CancellationToken
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.CancellationToken
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.CancellationToken
+  nameWithType: IRequestContext.CancellationToken
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.CancellationToken*
+  name: CancellationToken
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_CancellationToken_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.CancellationToken
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.CancellationToken
+  nameWithType: IRequestContext.CancellationToken
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.RequestInfo
+  name: RequestInfo
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_RequestInfo
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.RequestInfo
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.RequestInfo
+  nameWithType: IRequestContext.RequestInfo
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.RequestInfo*
+  name: RequestInfo
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_RequestInfo_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.RequestInfo
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.RequestInfo
+  nameWithType: IRequestContext.RequestInfo
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.SetHeader(System.String,System.String)
+  name: SetHeader(String, String)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_SetHeader_System_String_System_String_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.SetHeader(System.String,System.String)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.SetHeader(System.String, System.String)
+  nameWithType: IRequestContext.SetHeader(String, String)
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.SetHeader*
+  name: SetHeader
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_SetHeader_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.SetHeader
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.SetHeader
+  nameWithType: IRequestContext.SetHeader
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.SetStatus(System.Int32)
+  name: SetStatus(Int32)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_SetStatus_System_Int32_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.SetStatus(System.Int32)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.SetStatus(System.Int32)
+  nameWithType: IRequestContext.SetStatus(Int32)
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.SetStatus*
+  name: SetStatus
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_SetStatus_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.SetStatus
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.SetStatus
+  nameWithType: IRequestContext.SetStatus
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WriteChunkedDataAsync(System.Byte[])
+  name: WriteChunkedDataAsync(Byte[])
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_WriteChunkedDataAsync_System_Byte___
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WriteChunkedDataAsync(System.Byte[])
+  name.vb: WriteChunkedDataAsync(Byte())
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WriteChunkedDataAsync(System.Byte[])
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WriteChunkedDataAsync(System.Byte())
+  nameWithType: IRequestContext.WriteChunkedDataAsync(Byte[])
+  nameWithType.vb: IRequestContext.WriteChunkedDataAsync(Byte())
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WriteChunkedDataAsync*
+  name: WriteChunkedDataAsync
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_WriteChunkedDataAsync_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WriteChunkedDataAsync
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WriteChunkedDataAsync
+  nameWithType: IRequestContext.WriteChunkedDataAsync
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WriteFullResponseAsync(System.String,System.Byte[])
+  name: WriteFullResponseAsync(String, Byte[])
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_WriteFullResponseAsync_System_String_System_Byte___
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WriteFullResponseAsync(System.String,System.Byte[])
+  name.vb: WriteFullResponseAsync(String, Byte())
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WriteFullResponseAsync(System.String, System.Byte[])
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WriteFullResponseAsync(System.String, System.Byte())
+  nameWithType: IRequestContext.WriteFullResponseAsync(String, Byte[])
+  nameWithType.vb: IRequestContext.WriteFullResponseAsync(String, Byte())
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WriteFullResponseAsync*
+  name: WriteFullResponseAsync
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_WriteFullResponseAsync_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WriteFullResponseAsync
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WriteFullResponseAsync
+  nameWithType: IRequestContext.WriteFullResponseAsync
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestInfo
+  name: RequestInfo
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestInfo.html
+  commentId: T:LaunchDarkly.TestHelpers.HttpTest.RequestInfo
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestInfo
+  nameWithType: RequestInfo
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Body
+  name: Body
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestInfo.html#LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Body
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Body
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Body
+  nameWithType: RequestInfo.Body
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Body*
+  name: Body
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestInfo.html#LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Body_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Body
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Body
+  nameWithType: RequestInfo.Body
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Headers
+  name: Headers
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestInfo.html#LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Headers
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Headers
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Headers
+  nameWithType: RequestInfo.Headers
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Headers*
+  name: Headers
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestInfo.html#LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Headers_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Headers
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Headers
+  nameWithType: RequestInfo.Headers
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Method
+  name: Method
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestInfo.html#LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Method
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Method
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Method
+  nameWithType: RequestInfo.Method
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Method*
+  name: Method
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestInfo.html#LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Method_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Method
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Method
+  nameWithType: RequestInfo.Method
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Path
+  name: Path
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestInfo.html#LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Path
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Path
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Path
+  nameWithType: RequestInfo.Path
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Path*
+  name: Path
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestInfo.html#LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Path_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Path
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Path
+  nameWithType: RequestInfo.Path
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Query
+  name: Query
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestInfo.html#LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Query
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Query
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Query
+  nameWithType: RequestInfo.Query
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Query*
+  name: Query
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestInfo.html#LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Query_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Query
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Query
+  nameWithType: RequestInfo.Query
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Uri
+  name: Uri
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestInfo.html#LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Uri
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Uri
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Uri
+  nameWithType: RequestInfo.Uri
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Uri*
+  name: Uri
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestInfo.html#LaunchDarkly_TestHelpers_HttpTest_RequestInfo_Uri_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Uri
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestInfo.Uri
+  nameWithType: RequestInfo.Uri
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder
+  name: RequestRecorder
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html
+  commentId: T:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder
+  nameWithType: RequestRecorder
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.#ctor
+  name: RequestRecorder()
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder__ctor
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.#ctor
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequestRecorder()
+  nameWithType: RequestRecorder.RequestRecorder()
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.#ctor*
+  name: RequestRecorder
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder__ctor_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.#ctor
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequestRecorder
+  nameWithType: RequestRecorder.RequestRecorder
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Count
+  name: Count
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Count
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Count
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Count
+  nameWithType: RequestRecorder.Count
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Count*
+  name: Count
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Count_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Count
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Count
+  nameWithType: RequestRecorder.Count
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.DefaultTimeout
+  name: DefaultTimeout
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_DefaultTimeout
+  commentId: F:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.DefaultTimeout
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.DefaultTimeout
+  nameWithType: RequestRecorder.DefaultTimeout
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Handler
+  name: Handler
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Handler
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Handler
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Handler
+  nameWithType: RequestRecorder.Handler
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Handler*
+  name: Handler
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Handler_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Handler
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Handler
+  nameWithType: RequestRecorder.Handler
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.op_Implicit(LaunchDarkly.TestHelpers.HttpTest.RequestRecorder)~LaunchDarkly.TestHelpers.HttpTest.Handler
+  name: Implicit(RequestRecorder to Handler)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_op_Implicit_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder__LaunchDarkly_TestHelpers_HttpTest_Handler
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.op_Implicit(LaunchDarkly.TestHelpers.HttpTest.RequestRecorder)~LaunchDarkly.TestHelpers.HttpTest.Handler
+  name.vb: Widening(RequestRecorder to Handler)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Implicit(LaunchDarkly.TestHelpers.HttpTest.RequestRecorder to LaunchDarkly.TestHelpers.HttpTest.Handler)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Widening(LaunchDarkly.TestHelpers.HttpTest.RequestRecorder to LaunchDarkly.TestHelpers.HttpTest.Handler)
+  nameWithType: RequestRecorder.Implicit(RequestRecorder to Handler)
+  nameWithType.vb: RequestRecorder.Widening(RequestRecorder to Handler)
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.op_Implicit*
+  name: Implicit
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_op_Implicit_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.op_Implicit
+  name.vb: Widening
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Implicit
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Widening
+  nameWithType: RequestRecorder.Implicit
+  nameWithType.vb: RequestRecorder.Widening
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireNoRequests(System.TimeSpan)
+  name: RequireNoRequests(TimeSpan)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireNoRequests_System_TimeSpan_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireNoRequests(System.TimeSpan)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireNoRequests(System.TimeSpan)
+  nameWithType: RequestRecorder.RequireNoRequests(TimeSpan)
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireNoRequests*
+  name: RequireNoRequests
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireNoRequests_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireNoRequests
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireNoRequests
+  nameWithType: RequestRecorder.RequireNoRequests
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireRequest
+  name: RequireRequest()
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireRequest
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireRequest
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireRequest()
+  nameWithType: RequestRecorder.RequireRequest()
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireRequest(System.TimeSpan)
+  name: RequireRequest(TimeSpan)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireRequest_System_TimeSpan_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireRequest(System.TimeSpan)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireRequest(System.TimeSpan)
+  nameWithType: RequestRecorder.RequireRequest(TimeSpan)
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireRequest*
+  name: RequireRequest
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireRequest_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireRequest
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireRequest
+  nameWithType: RequestRecorder.RequireRequest
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter
+  name: SimpleRouter
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html
+  commentId: T:LaunchDarkly.TestHelpers.HttpTest.SimpleRouter
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter
+  nameWithType: SimpleRouter
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.#ctor
+  name: SimpleRouter()
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html#LaunchDarkly_TestHelpers_HttpTest_SimpleRouter__ctor
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.#ctor
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.SimpleRouter()
+  nameWithType: SimpleRouter.SimpleRouter()
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.#ctor*
+  name: SimpleRouter
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html#LaunchDarkly_TestHelpers_HttpTest_SimpleRouter__ctor_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.#ctor
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.SimpleRouter
+  nameWithType: SimpleRouter.SimpleRouter
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddPath(System.Net.Http.HttpMethod,System.String,LaunchDarkly.TestHelpers.HttpTest.Handler)
+  name: AddPath(HttpMethod, String, Handler)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html#LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddPath_System_Net_Http_HttpMethod_System_String_LaunchDarkly_TestHelpers_HttpTest_Handler_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddPath(System.Net.Http.HttpMethod,System.String,LaunchDarkly.TestHelpers.HttpTest.Handler)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddPath(System.Net.Http.HttpMethod, System.String, LaunchDarkly.TestHelpers.HttpTest.Handler)
+  nameWithType: SimpleRouter.AddPath(HttpMethod, String, Handler)
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddPath(System.String,LaunchDarkly.TestHelpers.HttpTest.Handler)
+  name: AddPath(String, Handler)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html#LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddPath_System_String_LaunchDarkly_TestHelpers_HttpTest_Handler_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddPath(System.String,LaunchDarkly.TestHelpers.HttpTest.Handler)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddPath(System.String, LaunchDarkly.TestHelpers.HttpTest.Handler)
+  nameWithType: SimpleRouter.AddPath(String, Handler)
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddPath*
+  name: AddPath
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html#LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddPath_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddPath
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddPath
+  nameWithType: SimpleRouter.AddPath
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddRegex(System.Net.Http.HttpMethod,System.String,LaunchDarkly.TestHelpers.HttpTest.Handler)
+  name: AddRegex(HttpMethod, String, Handler)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html#LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddRegex_System_Net_Http_HttpMethod_System_String_LaunchDarkly_TestHelpers_HttpTest_Handler_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddRegex(System.Net.Http.HttpMethod,System.String,LaunchDarkly.TestHelpers.HttpTest.Handler)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddRegex(System.Net.Http.HttpMethod, System.String, LaunchDarkly.TestHelpers.HttpTest.Handler)
+  nameWithType: SimpleRouter.AddRegex(HttpMethod, String, Handler)
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddRegex(System.String,LaunchDarkly.TestHelpers.HttpTest.Handler)
+  name: AddRegex(String, Handler)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html#LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddRegex_System_String_LaunchDarkly_TestHelpers_HttpTest_Handler_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddRegex(System.String,LaunchDarkly.TestHelpers.HttpTest.Handler)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddRegex(System.String, LaunchDarkly.TestHelpers.HttpTest.Handler)
+  nameWithType: SimpleRouter.AddRegex(String, Handler)
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddRegex*
+  name: AddRegex
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html#LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddRegex_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddRegex
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.AddRegex
+  nameWithType: SimpleRouter.AddRegex
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.Handler
+  name: Handler
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html#LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_Handler
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.Handler
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.Handler
+  nameWithType: SimpleRouter.Handler
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.Handler*
+  name: Handler
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html#LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_Handler_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.Handler
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.Handler
+  nameWithType: SimpleRouter.Handler
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.op_Implicit(LaunchDarkly.TestHelpers.HttpTest.SimpleRouter)~LaunchDarkly.TestHelpers.HttpTest.Handler
+  name: Implicit(SimpleRouter to Handler)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html#LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_op_Implicit_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter__LaunchDarkly_TestHelpers_HttpTest_Handler
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.op_Implicit(LaunchDarkly.TestHelpers.HttpTest.SimpleRouter)~LaunchDarkly.TestHelpers.HttpTest.Handler
+  name.vb: Widening(SimpleRouter to Handler)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.Implicit(LaunchDarkly.TestHelpers.HttpTest.SimpleRouter to LaunchDarkly.TestHelpers.HttpTest.Handler)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.Widening(LaunchDarkly.TestHelpers.HttpTest.SimpleRouter to LaunchDarkly.TestHelpers.HttpTest.Handler)
+  nameWithType: SimpleRouter.Implicit(SimpleRouter to Handler)
+  nameWithType.vb: SimpleRouter.Widening(SimpleRouter to Handler)
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.op_Implicit*
+  name: Implicit
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html#LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_op_Implicit_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.op_Implicit
+  name.vb: Widening
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.Implicit
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.Widening
+  nameWithType: SimpleRouter.Implicit
+  nameWithType.vb: SimpleRouter.Widening

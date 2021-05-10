@@ -1,0 +1,212 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/circleci/AppData/Local/Temp/project-releaser-temp/build-docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.HttpTest.Handler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.Handler.html",
+          "hash": "UPHha+k2xegb8mHGWfwCyJ/7rBqAIdJwWdoQPefazRM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.html",
+          "hash": "jbLdulR+NOjeNJZS1RYDBlas5CZJgdu+ampbIk8hIWs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.html",
+          "hash": "s8+xg6hYlL0KgoYtyfbhhQ8hl1ehkWG+Bm7skyoSrMI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.HttpTest.Handlers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html",
+          "hash": "9A/XnlYJWwpXYwaIbuydQ/xi6n7933bwZaY1EyxO6cg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.HttpTest.HttpServer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.HttpServer.html",
+          "hash": "sWPeyVVbfvNGXI8MDqLhKLNIhzgwFxbIVJm46z4M3BQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html",
+          "hash": "uElgfEfFihd8SajyTNCe3EKCHNoveb6xmoLcwVjQmXA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.HttpTest.RequestInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.RequestInfo.html",
+          "hash": "a38vYWEiGhwzOHPQNn9hOdcdkKnch4xzat/hranzeI4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html",
+          "hash": "kJldaaO/E/rbnJQ8kfxee1sOx0pyXgIW72VxFAXd8qM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html",
+          "hash": "jYc6i3R3qBDEf9lg59q9U+jGImb1lrSI9Niu+vUDAsg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.HttpTest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.html",
+          "hash": "LSc81JWc8IHCp6vGFlH/h6uG88WYaeQ1GdmaM0at4Ws="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "build/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "GNMyRoI7pEB9i4w+4LG5MN1zPb3jbNbvi0O/p9B3Gr8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "QOG4Gcq+KVECz6vKqmXKW7gEmTMQrz3TxI1pNZ9+8tM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "NcuLwWAZ6VvoG3eCrszAK7SUJWg02vnpENC6Q57CZdQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 11,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

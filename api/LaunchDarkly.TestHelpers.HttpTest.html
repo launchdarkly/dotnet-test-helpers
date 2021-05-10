@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace LaunchDarkly.TestHelpers.HttpTest
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace LaunchDarkly.TestHelpers.HttpTest
+   ">
+    <meta name="generator" content="docfx 2.57.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="LaunchDarkly.TestHelpers.HttpTest">
+  
+  <h1 id="LaunchDarkly_TestHelpers_HttpTest" data-uid="LaunchDarkly.TestHelpers.HttpTest" class="text-break">Namespace LaunchDarkly.TestHelpers.HttpTest
+  </h1>
+  <div class="markdown level0 summary"><p>A simple portable HTTP test server with response mocking.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"><p>This namespace provides a simple abstraction for setting up embedded HTTP test servers that return programmed responses, and verifying that the expected requests have been made in tests.</p>
+<p>The underlying implementation is <code>System.Net.HttpListener</code>. There are other HTTP mock server libraries for .NET, most of which also use <code>System.Net.HttpListener</code> either directly or indirectly, but they were generally not suitable for LaunchDarkly&#39;s testing needs due to either platform compatibility limitations or their API design.</p>
+<p>An <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.HttpServer.html">HttpServer</a> is an HTTP server that starts listening on an arbitrarily chosen port as soon as you create it. You should normally do this inside a <code>using</code> block to ensure that the server is shut down when you&#39;re done with it. The server&#39;s <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.HttpServer.html#LaunchDarkly_TestHelpers_HttpTest_HttpServer_Uri">Uri</a> property gives you the address for making your test requests.</p>
+<p>You configure the server with a single <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a> that receives all requests. The library provides a variety of handler implementations and combinators.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="invariant-response-with-error-status">Invariant response with error status</h3>
+<pre><code class="lang-csharp">
+    var server = HttpServer.Start(Handlers.Status(500));
+</code></pre><h3 id="invariant-response-with-status-headers-and-body">Invariant response with status, headers, and body</h3>
+<pre><code class="lang-csharp">
+    var server = HttpServer.Start(
+
+        Handlers.Status(202)
+
+            .Then(Handlers.Header(&quot;Etag&quot;, &quot;123&quot;))
+
+            .Then(Handlers.BodyString(&quot;text/plain&quot;, &quot;thanks&quot;))
+
+    );
+</code></pre><h3 id="verifying-requests-made-to-the-server">Verifying requests made to the server</h3>
+<pre><code class="lang-csharp">
+    using (var server = HttpServer.Start(Handlers.Status(200)))
+
+    {
+
+        DoSomethingThatMakesARequest(server.Uri);
+
+        DoSomethingElseThatMakesARequest(server.Uri);
+
+
+
+        var request1 = server.Recorder.RequireRequest();
+
+        Assert.Equals(&quot;/path1&quot;, request1.Path);
+
+
+
+        var request2 = server.Recorder.RequireRequest();
+
+        Assert.Equals(&quot;/path2&quot;, request2.Path);
+
+    }
+</code></pre><h3 id="response-with-custom-logic-depending-on-the-request">Response with custom logic depending on the request</h3>
+<pre><code class="lang-csharp">
+    var server = HttpServer.Start(
+
+        async ctx =&gt;
+
+        {
+
+            if (ctx.RequestInfo.Headers.Get(&quot;Header-Name&quot;) == &quot;good-value&quot;)
+
+            {
+
+                await Handlers.Status(200)(ctx);
+
+            }
+
+            else
+
+            {
+
+                await Handlers.status(400)(ctx);
+
+            }
+
+        }
+
+    );
+</code></pre><h3 id="simple-routing-to-simulate-two-endpoints">Simple routing to simulate two endpoints</h3>
+<pre><code class="lang-csharp">
+    var server = HttpServer.Start(Handlers.Router(out var router));
+
+    router.AddPath(&quot;/path1&quot;, Handlers.Status(200));
+
+    router.AddPath(&quot;/path2&quot;, Handlers.Status(500));
+</code></pre><h3 id="programmed-sequence-of-responses">Programmed sequence of responses</h3>
+<pre><code class="lang-csharp">
+    var server = HttpServer.Start(
+
+        Handlers.Sequential(
+
+            Handlers.Status(200), // first request gets a 200
+
+            Handlers.Status(500)  // next request gets a 500
+
+        )
+
+    );
+</code></pre><h3 id="changing-server-behavior-during-a-test">Changing server behavior during a test</h3>
+<pre><code class="lang-csharp">
+    using (var server = HttpServer.Start(Handlers.Switchable(out var switcher)))
+
+    {
+
+        switcher.Target = Handlers.Status(200);
+
+        // Now the server returns 200 for all requests
+
+
+
+        switcher.Target = Handlers.Status(500);
+
+        // Now the server returns 500 for all requests
+
+    }
+</code></pre></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a></h4>
+      <section><p>An asynchronous function that handles HTTP requests for a <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.HttpServer.html">HttpServer</a>.</p>
+</section>
+      <h4><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handlers.html">Handlers</a></h4>
+      <section><p>Factory methods for standard <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a> implementations.</p>
+</section>
+      <h4><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.html">Handlers.SSE</a></h4>
+      <section><p>Shortcut handlers for simulating a Server-Sent Events stream.</p>
+</section>
+      <h4><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.HandlerSwitcher.html">HandlerSwitcher</a></h4>
+      <section><p>A delegator that forwards requests to another handler, which can be changed at any time.</p>
+</section>
+      <h4><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.HttpServer.html">HttpServer</a></h4>
+      <section><p>A simplified wrapper for an embedded test HTTP server.</p>
+</section>
+      <h4><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.RequestInfo.html">RequestInfo</a></h4>
+      <section><p>Properties of a request received by a <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.HttpServer.html">HttpServer</a>.</p>
+</section>
+      <h4><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html">RequestRecorder</a></h4>
+      <section><p>An object that records all requests.</p>
+</section>
+      <h4><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html">SimpleRouter</a></h4>
+      <section><p>A delegator that provides simple request path/method matching. The request is sent to the
+handler for the first matching path. If there is no matching path, it returns a 404. If
+there is a matching path but only for a different HTTP method, it returns a 405.</p>
+</section>
+    <h3 id="interfaces">Interfaces
+  </h3>
+      <h4><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html">IRequestContext</a></h4>
+      <section><p>An abstraction used by <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a> implementations to hide the details of
+the underlying HTTP server framework.</p>
+</section>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

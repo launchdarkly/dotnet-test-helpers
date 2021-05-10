@@ -1,0 +1,403 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class RequestRecorder
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class RequestRecorder
+   ">
+    <meta name="generator" content="docfx 2.57.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder">
+  
+  
+  <h1 id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder" data-uid="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder" class="text-break">Class RequestRecorder
+  </h1>
+  <div class="markdown level0 summary"><p>An object that records all requests.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">RequestRecorder</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.html">LaunchDarkly.TestHelpers.HttpTest</a></h6>
+  <h6><strong>Assembly</strong>: LaunchDarkly.TestHelpers.dll</h6>
+  <h5 id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class RequestRecorder : Object</code></pre>
+  </div>
+  <h5 id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Normally you won&apos;t need to use this class directly, because <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.HttpServer.html">HttpServer</a>
+has a built-in instance that captures all requests. You can use it if you need to
+capture only a subset of requests.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder__ctor_" data-uid="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.#ctor*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder__ctor" data-uid="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.#ctor">RequestRecorder()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RequestRecorder()</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_DefaultTimeout" data-uid="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.DefaultTimeout">DefaultTimeout</h4>
+  <div class="markdown level1 summary"><p>The default timeout for <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireRequest">RequireRequest()</a>: 5 seconds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly TimeSpan DefaultTimeout</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Count_" data-uid="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Count*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Count" data-uid="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Count">Count</h4>
+  <div class="markdown level1 summary"><p>The number of requests currently in the queue.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Handler_" data-uid="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Handler*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Handler" data-uid="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Handler">Handler</h4>
+  <div class="markdown level1 summary"><p>Returns the stable <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Handler">Handler</a> that is the external entry point to this
+delegator. This is used implicitly if you use a <code>RequestRecorder</code> anywhere that
+a <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Handler">Handler</a> is expected.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Handler Handler { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireNoRequests_" data-uid="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireNoRequests*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireNoRequests_System_TimeSpan_" data-uid="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireNoRequests(System.TimeSpan)">RequireNoRequests(TimeSpan)</h4>
+  <div class="markdown level1 summary"><p>Asserts that there are no requests in the queue and none are received within
+the specified timeout.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RequireNoRequests(TimeSpan timeout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="parametername">timeout</span></td>
+        <td><p>the maximum length of time to wait</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>if a request was received</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireRequest_" data-uid="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireRequest*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireRequest" data-uid="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireRequest">RequireRequest()</h4>
+  <div class="markdown level1 summary"><p>Returns the first request in the queue, blocking until one is available,
+using <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_DefaultTimeout">DefaultTimeout</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RequestInfo RequireRequest()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.RequestInfo.html">RequestInfo</a></td>
+        <td><p>the request information</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeoutException</span></td>
+        <td><p>if the timeout expires</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireRequest_" data-uid="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireRequest*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_RequireRequest_System_TimeSpan_" data-uid="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireRequest(System.TimeSpan)">RequireRequest(TimeSpan)</h4>
+  <div class="markdown level1 summary"><p>Consumes and returns the first request in the queue, blocking until one is available.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RequestInfo RequireRequest(TimeSpan timeout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td><span class="parametername">timeout</span></td>
+        <td><p>the maximum length of time to wait</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.RequestInfo.html">RequestInfo</a></td>
+        <td><p>the request information</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeoutException</span></td>
+        <td><p>if the timeout expires</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <a id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_op_Implicit_" data-uid="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.op_Implicit*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_op_Implicit_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder__LaunchDarkly_TestHelpers_HttpTest_Handler" data-uid="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.op_Implicit(LaunchDarkly.TestHelpers.HttpTest.RequestRecorder)~LaunchDarkly.TestHelpers.HttpTest.Handler">Implicit(RequestRecorder to Handler)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Handler(RequestRecorder me)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html">RequestRecorder</a></td>
+        <td><span class="parametername">me</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
