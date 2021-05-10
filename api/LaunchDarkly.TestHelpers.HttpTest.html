@@ -72,9 +72,69 @@
   
   <h1 id="LaunchDarkly_TestHelpers_HttpTest" data-uid="LaunchDarkly.TestHelpers.HttpTest" class="text-break">Namespace LaunchDarkly.TestHelpers.HttpTest
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>A simple portable HTTP test server with response mocking.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
+  <div class="markdown level0 remarks"><p>This namespace provides a simple abstraction for setting up embedded HTTP test servers that return programmed responses, and verifying that the expected requests have been made in tests.</p>
+<p>The underlying implementation is <code>System.Net.HttpListener</code>. There are other HTTP mock server libraries for .NET, most of which also use <code>System.Net.HttpListener</code> either directly or indirectly, but they were generally not suitable for LaunchDarkly&#39;s testing needs due to either platform compatibility limitations or their API design.</p>
+<p>An <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.HttpServer.html">HttpServer</a> is an HTTP server that starts listening on an arbitrarily chosen port as soon as you create it. You should normally do this inside a <code>using</code> block to ensure that the server is shut down when you&#39;re done with it. The server&#39;s <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.HttpServer.html#LaunchDarkly_TestHelpers_HttpTest_HttpServer_Uri">Uri</a> property gives you the address for making your test requests.</p>
+<p>You configure the server with a single <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a> that receives all requests. The library provides a variety of handler implementations and combinators.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="invariant-response-with-error-status">Invariant response with error status</h3>
+<pre><code class="lang-csharp">    var server = HttpServer.Start(Handlers.Status(500));
+</code></pre><h3 id="invariant-response-with-status-headers-and-body">Invariant response with status, headers, and body</h3>
+<pre><code class="lang-csharp">    var server = HttpServer.Start(
+        Handlers.Status(202)
+            .Then(Handlers.Header(&quot;Etag&quot;, &quot;123&quot;))
+            .Then(Handlers.BodyString(&quot;text/plain&quot;, &quot;thanks&quot;))
+    );
+</code></pre><h3 id="verifying-requests-made-to-the-server">Verifying requests made to the server</h3>
+<pre><code class="lang-csharp">    using (var server = HttpServer.Start(Handlers.Status(200)))
+    {
+        DoSomethingThatMakesARequest(server.Uri);
+        DoSomethingElseThatMakesARequest(server.Uri);
+
+        var request1 = server.Recorder.RequireRequest();
+        Assert.Equals(&quot;/path1&quot;, request1.Path);
+
+        var request2 = server.Recorder.RequireRequest();
+        Assert.Equals(&quot;/path2&quot;, request2.Path);
+    }
+</code></pre><h3 id="response-with-custom-logic-depending-on-the-request">Response with custom logic depending on the request</h3>
+<pre><code class="lang-csharp">    var server = HttpServer.Start(
+        async ctx =&gt;
+        {
+            if (ctx.RequestInfo.Headers.Get(&quot;Header-Name&quot;) == &quot;good-value&quot;)
+            {
+                await Handlers.Status(200)(ctx);
+            }
+            else
+            {
+                await Handlers.status(400)(ctx);
+            }
+        }
+    );
+</code></pre><h3 id="simple-routing-to-simulate-two-endpoints">Simple routing to simulate two endpoints</h3>
+<pre><code class="lang-csharp">    var server = HttpServer.Start(Handlers.Router(out var router));
+    router.AddPath(&quot;/path1&quot;, Handlers.Status(200));
+    router.AddPath(&quot;/path2&quot;, Handlers.Status(500));
+</code></pre><h3 id="programmed-sequence-of-responses">Programmed sequence of responses</h3>
+<pre><code class="lang-csharp">    var server = HttpServer.Start(
+        Handlers.Sequential(
+            Handlers.Status(200), // first request gets a 200
+            Handlers.Status(500)  // next request gets a 500
+        )
+    );
+</code></pre><h3 id="changing-server-behavior-during-a-test">Changing server behavior during a test</h3>
+<pre><code class="lang-csharp">    using (var server = HttpServer.Start(Handlers.Switchable(out var switcher)))
+    {
+        switcher.Target = Handlers.Status(200);
+        // Now the server returns 200 for all requests
+
+        switcher.Target = Handlers.Status(500);
+        // Now the server returns 500 for all requests
+    }
+</code></pre></div>
     <h3 id="classes">Classes
   </h3>
       <h4><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a></h4>
