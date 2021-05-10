@@ -7,28 +7,8 @@ using System.Threading.Tasks;
 namespace LaunchDarkly.TestHelpers.HttpTest
 {
     /// <summary>
-    /// A simplified system for setting up embedded test HTTP servers.
+    /// A simplified wrapper for an embedded test HTTP server.
     /// </summary>
-    /// <remarks>
-    /// <para>
-    /// This abstraction is designed to allow writing test code that does not need to know anything
-    /// about the underlying implementation details of the HTTP framework, so that if a different
-    /// library needs to be used for compatibility reasons, it can be substituted without disrupting
-    /// the tests.
-    /// </para>
-    /// <example>
-    /// <code>
-    ///     // Start a server that returns a 200 status for all requests
-    ///     using (var server = HttpServer.Start(Handlers.Status(200)))
-    ///     {
-    ///         DoSomethingThatMakesARequestTo(server.Uri);
-    ///
-    ///         var req = server.Recorder.RequireRequest();
-    ///         // Check for expected properties of the request
-    ///     }
-    /// </code>
-    /// </example>
-    /// </remarks>
     public sealed class HttpServer : IDisposable
     {
         /// <summary>
