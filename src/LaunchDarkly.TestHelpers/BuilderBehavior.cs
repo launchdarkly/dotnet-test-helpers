@@ -239,8 +239,8 @@ namespace LaunchDarkly.TestHelpers
                 if (_owner._copyConstructor != null)
                 {
                     var b1 = _owner._copyConstructor(o);
-                    var o1 = _owner._buildMethod(b);
-                    Assert.Equal(v, _getter(o));
+                    var o1 = _owner._buildMethod(b1);
+                    Assert.Equal(v, _getter(o1));
                 }
             }
         }

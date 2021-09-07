@@ -1,15 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading;
 using Xunit;
 
 namespace LaunchDarkly.TestHelpers
 {
     /// <summary>
-    /// Test assertions that may be helpful in testing generic type behavior.
+    /// Xunit test assertions that may be helpful in testing generic type behavior.
     /// </summary>
     public static class TypeBehavior
     {
+        /// <summary>
+        /// Asserts that the values are commutatively equal with Equal(), and that their hash
+        /// codes are equal.
+        /// </summary>
+        /// <typeparam name="T">the type of the values</typeparam>
+        /// <param name="a">a value</param>
+        /// <param name="b">another value</param>
         public static void AssertEqual<T>(T a, T b)
         {
             Assert.Equal(a, b);
@@ -17,6 +23,13 @@ namespace LaunchDarkly.TestHelpers
             Assert.Equal(a.GetHashCode(), b.GetHashCode());
         }
 
+        /// <summary>
+        /// Asserts that the values are commutatively unequal with Equal(). The hash codes do not
+        /// have to be unequal.
+        /// </summary>
+        /// <typeparam name="T">the type of the values</typeparam>
+        /// <param name="a">a value</param>
+        /// <param name="b">another value</param>
         public static void AssertNotEqual<T>(T a, T b)
         {
             Assert.NotEqual(a, b);

@@ -50,26 +50,47 @@ namespace LaunchDarkly.TestHelpers
         }
 
         [Fact]
-        public void BuildTesterFailure()
+        public void BuildTesterFailsIfDefaultValueIsIncorrect()
         {
             var tester = BuilderBehavior.For(() => new BrokenBuilder(), b => b.Build());
-
             var aProp = tester.Property(m => m.A, (b, v) => b.A(v));
             var bProp = tester.Property(m => m.B, (b, v) => b.B(v));
 
             aProp.AssertDefault(BrokenBuilder.DefaultA);
             Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => bProp.AssertDefault(BrokenBuilder.DefaultB));
+        }
+
+        [Fact]
+        public void BuildTesterFailsIfSetterDoesNotSetValue()
+        {
+            var tester = BuilderBehavior.For(() => new BrokenBuilder(), b => b.Build());
+            var bProp = tester.Property(m => m.B, (b, v) => b.B(v));
 
             bProp.AssertCanSet(1);
             Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => bProp.AssertCanSet(BrokenBuilder.BValueThatFails));
+        }
+
+        [Fact]
+        public void BuildTesterFailsIfSetterDoesNotChangeValueToDifferentValueAsExpected()
+        {
+            var tester = BuilderBehavior.For(() => new BrokenBuilder(), b => b.Build());
+            var bProp = tester.Property(m => m.B, (b, v) => b.B(v));
 
             Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => bProp.AssertSetIsChangedTo(
                 BrokenBuilder.MinB - 1, BrokenBuilder.MinB));
             Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => bProp.AssertSetIsChangedTo(
                 BrokenBuilder.MaxB + 1, BrokenBuilder.MaxB));
+        }
+
+        [Fact]
+        public void BuildTesterFailsIfCopyConstructorDoesNotCopyValue()
+        {
+            var tester = BuilderBehavior.For(() => new BrokenBuilder(), b => b.Build());
+            var bProp = tester.Property(m => m.B, (b, v) => b.B(v));
 
             var copyTester = tester.WithCopyConstructor(m => new BrokenBuilder(m));
-
+            var bProp1 = copyTester.Property(m => m.B, (b, v) => b.B(v));
+            Assert.ThrowsAny<Xunit.Sdk.XunitException>(() => bProp1.AssertCanSet(1));
         }
 
         internal class MyBuilder
@@ -120,6 +141,10 @@ namespace LaunchDarkly.TestHelpers
             }
         }
 
+        // This class has the following deliberate mistakes:
+        // - the default for B is not DefaultB
+        // - the setter for B sets the value incorrectly if it is BValueThatFails
+        // - the copy constructor sets B incorrectly
         internal class BrokenBuilder
         {
             internal const int DefaultA = 2;
