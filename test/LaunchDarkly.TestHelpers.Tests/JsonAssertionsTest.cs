@@ -1,5 +1,6 @@
 ﻿using System;
 using Xunit;
+using Xunit.Sdk;
 
 namespace LaunchDarkly.TestHelpers
 {
@@ -125,6 +126,7 @@ namespace LaunchDarkly.TestHelpers
             var v = JsonTestValue.JsonOf(null);
             Assert.False(v.IsDefined);
             Assert.Equal("<no value>", v.ToString());
+            Assert.Equal(JsonTestValue.NoValue, v);
         }
 
         [Fact]
@@ -156,6 +158,26 @@ namespace LaunchDarkly.TestHelpers
 
             Assert.NotEqual(JsonTestValue.JsonOf(@"{""a"":[1,2],""b"":true}"),
                 JsonTestValue.JsonOf(@"{""b"":true,""a"":[1,3]}"));
+        }
+
+        [Fact]
+        public void OptionalProperty()
+        {
+            Assert.Equal(JsonTestValue.JsonOf("true"), JsonTestValue.JsonOf(@"{""a"":true}").Property("a"));
+            Assert.Equal(JsonTestValue.JsonOf(null), JsonTestValue.JsonOf(@"{""a"":true}").Property("b"));
+
+            Assert.ThrowsAny<XunitException>(() => JsonTestValue.JsonOf("true").Property("a"));
+            Assert.ThrowsAny<XunitException>(() => JsonTestValue.JsonOf(null).Property("a"));
+        }
+
+        [Fact]
+        public void RequiredProperty()
+        {
+            Assert.Equal(JsonTestValue.JsonOf("true"), JsonTestValue.JsonOf(@"{""a"":true}").RequiredProperty("a"));
+
+            Assert.ThrowsAny<XunitException>(() => JsonTestValue.JsonOf(@"{""a"":true}").RequiredProperty("b"));
+            Assert.ThrowsAny<XunitException>(() => JsonTestValue.JsonOf("true").RequiredProperty("a"));
+            Assert.ThrowsAny<XunitException>(() => JsonTestValue.JsonOf(null).RequiredProperty("a"));
         }
     }
 }

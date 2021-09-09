@@ -26,6 +26,11 @@ namespace LaunchDarkly.TestHelpers
         /// </summary>
         public bool IsDefined => Parsed != null;
 
+        /// <summary>
+        /// Shortcut for creating an undefined value, equivalent to <c>JsonOf(null)</c>.
+        /// </summary>
+        public static JsonTestValue NoValue => JsonOf(null);
+
         private JsonTestValue(string raw, JToken parsed)
         {
             Raw = raw;
@@ -76,6 +81,43 @@ namespace LaunchDarkly.TestHelpers
         /// <returns>a <c>JsonTestValue</c></returns>
         public static JsonTestValue JsonFromValue(object value) =>
             OfParsed(JToken.FromObject(value));
+
+        /// <summary>
+        /// If this value is a JSON object, return the value of the specified property or
+        /// an undefined value if there is no such property.
+        /// </summary>
+        /// <param name="name">the property name</param>
+        /// <returns>the value, if any</returns>
+        /// <exception cref="InvalidOperationException">if the current value is not an object</exception>
+        public JsonTestValue Property(string name)
+        {
+            if (Parsed is JObject o)
+            {
+                return o.TryGetValue(name, out var v) ? OfParsed(v) : JsonOf(null);
+            }
+            throw new XunitException(string.Format("Expected a JSON object but got {0}", this));
+        }
+
+        /// <summary>
+        /// If this value is a JSON object, return the value of the specified property.
+        /// </summary>
+        /// <param name="name">the property name</param>
+        /// <returns>the value, if any</returns>
+        /// <exception cref="InvalidOperationException">if the current value is not an object
+        /// or it has no such property </exception>
+        public JsonTestValue RequiredProperty(string name)
+        {
+            if (Parsed is JObject o)
+            {
+                if (o.TryGetValue(name, out var v))
+                {
+                    return OfParsed(v);
+                }
+                throw new XunitException(string.Format(@"Did not find property ""{0}"" in {1}",
+                    name, this));
+            }
+            throw new XunitException(string.Format("Expected a JSON object but got {0}", this));
+        }
 
         /// <summary>
         /// Returns the JSON as a string, or a "no value" message if undefined.
