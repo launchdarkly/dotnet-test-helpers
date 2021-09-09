@@ -77,6 +77,11 @@ namespace LaunchDarkly.TestHelpers
             JsonIncludesShouldSucceed("{\"a\":1,\"b\":2}", "{\"b\":2,\"a\":1}");
             JsonIncludesShouldSucceed("{\"a\":1,\"b\":2}", "{\"b\":2,\"a\":1,\"c\":3}");
             JsonIncludesShouldSucceed("{\"a\":1,\"b\":{\"c\":2}}", "{\"b\":{\"c\":2,\"d\":3},\"a\":1}");
+
+            JsonIncludesShouldSucceed("[1,2,3]", "[1,2,3]");
+            JsonIncludesShouldSucceed("[3,1]", "[1,2,3]");
+            JsonIncludesShouldSucceed("[1,[4],5]", "[1,[2,3,4],5]");
+            JsonIncludesShouldSucceed("[1,{\"a\":2}]", "[{\"a\":2,\"b\":3},1]");
         }
 
         private static void JsonIncludesShouldSucceed(string expected, string actual)
@@ -102,6 +107,10 @@ namespace LaunchDarkly.TestHelpers
 
             JsonIncludesShouldFail("{\"b\":{\"c\":2,\"d\":3},\"a\":1}", "{\"a\":1,\"b\":{\"c\":2}}",
                 "at \"b.d\": expected = 3, actual = <absent>");
+
+            JsonIncludesShouldFail("[3,1]", "[2,3]", "failed"); // diff isn't very helpful for these cases
+            JsonIncludesShouldFail("[1,[4],5]", "[1,[2,3],5]", "failed");
+            JsonIncludesShouldFail("[1,{\"a\":2}]", "[{\"b\":3},1]", "failed");
         }
 
         private static void JsonIncludesShouldFail(string expected, string actual, string expectedMessage)

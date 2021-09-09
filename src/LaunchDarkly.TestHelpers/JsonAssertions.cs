@@ -191,8 +191,10 @@ namespace LaunchDarkly.TestHelpers
         }
 
         /// <summary>
-        /// Same as <see cref="AssertJsonEqual(string, string)"/> except that it allows any JSON
-        /// objects in the actual data to contain extra properties that are not in the expected data.
+        /// Similar to <see cref="AssertJsonEqual(string, string)"/> except that when comparing JSON
+        /// objects (at any level) it allows the actual data to contain extra properties that are not in
+        /// the expected data, and when comparing JSON arrays (at any level) it only checks whether the
+        /// expected elements appear somewhere in the actual array in any order.
         /// </summary>
         /// <param name="expected">the expected value</param>
         /// <param name="actual">the actual value</param>
@@ -200,8 +202,10 @@ namespace LaunchDarkly.TestHelpers
             AssertJsonIncludes(JsonTestValue.JsonOf(expected), JsonTestValue.JsonOf(actual));
 
         /// <summary>
-        /// Same as <see cref="AssertJsonEqual(JsonTestValue, JsonTestValue)"/> except that it allows any JSON
-        /// objects in the actual data to contain extra properties that are not in the expected data.
+        /// Similar to <see cref="AssertJsonEqual(JsonTestValue, JsonTestValue)"/> except that when comparing JSON
+        /// objects (at any level) it allows the actual data to contain extra properties that are not in
+        /// the expected data, and when comparing JSON arrays (at any level) it only checks whether the
+        /// expected elements appear somewhere in the actual array in any order.
         /// </summary>
         /// <param name="expected">the expected value</param>
         /// <param name="actual">the actual value</param>
@@ -244,13 +248,18 @@ namespace LaunchDarkly.TestHelpers
                 return true;
             }
             if (expected is JArray ea && actual is JArray aa) {
-                if (ea.Count != aa.Count)
+                foreach (var ev in ea)
                 {
-                    return false;
-                }
-                for (int i = 0; i < ea.Count; i++)
-                {
-                    if (!IsJsonSubset(ea[i], aa[i]))
+                    bool found = false;
+                    foreach (var av in aa)
+                    {
+                        if (IsJsonSubset(ev, av))
+                        {
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found)
                     {
                         return false;
                     }
