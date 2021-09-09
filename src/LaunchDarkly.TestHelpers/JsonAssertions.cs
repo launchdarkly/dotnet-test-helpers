@@ -144,6 +144,17 @@ namespace LaunchDarkly.TestHelpers
     /// <summary>
     /// Test assertions related to JSON.
     /// </summary>
+    /// <remarks>
+    /// Examples:
+    /// <code>
+    ///     using static LaunchDarkly.TestHelpers.JsonAssertions;
+    ///     using static LaunchDarkly.TestHelpers.JsonTestValue;
+    ///
+    ///     AssertJsonEquals(@"{""a"":1, ""b"":2}", @"{""b"":2, ""a"":1}");
+    ///     AssertJsonIncludes(@"{""a"":1}", @"{""b"":2, ""a"":1}");
+    ///     AssertJsonEquals(JsonFromValue(true), JsonOf(@"{""a"":true}").Property("a"));
+    /// </code>
+    /// </remarks>
     public class JsonAssertions
     {
         /// <summary>
