@@ -187,7 +187,8 @@ namespace LaunchDarkly.TestHelpers
             {
                 throw new AssertActualExpectedException(expected, actual, "AssertJsonEqual failed");
             }
-            throw new XunitException("AssertJSONEqual failed:\n" + diff + "\nfull JSON was: " + actual);
+            throw new XunitException(string.Format(
+                "AssertJSONEqual failed:{0}{1}{0}full JSON was: {2}", Environment.NewLine, diff, actual));
         }
 
         /// <summary>
@@ -232,7 +233,8 @@ namespace LaunchDarkly.TestHelpers
             {
                 throw new AssertActualExpectedException(expected, actual, "AssertJsonIncludes failed");
             }
-            throw new XunitException("AssertJsonIncludes failed:\n" + diff + "\nfull JSON was: " + actual);
+            throw new XunitException(string.Format(
+                "AssertJsonIncludes failed:{0}{1}{0}full JSON was: {2}", Environment.NewLine, diff, actual));
         }
 
         private static bool IsJsonSubset(JToken expected, JToken actual)
@@ -324,7 +326,7 @@ namespace LaunchDarkly.TestHelpers
                     }
                 }
             }
-            return string.Join("\n", diffs);
+            return string.Join(Environment.NewLine, diffs);
         }
 
         private static string DescribeJsonArrayDifference(JArray expected, JArray actual, string prefix, bool allowExtraProps)
@@ -352,7 +354,7 @@ namespace LaunchDarkly.TestHelpers
                     }
                 }
             }
-            return string.Join("\n", diffs);
+            return string.Join(Environment.NewLine, diffs);
         }
     }
 }

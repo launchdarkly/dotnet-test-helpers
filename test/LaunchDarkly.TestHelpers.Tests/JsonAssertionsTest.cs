@@ -57,11 +57,11 @@ namespace LaunchDarkly.TestHelpers
         {
             JsonEqualShouldFail("null", null, "no value");
             JsonEqualShouldFail("null", "{", "not valid JSON");
-            JsonEqualShouldFail("null", "true", "Expected: *null\nActual: *true");
-            JsonEqualShouldFail("false", "true", "Expected: *false\nActual: *true");
-            JsonEqualShouldFail("{\"a\":1}", "3", "Expected: *{\"a\":1}\nActual: *3");
-            JsonEqualShouldFail("[1,2]", "3", "Expected: *\\[1,2\\]\nActual: *3");
-            JsonEqualShouldFail("[1,2]", "[1,2,3]", "Expected: *\\[1,2\\]\nActual: *\\[1,2,3\\]");
+            JsonEqualShouldFail("null", "true", ExpectedAndActualMessage("null", "true"));
+            JsonEqualShouldFail("false", "true", ExpectedAndActualMessage("false", "true"));
+            JsonEqualShouldFail("{\"a\":1}", "3", ExpectedAndActualMessage("{\"a\":1}", "3"));
+            JsonEqualShouldFail("[1,2]", "3", ExpectedAndActualMessage("\\[1,2\\]", "3"));
+            JsonEqualShouldFail("[1,2]", "[1,2,3]", ExpectedAndActualMessage("\\[1,2\\]", "\\[1,2,3\\]"));
         }
 
         private static void JsonEqualShouldFail(string expected, string actual, string expectedMessage)
@@ -125,6 +125,9 @@ namespace LaunchDarkly.TestHelpers
             var ex = Assert.ThrowsAny<Exception>(action);
             Assert.Matches(expectedMessage, ex.Message);
         }
+
+        private static string ExpectedAndActualMessage(string expected, string actual) =>
+            "Expected: *" + expected + Environment.NewLine + "Actual: *" + actual;
     }
 
     public class JsonTestValueTest
