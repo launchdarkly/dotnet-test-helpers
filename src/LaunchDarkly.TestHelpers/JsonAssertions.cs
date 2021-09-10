@@ -88,7 +88,7 @@ namespace LaunchDarkly.TestHelpers
         /// </summary>
         /// <param name="name">the property name</param>
         /// <returns>the value, if any</returns>
-        /// <exception cref="InvalidOperationException">if the current value is not an object</exception>
+        /// <exception cref="XunitException">if the current value is not an object</exception>
         public JsonTestValue Property(string name)
         {
             if (Parsed is JObject o)
@@ -103,7 +103,7 @@ namespace LaunchDarkly.TestHelpers
         /// </summary>
         /// <param name="name">the property name</param>
         /// <returns>the value, if any</returns>
-        /// <exception cref="InvalidOperationException">if the current value is not an object
+        /// <exception cref="XunitException">if the current value is not an object
         /// or it has no such property </exception>
         public JsonTestValue RequiredProperty(string name)
         {
