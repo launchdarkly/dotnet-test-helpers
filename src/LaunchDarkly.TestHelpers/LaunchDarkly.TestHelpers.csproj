@@ -7,6 +7,10 @@
     <AssemblyName>LaunchDarkly.TestHelpers</AssemblyName>
     <DebugType>portable</DebugType>
     <OutputType>Library</OutputType>
+    <IsPackable>true</IsPackable>
+    <!-- IsPackable normally defaults to true, but we need to specify it here because
+         otherwise having a dependency on xunit makes NuGet assume we're a test project
+         that shouldn't be made into a package. -->
     <LangVersion>7.3</LangVersion>
     <PackageId>LaunchDarkly.TestHelpers</PackageId>
     <Company>LaunchDarkly</Company>
@@ -26,9 +30,11 @@
 
   <ItemGroup>
     <None Remove="xunit" />
+    <None Remove="Newtonsoft.Json" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="xunit" Version="2.3.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <PropertyGroup>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\LaunchDarkly.TestHelpers.xml</DocumentationFile>
