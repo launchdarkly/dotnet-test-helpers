@@ -1,8 +1,80 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/circleci/AppData/Local/Temp/project-releaser-temp/build-docs",
+  "source_base_path": "/tmp/project-releaser/temp/build-docs",
   "xrefmap": "xrefmap.yml",
   "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.Assertions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.Assertions.html",
+          "hash": "sYNRN6G/3pNJxC7u1lltJkItG5Sv7Kux85u8uV3BgOw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester-2.html",
+          "hash": "D6rQtA2KNzXo1XcTMIfuStJkDHIl9Sqy0flKXhahEqc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions-1.html",
+          "hash": "kiO59SNdyyZDalpHadidmzr2CPH6aWOwYjtOluj2DZQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester-1.html",
+          "hash": "53O78xHbgLi21NdDIi5Dz3H/cbbchPk2XmAYncEOQRo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.BuilderBehavior.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.BuilderBehavior.html",
+          "hash": "/4tp3iylajFQDb+wtdkqeYEj5PJsP7fSmOK0w7dy+S8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.EventSink-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.EventSink-1.html",
+          "hash": "8NAvsSH3PcwiHlr+xvS8RulBL45DbT1vuSWLzGG3kRc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
     {
       "type": "ManagedReference",
       "source_relative_path": "build/api/LaunchDarkly.TestHelpers.HttpTest.Handler.yml",
@@ -124,12 +196,60 @@
       "version": ""
     },
     {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.JsonAssertions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.JsonAssertions.html",
+          "hash": "D9227Wf5CXhl82ffaIP/1NDPbL+JIHMLKkJEr0SqFv4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.JsonTestValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.JsonTestValue.html",
+          "hash": "LiCy8D2VT8HofX6r9rkay5uSdcIoIbILIejxwt86T4A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.TypeBehavior.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.TypeBehavior.html",
+          "hash": "GYbG0dUQ/5R9j35PLhj3U5KWqRLiQ5FyZFV35+MOZKg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.html",
+          "hash": "GqHoT7WwLTTaIcDkvBZIJOrFmLRTz+4/l2Rv11pqQXs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "build/api/toc.yml",
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "GNMyRoI7pEB9i4w+4LG5MN1zPb3jbNbvi0O/p9B3Gr8="
+          "hash": "c3DDheBxreKc9/L9XUP7nnVJGH0Efsi2QRy3dQQlJrk="
         }
       },
       "is_incremental": false,
@@ -141,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "QOG4Gcq+KVECz6vKqmXKW7gEmTMQrz3TxI1pNZ9+8tM="
+          "hash": "6SXsqmIy9EpC0Dm1qmG7FqNTuJQUiWKjWyQC6nc/EIw="
         }
       },
       "is_incremental": false,
@@ -153,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "NcuLwWAZ6VvoG3eCrszAK7SUJWg02vnpENC6Q57CZdQ="
+          "hash": "pZc300YF/StPK/u3j8YJUBTLonqtXl0iIuyI4ZFczqM="
         }
       },
       "is_incremental": false,
@@ -180,7 +300,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 11,
+          "total_file_count": 21,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {

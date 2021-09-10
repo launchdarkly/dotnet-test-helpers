@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class JsonTestValue
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class JsonTestValue
+   ">
+    <meta name="generator" content="docfx 2.57.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="LaunchDarkly.TestHelpers.JsonTestValue">
+  
+  
+  <h1 id="LaunchDarkly_TestHelpers_JsonTestValue" data-uid="LaunchDarkly.TestHelpers.JsonTestValue" class="text-break">Class JsonTestValue
+  </h1>
+  <div class="markdown level0 summary"><p>A simple wrapper for a string that can be parsed as JSON for tests.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">JsonTestValue</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LaunchDarkly.TestHelpers.html">LaunchDarkly.TestHelpers</a></h6>
+  <h6><strong>Assembly</strong>: LaunchDarkly.TestHelpers.dll</h6>
+  <h5 id="LaunchDarkly_TestHelpers_JsonTestValue_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class JsonTestValue : ValueType</code></pre>
+  </div>
+  <h5 id="LaunchDarkly_TestHelpers_JsonTestValue_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This type provides strong typing so that it is clear when test matchers apply to JSON
+values versus strings, and hides the implementation details of parsing and serialization
+which are not relevant to the test logic.</p>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="LaunchDarkly_TestHelpers_JsonTestValue_IsDefined_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.IsDefined*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_JsonTestValue_IsDefined" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.IsDefined">IsDefined</h4>
+  <div class="markdown level1 summary"><p>True if there is a value (that is, the original string was not a null reference).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsDefined { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="LaunchDarkly_TestHelpers_JsonTestValue_NoValue_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.NoValue*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_JsonTestValue_NoValue" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.NoValue">NoValue</h4>
+  <div class="markdown level1 summary"><p>Shortcut for creating an undefined value, equivalent to <code>JsonOf(null)</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static JsonTestValue NoValue { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.JsonTestValue.html">JsonTestValue</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="LaunchDarkly_TestHelpers_JsonTestValue_Equals_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.Equals*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_JsonTestValue_Equals_System_Object_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"><p>Compares two values for deep equality.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>another JSON value</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if the values are deeply equal, or are both undefined</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="LaunchDarkly_TestHelpers_JsonTestValue_GetHashCode_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.GetHashCode*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_JsonTestValue_GetHashCode" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="LaunchDarkly_TestHelpers_JsonTestValue_JsonFromValue_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.JsonFromValue*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_JsonTestValue_JsonFromValue_System_Object_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.JsonFromValue(System.Object)">JsonFromValue(Object)</h4>
+  <div class="markdown level1 summary"><p>Creates a <code>JsonTestValue</code> by serializing an arbitrary value to JSON.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static JsonTestValue JsonFromValue(object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>an arbitrary value</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.JsonTestValue.html">JsonTestValue</a></td>
+        <td><p>a <code>JsonTestValue</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="LaunchDarkly_TestHelpers_JsonTestValue_JsonFromValue_System_Object__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>For instance, <code>JsonFromValue(true)</code> is equivalent to <code>JsonOf(&quot;true&quot;)</code>.
+This only works for types that are supported by Newtonsoft.Json&apos;s default
+reflection-based serialization mechanism.</p>
+</div>
+  <a id="LaunchDarkly_TestHelpers_JsonTestValue_JsonOf_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.JsonOf*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_JsonTestValue_JsonOf_System_String_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.JsonOf(System.String)">JsonOf(String)</h4>
+  <div class="markdown level1 summary"><p>Creates a <code>JsonTestValue</code> from a string that should contain JSON.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static JsonTestValue JsonOf(string raw)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">raw</span></td>
+        <td><p>the input string</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.JsonTestValue.html">JsonTestValue</a></td>
+        <td><p>a <code>JsonTestValue</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="LaunchDarkly_TestHelpers_JsonTestValue_JsonOf_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method fails immediately for any string that is not well-formed JSON. However, if
+it is a null reference, it returns an &quot;undefined&quot; instance that will return <code>false</code>
+from <a class="xref" href="LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_IsDefined">IsDefined</a>.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.FormatException</span></td>
+        <td><p>for malformed JSON</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="LaunchDarkly_TestHelpers_JsonTestValue_Property_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.Property*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_JsonTestValue_Property_System_String_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.Property(System.String)">Property(String)</h4>
+  <div class="markdown level1 summary"><p>If this value is a JSON object, return the value of the specified property or
+an undefined value if there is no such property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JsonTestValue Property(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>the property name</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.JsonTestValue.html">JsonTestValue</a></td>
+        <td><p>the value, if any</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Xunit.Sdk.XunitException</span></td>
+        <td><p>if the current value is not an object</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="LaunchDarkly_TestHelpers_JsonTestValue_RequiredProperty_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.RequiredProperty*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_JsonTestValue_RequiredProperty_System_String_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.RequiredProperty(System.String)">RequiredProperty(String)</h4>
+  <div class="markdown level1 summary"><p>If this value is a JSON object, return the value of the specified property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JsonTestValue RequiredProperty(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>the property name</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.JsonTestValue.html">JsonTestValue</a></td>
+        <td><p>the value, if any</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Xunit.Sdk.XunitException</span></td>
+        <td><p>if the current value is not an object
+or it has no such property </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="LaunchDarkly_TestHelpers_JsonTestValue_ToString_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.ToString*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_JsonTestValue_ToString" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Returns the JSON as a string, or a &quot;no value&quot; message if undefined.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="LaunchDarkly.TestHelpers.JsonAssertions.html">JsonAssertions</a></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

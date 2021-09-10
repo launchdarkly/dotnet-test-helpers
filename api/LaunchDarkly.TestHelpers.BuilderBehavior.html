@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BuilderBehavior
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BuilderBehavior
+   ">
+    <meta name="generator" content="docfx 2.57.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="LaunchDarkly.TestHelpers.BuilderBehavior">
+  
+  
+  <h1 id="LaunchDarkly_TestHelpers_BuilderBehavior" data-uid="LaunchDarkly.TestHelpers.BuilderBehavior" class="text-break">Class BuilderBehavior
+  </h1>
+  <div class="markdown level0 summary"><p>Factories for helper classes that provide useful test patterns for builder types.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">BuilderBehavior</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LaunchDarkly.TestHelpers.html">LaunchDarkly.TestHelpers</a></h6>
+  <h6><strong>Assembly</strong>: LaunchDarkly.TestHelpers.dll</h6>
+  <h5 id="LaunchDarkly_TestHelpers_BuilderBehavior_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class BuilderBehavior : Object</code></pre>
+  </div>
+  <h5 id="LaunchDarkly_TestHelpers_BuilderBehavior_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+These helpers make it easier to provide thorough test coverage of builder types.
+It is easy when implementing builders to make basic mistakes like not setting the
+right property in a setter, not enforcing desired constraints, or not copying all
+the properties in a copy constructor.
+</p>
+<p>
+The general pattern consists of creating a generic helper for the builder type and
+the type that it builds, then creating a property helper for each settable property
+and performing standard assertions with it. Example:
+</p>
+<pre><pre><code>    // This assumes there is a type MyBuilder whose Build method creates an
+    // instance of MyType, with properties Height and Weight.
+
+    var tester = BuilderBehavior.For(() => new MyBuilder(), b => b.Build());
+
+    var height = tester.Property(x => x.Height, b => (b, value) => b.Height(value));
+    height.AssertDefault(DefaultHeight);
+    height.AssertCanSet(72);
+    height.AssertSetIsChangedTo(-1, 0); // setter should enforce minimum height of 0
+
+    var weight = tester.Property(x => x.Weight, b => (b, value) => b.Weight(value));
+    weight.AssertDefault(DefaultWeight);
+    weight.AssertCanSet(200);
+    weight.AssertSetIsChangedTo(-1, 0); // setter should enforce minimum weight of 0</code></pre></pre>
+<p>
+It uses Xunit assertion methods.
+</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="LaunchDarkly_TestHelpers_BuilderBehavior_For_" data-uid="LaunchDarkly.TestHelpers.BuilderBehavior.For*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_BuilderBehavior_For__1_System_Func___0__" data-uid="LaunchDarkly.TestHelpers.BuilderBehavior.For``1(System.Func{``0})">For&lt;TBuilder&gt;(Func&lt;TBuilder&gt;)</h4>
+  <div class="markdown level1 summary"><p>Provides a generic <a class="xref" href="LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester-1.html">BuilderBehavior.InternalStateTester&lt;TBuilder&gt;</a> for testing
+methods of a builder against the builder&apos;s own internal state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BuilderBehavior.InternalStateTester&lt;TBuilder&gt; For&lt;TBuilder&gt;(Func&lt;TBuilder&gt; constructor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;TBuilder&gt;</td>
+        <td><span class="parametername">constructor</span></td>
+        <td><p>function that constructs a <code data-dev-comment-type="typeparamref" class="typeparamref">TBuilder</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester-1.html">BuilderBehavior.InternalStateTester</a>&lt;TBuilder&gt;</td>
+        <td><p>an <a class="xref" href="LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester-1.html">BuilderBehavior.InternalStateTester&lt;TBuilder&gt;</a> instance</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TBuilder</span></td>
+        <td><p>the builder type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="LaunchDarkly_TestHelpers_BuilderBehavior_For__1_System_Func___0___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This can be used in cases where it is not feasible for the test code to actually
+call the builder&apos;s build method, for instance if it has unwanted side effects.</p>
+</div>
+  <a id="LaunchDarkly_TestHelpers_BuilderBehavior_For_" data-uid="LaunchDarkly.TestHelpers.BuilderBehavior.For*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_BuilderBehavior_For__2_System_Func___0__System_Func___0___1__" data-uid="LaunchDarkly.TestHelpers.BuilderBehavior.For``2(System.Func{``0},System.Func{``0,``1})">For&lt;TBuilder, TBuilt&gt;(Func&lt;TBuilder&gt;, Func&lt;TBuilder, TBuilt&gt;)</h4>
+  <div class="markdown level1 summary"><p>Provides a generic <a class="xref" href="LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester-2.html">BuilderBehavior.BuildTester&lt;TBuilder, TBuilt&gt;</a> for testing
+methods of a builder against properties of the type it builds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BuilderBehavior.BuildTester&lt;TBuilder, TBuilt&gt; For&lt;TBuilder, TBuilt&gt;(Func&lt;TBuilder&gt; constructor, Func&lt;TBuilder, TBuilt&gt; buildMethod)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;TBuilder&gt;</td>
+        <td><span class="parametername">constructor</span></td>
+        <td><p>function that constructs a <code data-dev-comment-type="typeparamref" class="typeparamref">TBuilder</code></p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;TBuilder, TBuilt&gt;</td>
+        <td><span class="parametername">buildMethod</span></td>
+        <td><p>function that creates a <code data-dev-comment-type="typeparamref" class="typeparamref">TBuilt</code>
+  from a <code data-dev-comment-type="typeparamref" class="typeparamref">TBuilder</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester-2.html">BuilderBehavior.BuildTester</a>&lt;TBuilder, TBuilt&gt;</td>
+        <td><p>a <a class="xref" href="LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester-2.html">BuilderBehavior.BuildTester&lt;TBuilder, TBuilt&gt;</a> instance</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TBuilder</span></td>
+        <td><p>the builder type</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TBuilt</span></td>
+        <td><p>the type that it builds</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

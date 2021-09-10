@@ -1,6 +1,358 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: LaunchDarkly.TestHelpers
+  name: LaunchDarkly.TestHelpers
+  href: api/LaunchDarkly.TestHelpers.html
+  commentId: N:LaunchDarkly.TestHelpers
+  fullName: LaunchDarkly.TestHelpers
+  nameWithType: LaunchDarkly.TestHelpers
+- uid: LaunchDarkly.TestHelpers.Assertions
+  name: Assertions
+  href: api/LaunchDarkly.TestHelpers.Assertions.html
+  commentId: T:LaunchDarkly.TestHelpers.Assertions
+  fullName: LaunchDarkly.TestHelpers.Assertions
+  nameWithType: Assertions
+- uid: LaunchDarkly.TestHelpers.Assertions.AssertEventually(System.TimeSpan,System.TimeSpan,System.Func{System.Boolean})
+  name: AssertEventually(TimeSpan, TimeSpan, Func<Boolean>)
+  href: api/LaunchDarkly.TestHelpers.Assertions.html#LaunchDarkly_TestHelpers_Assertions_AssertEventually_System_TimeSpan_System_TimeSpan_System_Func_System_Boolean__
+  commentId: M:LaunchDarkly.TestHelpers.Assertions.AssertEventually(System.TimeSpan,System.TimeSpan,System.Func{System.Boolean})
+  name.vb: AssertEventually(TimeSpan, TimeSpan, Func(Of Boolean))
+  fullName: LaunchDarkly.TestHelpers.Assertions.AssertEventually(System.TimeSpan, System.TimeSpan, System.Func<System.Boolean>)
+  fullName.vb: LaunchDarkly.TestHelpers.Assertions.AssertEventually(System.TimeSpan, System.TimeSpan, System.Func(Of System.Boolean))
+  nameWithType: Assertions.AssertEventually(TimeSpan, TimeSpan, Func<Boolean>)
+  nameWithType.vb: Assertions.AssertEventually(TimeSpan, TimeSpan, Func(Of Boolean))
+- uid: LaunchDarkly.TestHelpers.Assertions.AssertEventually*
+  name: AssertEventually
+  href: api/LaunchDarkly.TestHelpers.Assertions.html#LaunchDarkly_TestHelpers_Assertions_AssertEventually_
+  commentId: Overload:LaunchDarkly.TestHelpers.Assertions.AssertEventually
+  fullName: LaunchDarkly.TestHelpers.Assertions.AssertEventually
+  nameWithType: Assertions.AssertEventually
+- uid: LaunchDarkly.TestHelpers.Assertions.AssertEventuallyAsync(System.TimeSpan,System.TimeSpan,System.Func{System.Threading.Tasks.Task{System.Boolean}})
+  name: AssertEventuallyAsync(TimeSpan, TimeSpan, Func<Task<Boolean>>)
+  href: api/LaunchDarkly.TestHelpers.Assertions.html#LaunchDarkly_TestHelpers_Assertions_AssertEventuallyAsync_System_TimeSpan_System_TimeSpan_System_Func_System_Threading_Tasks_Task_System_Boolean___
+  commentId: M:LaunchDarkly.TestHelpers.Assertions.AssertEventuallyAsync(System.TimeSpan,System.TimeSpan,System.Func{System.Threading.Tasks.Task{System.Boolean}})
+  name.vb: AssertEventuallyAsync(TimeSpan, TimeSpan, Func(Of Task(Of Boolean)))
+  fullName: LaunchDarkly.TestHelpers.Assertions.AssertEventuallyAsync(System.TimeSpan, System.TimeSpan, System.Func<System.Threading.Tasks.Task<System.Boolean>>)
+  fullName.vb: LaunchDarkly.TestHelpers.Assertions.AssertEventuallyAsync(System.TimeSpan, System.TimeSpan, System.Func(Of System.Threading.Tasks.Task(Of System.Boolean)))
+  nameWithType: Assertions.AssertEventuallyAsync(TimeSpan, TimeSpan, Func<Task<Boolean>>)
+  nameWithType.vb: Assertions.AssertEventuallyAsync(TimeSpan, TimeSpan, Func(Of Task(Of Boolean)))
+- uid: LaunchDarkly.TestHelpers.Assertions.AssertEventuallyAsync*
+  name: AssertEventuallyAsync
+  href: api/LaunchDarkly.TestHelpers.Assertions.html#LaunchDarkly_TestHelpers_Assertions_AssertEventuallyAsync_
+  commentId: Overload:LaunchDarkly.TestHelpers.Assertions.AssertEventuallyAsync
+  fullName: LaunchDarkly.TestHelpers.Assertions.AssertEventuallyAsync
+  nameWithType: Assertions.AssertEventuallyAsync
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior
+  name: BuilderBehavior
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.html
+  commentId: T:LaunchDarkly.TestHelpers.BuilderBehavior
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior
+  nameWithType: BuilderBehavior
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester`2
+  name: BuilderBehavior.BuildTester<TBuilder, TBuilt>
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester-2.html
+  commentId: T:LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester`2
+  name.vb: BuilderBehavior.BuildTester(Of TBuilder, TBuilt)
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester<TBuilder, TBuilt>
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester(Of TBuilder, TBuilt)
+  nameWithType: BuilderBehavior.BuildTester<TBuilder, TBuilt>
+  nameWithType.vb: BuilderBehavior.BuildTester(Of TBuilder, TBuilt)
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester`2.New
+  name: New()
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester-2.html#LaunchDarkly_TestHelpers_BuilderBehavior_BuildTester_2_New
+  commentId: M:LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester`2.New
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester<TBuilder, TBuilt>.New()
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester(Of TBuilder, TBuilt).New()
+  nameWithType: BuilderBehavior.BuildTester<TBuilder, TBuilt>.New()
+  nameWithType.vb: BuilderBehavior.BuildTester(Of TBuilder, TBuilt).New()
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester`2.New*
+  name: New
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester-2.html#LaunchDarkly_TestHelpers_BuilderBehavior_BuildTester_2_New_
+  commentId: Overload:LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester`2.New
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester<TBuilder, TBuilt>.New
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester(Of TBuilder, TBuilt).New
+  nameWithType: BuilderBehavior.BuildTester<TBuilder, TBuilt>.New
+  nameWithType.vb: BuilderBehavior.BuildTester(Of TBuilder, TBuilt).New
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester`2.Property*
+  name: Property
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester-2.html#LaunchDarkly_TestHelpers_BuilderBehavior_BuildTester_2_Property_
+  commentId: Overload:LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester`2.Property
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester<TBuilder, TBuilt>.Property
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester(Of TBuilder, TBuilt).Property
+  nameWithType: BuilderBehavior.BuildTester<TBuilder, TBuilt>.Property
+  nameWithType.vb: BuilderBehavior.BuildTester(Of TBuilder, TBuilt).Property
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester`2.Property``1(System.Func{`1,``0},System.Action{`0,``0})
+  name: Property<TValue>(Func<TBuilt, TValue>, Action<TBuilder, TValue>)
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester-2.html#LaunchDarkly_TestHelpers_BuilderBehavior_BuildTester_2_Property__1_System_Func__1___0__System_Action__0___0__
+  commentId: M:LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester`2.Property``1(System.Func{`1,``0},System.Action{`0,``0})
+  name.vb: Property(Of TValue)(Func(Of TBuilt, TValue), Action(Of TBuilder, TValue))
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester<TBuilder, TBuilt>.Property<TValue>(System.Func<TBuilt, TValue>, System.Action<TBuilder, TValue>)
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester(Of TBuilder, TBuilt).Property(Of TValue)(System.Func(Of TBuilt, TValue), System.Action(Of TBuilder, TValue))
+  nameWithType: BuilderBehavior.BuildTester<TBuilder, TBuilt>.Property<TValue>(Func<TBuilt, TValue>, Action<TBuilder, TValue>)
+  nameWithType.vb: BuilderBehavior.BuildTester(Of TBuilder, TBuilt).Property(Of TValue)(Func(Of TBuilt, TValue), Action(Of TBuilder, TValue))
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester`2.WithCopyConstructor(System.Func{`1,`0})
+  name: WithCopyConstructor(Func<TBuilt, TBuilder>)
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester-2.html#LaunchDarkly_TestHelpers_BuilderBehavior_BuildTester_2_WithCopyConstructor_System_Func__1__0__
+  commentId: M:LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester`2.WithCopyConstructor(System.Func{`1,`0})
+  name.vb: WithCopyConstructor(Func(Of TBuilt, TBuilder))
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester<TBuilder, TBuilt>.WithCopyConstructor(System.Func<TBuilt, TBuilder>)
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester(Of TBuilder, TBuilt).WithCopyConstructor(System.Func(Of TBuilt, TBuilder))
+  nameWithType: BuilderBehavior.BuildTester<TBuilder, TBuilt>.WithCopyConstructor(Func<TBuilt, TBuilder>)
+  nameWithType.vb: BuilderBehavior.BuildTester(Of TBuilder, TBuilt).WithCopyConstructor(Func(Of TBuilt, TBuilder))
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester`2.WithCopyConstructor*
+  name: WithCopyConstructor
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester-2.html#LaunchDarkly_TestHelpers_BuilderBehavior_BuildTester_2_WithCopyConstructor_
+  commentId: Overload:LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester`2.WithCopyConstructor
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester<TBuilder, TBuilt>.WithCopyConstructor
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.BuildTester(Of TBuilder, TBuilt).WithCopyConstructor
+  nameWithType: BuilderBehavior.BuildTester<TBuilder, TBuilt>.WithCopyConstructor
+  nameWithType.vb: BuilderBehavior.BuildTester(Of TBuilder, TBuilt).WithCopyConstructor
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.For*
+  name: For
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.html#LaunchDarkly_TestHelpers_BuilderBehavior_For_
+  commentId: Overload:LaunchDarkly.TestHelpers.BuilderBehavior.For
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.For
+  nameWithType: BuilderBehavior.For
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.For``1(System.Func{``0})
+  name: For<TBuilder>(Func<TBuilder>)
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.html#LaunchDarkly_TestHelpers_BuilderBehavior_For__1_System_Func___0__
+  commentId: M:LaunchDarkly.TestHelpers.BuilderBehavior.For``1(System.Func{``0})
+  name.vb: For(Of TBuilder)(Func(Of TBuilder))
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.For<TBuilder>(System.Func<TBuilder>)
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.For(Of TBuilder)(System.Func(Of TBuilder))
+  nameWithType: BuilderBehavior.For<TBuilder>(Func<TBuilder>)
+  nameWithType.vb: BuilderBehavior.For(Of TBuilder)(Func(Of TBuilder))
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.For``2(System.Func{``0},System.Func{``0,``1})
+  name: For<TBuilder, TBuilt>(Func<TBuilder>, Func<TBuilder, TBuilt>)
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.html#LaunchDarkly_TestHelpers_BuilderBehavior_For__2_System_Func___0__System_Func___0___1__
+  commentId: M:LaunchDarkly.TestHelpers.BuilderBehavior.For``2(System.Func{``0},System.Func{``0,``1})
+  name.vb: For(Of TBuilder, TBuilt)(Func(Of TBuilder), Func(Of TBuilder, TBuilt))
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.For<TBuilder, TBuilt>(System.Func<TBuilder>, System.Func<TBuilder, TBuilt>)
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.For(Of TBuilder, TBuilt)(System.Func(Of TBuilder), System.Func(Of TBuilder, TBuilt))
+  nameWithType: BuilderBehavior.For<TBuilder, TBuilt>(Func<TBuilder>, Func<TBuilder, TBuilt>)
+  nameWithType.vb: BuilderBehavior.For(Of TBuilder, TBuilt)(Func(Of TBuilder), Func(Of TBuilder, TBuilt))
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester`1
+  name: BuilderBehavior.InternalStateTester<TBuilder>
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester-1.html
+  commentId: T:LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester`1
+  name.vb: BuilderBehavior.InternalStateTester(Of TBuilder)
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester<TBuilder>
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester(Of TBuilder)
+  nameWithType: BuilderBehavior.InternalStateTester<TBuilder>
+  nameWithType.vb: BuilderBehavior.InternalStateTester(Of TBuilder)
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester`1.New
+  name: New()
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester-1.html#LaunchDarkly_TestHelpers_BuilderBehavior_InternalStateTester_1_New
+  commentId: M:LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester`1.New
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester<TBuilder>.New()
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester(Of TBuilder).New()
+  nameWithType: BuilderBehavior.InternalStateTester<TBuilder>.New()
+  nameWithType.vb: BuilderBehavior.InternalStateTester(Of TBuilder).New()
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester`1.New*
+  name: New
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester-1.html#LaunchDarkly_TestHelpers_BuilderBehavior_InternalStateTester_1_New_
+  commentId: Overload:LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester`1.New
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester<TBuilder>.New
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester(Of TBuilder).New
+  nameWithType: BuilderBehavior.InternalStateTester<TBuilder>.New
+  nameWithType.vb: BuilderBehavior.InternalStateTester(Of TBuilder).New
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester`1.Property*
+  name: Property
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester-1.html#LaunchDarkly_TestHelpers_BuilderBehavior_InternalStateTester_1_Property_
+  commentId: Overload:LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester`1.Property
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester<TBuilder>.Property
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester(Of TBuilder).Property
+  nameWithType: BuilderBehavior.InternalStateTester<TBuilder>.Property
+  nameWithType.vb: BuilderBehavior.InternalStateTester(Of TBuilder).Property
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester`1.Property``1(System.Func{`0,``0},System.Action{`0,``0})
+  name: Property<TValue>(Func<TBuilder, TValue>, Action<TBuilder, TValue>)
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester-1.html#LaunchDarkly_TestHelpers_BuilderBehavior_InternalStateTester_1_Property__1_System_Func__0___0__System_Action__0___0__
+  commentId: M:LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester`1.Property``1(System.Func{`0,``0},System.Action{`0,``0})
+  name.vb: Property(Of TValue)(Func(Of TBuilder, TValue), Action(Of TBuilder, TValue))
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester<TBuilder>.Property<TValue>(System.Func<TBuilder, TValue>, System.Action<TBuilder, TValue>)
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.InternalStateTester(Of TBuilder).Property(Of TValue)(System.Func(Of TBuilder, TValue), System.Action(Of TBuilder, TValue))
+  nameWithType: BuilderBehavior.InternalStateTester<TBuilder>.Property<TValue>(Func<TBuilder, TValue>, Action<TBuilder, TValue>)
+  nameWithType.vb: BuilderBehavior.InternalStateTester(Of TBuilder).Property(Of TValue)(Func(Of TBuilder, TValue), Action(Of TBuilder, TValue))
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions`1
+  name: BuilderBehavior.IPropertyAssertions<TValue>
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions-1.html
+  commentId: T:LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions`1
+  name.vb: BuilderBehavior.IPropertyAssertions(Of TValue)
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions<TValue>
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions(Of TValue)
+  nameWithType: BuilderBehavior.IPropertyAssertions<TValue>
+  nameWithType.vb: BuilderBehavior.IPropertyAssertions(Of TValue)
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions`1.AssertCanSet(`0)
+  name: AssertCanSet(TValue)
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions-1.html#LaunchDarkly_TestHelpers_BuilderBehavior_IPropertyAssertions_1_AssertCanSet__0_
+  commentId: M:LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions`1.AssertCanSet(`0)
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions<TValue>.AssertCanSet(TValue)
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions(Of TValue).AssertCanSet(TValue)
+  nameWithType: BuilderBehavior.IPropertyAssertions<TValue>.AssertCanSet(TValue)
+  nameWithType.vb: BuilderBehavior.IPropertyAssertions(Of TValue).AssertCanSet(TValue)
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions`1.AssertCanSet*
+  name: AssertCanSet
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions-1.html#LaunchDarkly_TestHelpers_BuilderBehavior_IPropertyAssertions_1_AssertCanSet_
+  commentId: Overload:LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions`1.AssertCanSet
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions<TValue>.AssertCanSet
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions(Of TValue).AssertCanSet
+  nameWithType: BuilderBehavior.IPropertyAssertions<TValue>.AssertCanSet
+  nameWithType.vb: BuilderBehavior.IPropertyAssertions(Of TValue).AssertCanSet
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions`1.AssertDefault(`0)
+  name: AssertDefault(TValue)
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions-1.html#LaunchDarkly_TestHelpers_BuilderBehavior_IPropertyAssertions_1_AssertDefault__0_
+  commentId: M:LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions`1.AssertDefault(`0)
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions<TValue>.AssertDefault(TValue)
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions(Of TValue).AssertDefault(TValue)
+  nameWithType: BuilderBehavior.IPropertyAssertions<TValue>.AssertDefault(TValue)
+  nameWithType.vb: BuilderBehavior.IPropertyAssertions(Of TValue).AssertDefault(TValue)
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions`1.AssertDefault*
+  name: AssertDefault
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions-1.html#LaunchDarkly_TestHelpers_BuilderBehavior_IPropertyAssertions_1_AssertDefault_
+  commentId: Overload:LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions`1.AssertDefault
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions<TValue>.AssertDefault
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions(Of TValue).AssertDefault
+  nameWithType: BuilderBehavior.IPropertyAssertions<TValue>.AssertDefault
+  nameWithType.vb: BuilderBehavior.IPropertyAssertions(Of TValue).AssertDefault
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions`1.AssertSetIsChangedTo(`0,`0)
+  name: AssertSetIsChangedTo(TValue, TValue)
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions-1.html#LaunchDarkly_TestHelpers_BuilderBehavior_IPropertyAssertions_1_AssertSetIsChangedTo__0__0_
+  commentId: M:LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions`1.AssertSetIsChangedTo(`0,`0)
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions<TValue>.AssertSetIsChangedTo(TValue, TValue)
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions(Of TValue).AssertSetIsChangedTo(TValue, TValue)
+  nameWithType: BuilderBehavior.IPropertyAssertions<TValue>.AssertSetIsChangedTo(TValue, TValue)
+  nameWithType.vb: BuilderBehavior.IPropertyAssertions(Of TValue).AssertSetIsChangedTo(TValue, TValue)
+- uid: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions`1.AssertSetIsChangedTo*
+  name: AssertSetIsChangedTo
+  href: api/LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions-1.html#LaunchDarkly_TestHelpers_BuilderBehavior_IPropertyAssertions_1_AssertSetIsChangedTo_
+  commentId: Overload:LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions`1.AssertSetIsChangedTo
+  fullName: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions<TValue>.AssertSetIsChangedTo
+  fullName.vb: LaunchDarkly.TestHelpers.BuilderBehavior.IPropertyAssertions(Of TValue).AssertSetIsChangedTo
+  nameWithType: BuilderBehavior.IPropertyAssertions<TValue>.AssertSetIsChangedTo
+  nameWithType.vb: BuilderBehavior.IPropertyAssertions(Of TValue).AssertSetIsChangedTo
+- uid: LaunchDarkly.TestHelpers.EventSink`1
+  name: EventSink<T>
+  href: api/LaunchDarkly.TestHelpers.EventSink-1.html
+  commentId: T:LaunchDarkly.TestHelpers.EventSink`1
+  name.vb: EventSink(Of T)
+  fullName: LaunchDarkly.TestHelpers.EventSink<T>
+  fullName.vb: LaunchDarkly.TestHelpers.EventSink(Of T)
+  nameWithType: EventSink<T>
+  nameWithType.vb: EventSink(Of T)
+- uid: LaunchDarkly.TestHelpers.EventSink`1.#ctor
+  name: EventSink()
+  href: api/LaunchDarkly.TestHelpers.EventSink-1.html#LaunchDarkly_TestHelpers_EventSink_1__ctor
+  commentId: M:LaunchDarkly.TestHelpers.EventSink`1.#ctor
+  fullName: LaunchDarkly.TestHelpers.EventSink<T>.EventSink()
+  fullName.vb: LaunchDarkly.TestHelpers.EventSink(Of T).EventSink()
+  nameWithType: EventSink<T>.EventSink()
+  nameWithType.vb: EventSink(Of T).EventSink()
+- uid: LaunchDarkly.TestHelpers.EventSink`1.#ctor*
+  name: EventSink
+  href: api/LaunchDarkly.TestHelpers.EventSink-1.html#LaunchDarkly_TestHelpers_EventSink_1__ctor_
+  commentId: Overload:LaunchDarkly.TestHelpers.EventSink`1.#ctor
+  fullName: LaunchDarkly.TestHelpers.EventSink<T>.EventSink
+  fullName.vb: LaunchDarkly.TestHelpers.EventSink(Of T).EventSink
+  nameWithType: EventSink<T>.EventSink
+  nameWithType.vb: EventSink(Of T).EventSink
+- uid: LaunchDarkly.TestHelpers.EventSink`1.Add(System.Object,`0)
+  name: Add(Object, T)
+  href: api/LaunchDarkly.TestHelpers.EventSink-1.html#LaunchDarkly_TestHelpers_EventSink_1_Add_System_Object__0_
+  commentId: M:LaunchDarkly.TestHelpers.EventSink`1.Add(System.Object,`0)
+  fullName: LaunchDarkly.TestHelpers.EventSink<T>.Add(System.Object, T)
+  fullName.vb: LaunchDarkly.TestHelpers.EventSink(Of T).Add(System.Object, T)
+  nameWithType: EventSink<T>.Add(Object, T)
+  nameWithType.vb: EventSink(Of T).Add(Object, T)
+- uid: LaunchDarkly.TestHelpers.EventSink`1.Add*
+  name: Add
+  href: api/LaunchDarkly.TestHelpers.EventSink-1.html#LaunchDarkly_TestHelpers_EventSink_1_Add_
+  commentId: Overload:LaunchDarkly.TestHelpers.EventSink`1.Add
+  fullName: LaunchDarkly.TestHelpers.EventSink<T>.Add
+  fullName.vb: LaunchDarkly.TestHelpers.EventSink(Of T).Add
+  nameWithType: EventSink<T>.Add
+  nameWithType.vb: EventSink(Of T).Add
+- uid: LaunchDarkly.TestHelpers.EventSink`1.Enqueue(`0)
+  name: Enqueue(T)
+  href: api/LaunchDarkly.TestHelpers.EventSink-1.html#LaunchDarkly_TestHelpers_EventSink_1_Enqueue__0_
+  commentId: M:LaunchDarkly.TestHelpers.EventSink`1.Enqueue(`0)
+  fullName: LaunchDarkly.TestHelpers.EventSink<T>.Enqueue(T)
+  fullName.vb: LaunchDarkly.TestHelpers.EventSink(Of T).Enqueue(T)
+  nameWithType: EventSink<T>.Enqueue(T)
+  nameWithType.vb: EventSink(Of T).Enqueue(T)
+- uid: LaunchDarkly.TestHelpers.EventSink`1.Enqueue*
+  name: Enqueue
+  href: api/LaunchDarkly.TestHelpers.EventSink-1.html#LaunchDarkly_TestHelpers_EventSink_1_Enqueue_
+  commentId: Overload:LaunchDarkly.TestHelpers.EventSink`1.Enqueue
+  fullName: LaunchDarkly.TestHelpers.EventSink<T>.Enqueue
+  fullName.vb: LaunchDarkly.TestHelpers.EventSink(Of T).Enqueue
+  nameWithType: EventSink<T>.Enqueue
+  nameWithType.vb: EventSink(Of T).Enqueue
+- uid: LaunchDarkly.TestHelpers.EventSink`1.ExpectNoValue
+  name: ExpectNoValue()
+  href: api/LaunchDarkly.TestHelpers.EventSink-1.html#LaunchDarkly_TestHelpers_EventSink_1_ExpectNoValue
+  commentId: M:LaunchDarkly.TestHelpers.EventSink`1.ExpectNoValue
+  fullName: LaunchDarkly.TestHelpers.EventSink<T>.ExpectNoValue()
+  fullName.vb: LaunchDarkly.TestHelpers.EventSink(Of T).ExpectNoValue()
+  nameWithType: EventSink<T>.ExpectNoValue()
+  nameWithType.vb: EventSink(Of T).ExpectNoValue()
+- uid: LaunchDarkly.TestHelpers.EventSink`1.ExpectNoValue(System.TimeSpan)
+  name: ExpectNoValue(TimeSpan)
+  href: api/LaunchDarkly.TestHelpers.EventSink-1.html#LaunchDarkly_TestHelpers_EventSink_1_ExpectNoValue_System_TimeSpan_
+  commentId: M:LaunchDarkly.TestHelpers.EventSink`1.ExpectNoValue(System.TimeSpan)
+  fullName: LaunchDarkly.TestHelpers.EventSink<T>.ExpectNoValue(System.TimeSpan)
+  fullName.vb: LaunchDarkly.TestHelpers.EventSink(Of T).ExpectNoValue(System.TimeSpan)
+  nameWithType: EventSink<T>.ExpectNoValue(TimeSpan)
+  nameWithType.vb: EventSink(Of T).ExpectNoValue(TimeSpan)
+- uid: LaunchDarkly.TestHelpers.EventSink`1.ExpectNoValue*
+  name: ExpectNoValue
+  href: api/LaunchDarkly.TestHelpers.EventSink-1.html#LaunchDarkly_TestHelpers_EventSink_1_ExpectNoValue_
+  commentId: Overload:LaunchDarkly.TestHelpers.EventSink`1.ExpectNoValue
+  fullName: LaunchDarkly.TestHelpers.EventSink<T>.ExpectNoValue
+  fullName.vb: LaunchDarkly.TestHelpers.EventSink(Of T).ExpectNoValue
+  nameWithType: EventSink<T>.ExpectNoValue
+  nameWithType.vb: EventSink(Of T).ExpectNoValue
+- uid: LaunchDarkly.TestHelpers.EventSink`1.ExpectValue
+  name: ExpectValue()
+  href: api/LaunchDarkly.TestHelpers.EventSink-1.html#LaunchDarkly_TestHelpers_EventSink_1_ExpectValue
+  commentId: M:LaunchDarkly.TestHelpers.EventSink`1.ExpectValue
+  fullName: LaunchDarkly.TestHelpers.EventSink<T>.ExpectValue()
+  fullName.vb: LaunchDarkly.TestHelpers.EventSink(Of T).ExpectValue()
+  nameWithType: EventSink<T>.ExpectValue()
+  nameWithType.vb: EventSink(Of T).ExpectValue()
+- uid: LaunchDarkly.TestHelpers.EventSink`1.ExpectValue(System.TimeSpan)
+  name: ExpectValue(TimeSpan)
+  href: api/LaunchDarkly.TestHelpers.EventSink-1.html#LaunchDarkly_TestHelpers_EventSink_1_ExpectValue_System_TimeSpan_
+  commentId: M:LaunchDarkly.TestHelpers.EventSink`1.ExpectValue(System.TimeSpan)
+  fullName: LaunchDarkly.TestHelpers.EventSink<T>.ExpectValue(System.TimeSpan)
+  fullName.vb: LaunchDarkly.TestHelpers.EventSink(Of T).ExpectValue(System.TimeSpan)
+  nameWithType: EventSink<T>.ExpectValue(TimeSpan)
+  nameWithType.vb: EventSink(Of T).ExpectValue(TimeSpan)
+- uid: LaunchDarkly.TestHelpers.EventSink`1.ExpectValue*
+  name: ExpectValue
+  href: api/LaunchDarkly.TestHelpers.EventSink-1.html#LaunchDarkly_TestHelpers_EventSink_1_ExpectValue_
+  commentId: Overload:LaunchDarkly.TestHelpers.EventSink`1.ExpectValue
+  fullName: LaunchDarkly.TestHelpers.EventSink<T>.ExpectValue
+  fullName.vb: LaunchDarkly.TestHelpers.EventSink(Of T).ExpectValue
+  nameWithType: EventSink<T>.ExpectValue
+  nameWithType.vb: EventSink(Of T).ExpectValue
+- uid: LaunchDarkly.TestHelpers.EventSink`1.TryTakeValue(`0@)
+  name: TryTakeValue(out T)
+  href: api/LaunchDarkly.TestHelpers.EventSink-1.html#LaunchDarkly_TestHelpers_EventSink_1_TryTakeValue__0__
+  commentId: M:LaunchDarkly.TestHelpers.EventSink`1.TryTakeValue(`0@)
+  name.vb: TryTakeValue(ByRef T)
+  fullName: LaunchDarkly.TestHelpers.EventSink<T>.TryTakeValue(out T)
+  fullName.vb: LaunchDarkly.TestHelpers.EventSink(Of T).TryTakeValue(ByRef T)
+  nameWithType: EventSink<T>.TryTakeValue(out T)
+  nameWithType.vb: EventSink(Of T).TryTakeValue(ByRef T)
+- uid: LaunchDarkly.TestHelpers.EventSink`1.TryTakeValue*
+  name: TryTakeValue
+  href: api/LaunchDarkly.TestHelpers.EventSink-1.html#LaunchDarkly_TestHelpers_EventSink_1_TryTakeValue_
+  commentId: Overload:LaunchDarkly.TestHelpers.EventSink`1.TryTakeValue
+  fullName: LaunchDarkly.TestHelpers.EventSink<T>.TryTakeValue
+  fullName.vb: LaunchDarkly.TestHelpers.EventSink(Of T).TryTakeValue
+  nameWithType: EventSink<T>.TryTakeValue
+  nameWithType.vb: EventSink(Of T).TryTakeValue
 - uid: LaunchDarkly.TestHelpers.HttpTest
   name: LaunchDarkly.TestHelpers.HttpTest
   href: api/LaunchDarkly.TestHelpers.HttpTest.html
@@ -826,3 +1178,237 @@ references:
   fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.Widening
   nameWithType: SimpleRouter.Implicit
   nameWithType.vb: SimpleRouter.Widening
+- uid: LaunchDarkly.TestHelpers.JsonAssertions
+  name: JsonAssertions
+  href: api/LaunchDarkly.TestHelpers.JsonAssertions.html
+  commentId: T:LaunchDarkly.TestHelpers.JsonAssertions
+  fullName: LaunchDarkly.TestHelpers.JsonAssertions
+  nameWithType: JsonAssertions
+- uid: LaunchDarkly.TestHelpers.JsonAssertions.#ctor
+  name: JsonAssertions()
+  href: api/LaunchDarkly.TestHelpers.JsonAssertions.html#LaunchDarkly_TestHelpers_JsonAssertions__ctor
+  commentId: M:LaunchDarkly.TestHelpers.JsonAssertions.#ctor
+  fullName: LaunchDarkly.TestHelpers.JsonAssertions.JsonAssertions()
+  nameWithType: JsonAssertions.JsonAssertions()
+- uid: LaunchDarkly.TestHelpers.JsonAssertions.#ctor*
+  name: JsonAssertions
+  href: api/LaunchDarkly.TestHelpers.JsonAssertions.html#LaunchDarkly_TestHelpers_JsonAssertions__ctor_
+  commentId: Overload:LaunchDarkly.TestHelpers.JsonAssertions.#ctor
+  fullName: LaunchDarkly.TestHelpers.JsonAssertions.JsonAssertions
+  nameWithType: JsonAssertions.JsonAssertions
+- uid: LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonEqual(LaunchDarkly.TestHelpers.JsonTestValue,LaunchDarkly.TestHelpers.JsonTestValue)
+  name: AssertJsonEqual(JsonTestValue, JsonTestValue)
+  href: api/LaunchDarkly.TestHelpers.JsonAssertions.html#LaunchDarkly_TestHelpers_JsonAssertions_AssertJsonEqual_LaunchDarkly_TestHelpers_JsonTestValue_LaunchDarkly_TestHelpers_JsonTestValue_
+  commentId: M:LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonEqual(LaunchDarkly.TestHelpers.JsonTestValue,LaunchDarkly.TestHelpers.JsonTestValue)
+  fullName: LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonEqual(LaunchDarkly.TestHelpers.JsonTestValue, LaunchDarkly.TestHelpers.JsonTestValue)
+  nameWithType: JsonAssertions.AssertJsonEqual(JsonTestValue, JsonTestValue)
+- uid: LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonEqual(System.String,System.String)
+  name: AssertJsonEqual(String, String)
+  href: api/LaunchDarkly.TestHelpers.JsonAssertions.html#LaunchDarkly_TestHelpers_JsonAssertions_AssertJsonEqual_System_String_System_String_
+  commentId: M:LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonEqual(System.String,System.String)
+  fullName: LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonEqual(System.String, System.String)
+  nameWithType: JsonAssertions.AssertJsonEqual(String, String)
+- uid: LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonEqual*
+  name: AssertJsonEqual
+  href: api/LaunchDarkly.TestHelpers.JsonAssertions.html#LaunchDarkly_TestHelpers_JsonAssertions_AssertJsonEqual_
+  commentId: Overload:LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonEqual
+  fullName: LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonEqual
+  nameWithType: JsonAssertions.AssertJsonEqual
+- uid: LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonIncludes(LaunchDarkly.TestHelpers.JsonTestValue,LaunchDarkly.TestHelpers.JsonTestValue)
+  name: AssertJsonIncludes(JsonTestValue, JsonTestValue)
+  href: api/LaunchDarkly.TestHelpers.JsonAssertions.html#LaunchDarkly_TestHelpers_JsonAssertions_AssertJsonIncludes_LaunchDarkly_TestHelpers_JsonTestValue_LaunchDarkly_TestHelpers_JsonTestValue_
+  commentId: M:LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonIncludes(LaunchDarkly.TestHelpers.JsonTestValue,LaunchDarkly.TestHelpers.JsonTestValue)
+  fullName: LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonIncludes(LaunchDarkly.TestHelpers.JsonTestValue, LaunchDarkly.TestHelpers.JsonTestValue)
+  nameWithType: JsonAssertions.AssertJsonIncludes(JsonTestValue, JsonTestValue)
+- uid: LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonIncludes(System.String,System.String)
+  name: AssertJsonIncludes(String, String)
+  href: api/LaunchDarkly.TestHelpers.JsonAssertions.html#LaunchDarkly_TestHelpers_JsonAssertions_AssertJsonIncludes_System_String_System_String_
+  commentId: M:LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonIncludes(System.String,System.String)
+  fullName: LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonIncludes(System.String, System.String)
+  nameWithType: JsonAssertions.AssertJsonIncludes(String, String)
+- uid: LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonIncludes*
+  name: AssertJsonIncludes
+  href: api/LaunchDarkly.TestHelpers.JsonAssertions.html#LaunchDarkly_TestHelpers_JsonAssertions_AssertJsonIncludes_
+  commentId: Overload:LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonIncludes
+  fullName: LaunchDarkly.TestHelpers.JsonAssertions.AssertJsonIncludes
+  nameWithType: JsonAssertions.AssertJsonIncludes
+- uid: LaunchDarkly.TestHelpers.JsonTestValue
+  name: JsonTestValue
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html
+  commentId: T:LaunchDarkly.TestHelpers.JsonTestValue
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue
+  nameWithType: JsonTestValue
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.Equals(System.Object)
+  name: Equals(Object)
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_Equals_System_Object_
+  commentId: M:LaunchDarkly.TestHelpers.JsonTestValue.Equals(System.Object)
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.Equals(System.Object)
+  nameWithType: JsonTestValue.Equals(Object)
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.Equals*
+  name: Equals
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_Equals_
+  commentId: Overload:LaunchDarkly.TestHelpers.JsonTestValue.Equals
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.Equals
+  nameWithType: JsonTestValue.Equals
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.GetHashCode
+  name: GetHashCode()
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_GetHashCode
+  commentId: M:LaunchDarkly.TestHelpers.JsonTestValue.GetHashCode
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.GetHashCode()
+  nameWithType: JsonTestValue.GetHashCode()
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.GetHashCode*
+  name: GetHashCode
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_GetHashCode_
+  commentId: Overload:LaunchDarkly.TestHelpers.JsonTestValue.GetHashCode
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.GetHashCode
+  nameWithType: JsonTestValue.GetHashCode
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.IsDefined
+  name: IsDefined
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_IsDefined
+  commentId: P:LaunchDarkly.TestHelpers.JsonTestValue.IsDefined
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.IsDefined
+  nameWithType: JsonTestValue.IsDefined
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.IsDefined*
+  name: IsDefined
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_IsDefined_
+  commentId: Overload:LaunchDarkly.TestHelpers.JsonTestValue.IsDefined
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.IsDefined
+  nameWithType: JsonTestValue.IsDefined
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.JsonFromValue(System.Object)
+  name: JsonFromValue(Object)
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_JsonFromValue_System_Object_
+  commentId: M:LaunchDarkly.TestHelpers.JsonTestValue.JsonFromValue(System.Object)
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.JsonFromValue(System.Object)
+  nameWithType: JsonTestValue.JsonFromValue(Object)
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.JsonFromValue*
+  name: JsonFromValue
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_JsonFromValue_
+  commentId: Overload:LaunchDarkly.TestHelpers.JsonTestValue.JsonFromValue
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.JsonFromValue
+  nameWithType: JsonTestValue.JsonFromValue
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.JsonOf(System.String)
+  name: JsonOf(String)
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_JsonOf_System_String_
+  commentId: M:LaunchDarkly.TestHelpers.JsonTestValue.JsonOf(System.String)
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.JsonOf(System.String)
+  nameWithType: JsonTestValue.JsonOf(String)
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.JsonOf*
+  name: JsonOf
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_JsonOf_
+  commentId: Overload:LaunchDarkly.TestHelpers.JsonTestValue.JsonOf
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.JsonOf
+  nameWithType: JsonTestValue.JsonOf
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.NoValue
+  name: NoValue
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_NoValue
+  commentId: P:LaunchDarkly.TestHelpers.JsonTestValue.NoValue
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.NoValue
+  nameWithType: JsonTestValue.NoValue
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.NoValue*
+  name: NoValue
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_NoValue_
+  commentId: Overload:LaunchDarkly.TestHelpers.JsonTestValue.NoValue
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.NoValue
+  nameWithType: JsonTestValue.NoValue
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.Property(System.String)
+  name: Property(String)
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_Property_System_String_
+  commentId: M:LaunchDarkly.TestHelpers.JsonTestValue.Property(System.String)
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.Property(System.String)
+  nameWithType: JsonTestValue.Property(String)
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.Property*
+  name: Property
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_Property_
+  commentId: Overload:LaunchDarkly.TestHelpers.JsonTestValue.Property
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.Property
+  nameWithType: JsonTestValue.Property
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.RequiredProperty(System.String)
+  name: RequiredProperty(String)
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_RequiredProperty_System_String_
+  commentId: M:LaunchDarkly.TestHelpers.JsonTestValue.RequiredProperty(System.String)
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.RequiredProperty(System.String)
+  nameWithType: JsonTestValue.RequiredProperty(String)
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.RequiredProperty*
+  name: RequiredProperty
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_RequiredProperty_
+  commentId: Overload:LaunchDarkly.TestHelpers.JsonTestValue.RequiredProperty
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.RequiredProperty
+  nameWithType: JsonTestValue.RequiredProperty
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.ToString
+  name: ToString()
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_ToString
+  commentId: M:LaunchDarkly.TestHelpers.JsonTestValue.ToString
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.ToString()
+  nameWithType: JsonTestValue.ToString()
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.ToString*
+  name: ToString
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_ToString_
+  commentId: Overload:LaunchDarkly.TestHelpers.JsonTestValue.ToString
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.ToString
+  nameWithType: JsonTestValue.ToString
+- uid: LaunchDarkly.TestHelpers.TypeBehavior
+  name: TypeBehavior
+  href: api/LaunchDarkly.TestHelpers.TypeBehavior.html
+  commentId: T:LaunchDarkly.TestHelpers.TypeBehavior
+  fullName: LaunchDarkly.TestHelpers.TypeBehavior
+  nameWithType: TypeBehavior
+- uid: LaunchDarkly.TestHelpers.TypeBehavior.AssertEqual*
+  name: AssertEqual
+  href: api/LaunchDarkly.TestHelpers.TypeBehavior.html#LaunchDarkly_TestHelpers_TypeBehavior_AssertEqual_
+  commentId: Overload:LaunchDarkly.TestHelpers.TypeBehavior.AssertEqual
+  fullName: LaunchDarkly.TestHelpers.TypeBehavior.AssertEqual
+  nameWithType: TypeBehavior.AssertEqual
+- uid: LaunchDarkly.TestHelpers.TypeBehavior.AssertEqual``1(``0,``0)
+  name: AssertEqual<T>(T, T)
+  href: api/LaunchDarkly.TestHelpers.TypeBehavior.html#LaunchDarkly_TestHelpers_TypeBehavior_AssertEqual__1___0___0_
+  commentId: M:LaunchDarkly.TestHelpers.TypeBehavior.AssertEqual``1(``0,``0)
+  name.vb: AssertEqual(Of T)(T, T)
+  fullName: LaunchDarkly.TestHelpers.TypeBehavior.AssertEqual<T>(T, T)
+  fullName.vb: LaunchDarkly.TestHelpers.TypeBehavior.AssertEqual(Of T)(T, T)
+  nameWithType: TypeBehavior.AssertEqual<T>(T, T)
+  nameWithType.vb: TypeBehavior.AssertEqual(Of T)(T, T)
+- uid: LaunchDarkly.TestHelpers.TypeBehavior.AssertNotEqual*
+  name: AssertNotEqual
+  href: api/LaunchDarkly.TestHelpers.TypeBehavior.html#LaunchDarkly_TestHelpers_TypeBehavior_AssertNotEqual_
+  commentId: Overload:LaunchDarkly.TestHelpers.TypeBehavior.AssertNotEqual
+  fullName: LaunchDarkly.TestHelpers.TypeBehavior.AssertNotEqual
+  nameWithType: TypeBehavior.AssertNotEqual
+- uid: LaunchDarkly.TestHelpers.TypeBehavior.AssertNotEqual``1(``0,``0)
+  name: AssertNotEqual<T>(T, T)
+  href: api/LaunchDarkly.TestHelpers.TypeBehavior.html#LaunchDarkly_TestHelpers_TypeBehavior_AssertNotEqual__1___0___0_
+  commentId: M:LaunchDarkly.TestHelpers.TypeBehavior.AssertNotEqual``1(``0,``0)
+  name.vb: AssertNotEqual(Of T)(T, T)
+  fullName: LaunchDarkly.TestHelpers.TypeBehavior.AssertNotEqual<T>(T, T)
+  fullName.vb: LaunchDarkly.TestHelpers.TypeBehavior.AssertNotEqual(Of T)(T, T)
+  nameWithType: TypeBehavior.AssertNotEqual<T>(T, T)
+  nameWithType.vb: TypeBehavior.AssertNotEqual(Of T)(T, T)
+- uid: LaunchDarkly.TestHelpers.TypeBehavior.CheckEqualsAndHashCode*
+  name: CheckEqualsAndHashCode
+  href: api/LaunchDarkly.TestHelpers.TypeBehavior.html#LaunchDarkly_TestHelpers_TypeBehavior_CheckEqualsAndHashCode_
+  commentId: Overload:LaunchDarkly.TestHelpers.TypeBehavior.CheckEqualsAndHashCode
+  fullName: LaunchDarkly.TestHelpers.TypeBehavior.CheckEqualsAndHashCode
+  nameWithType: TypeBehavior.CheckEqualsAndHashCode
+- uid: LaunchDarkly.TestHelpers.TypeBehavior.CheckEqualsAndHashCode``1(System.Func{``0}[])
+  name: CheckEqualsAndHashCode<T>(Func<T>[])
+  href: api/LaunchDarkly.TestHelpers.TypeBehavior.html#LaunchDarkly_TestHelpers_TypeBehavior_CheckEqualsAndHashCode__1_System_Func___0____
+  commentId: M:LaunchDarkly.TestHelpers.TypeBehavior.CheckEqualsAndHashCode``1(System.Func{``0}[])
+  name.vb: CheckEqualsAndHashCode(Of T)(Func(Of T)())
+  fullName: LaunchDarkly.TestHelpers.TypeBehavior.CheckEqualsAndHashCode<T>(System.Func<T>[])
+  fullName.vb: LaunchDarkly.TestHelpers.TypeBehavior.CheckEqualsAndHashCode(Of T)(System.Func(Of T)())
+  nameWithType: TypeBehavior.CheckEqualsAndHashCode<T>(Func<T>[])
+  nameWithType.vb: TypeBehavior.CheckEqualsAndHashCode(Of T)(Func(Of T)())
+- uid: LaunchDarkly.TestHelpers.TypeBehavior.ValueFactoryFromInstances*
+  name: ValueFactoryFromInstances
+  href: api/LaunchDarkly.TestHelpers.TypeBehavior.html#LaunchDarkly_TestHelpers_TypeBehavior_ValueFactoryFromInstances_
+  commentId: Overload:LaunchDarkly.TestHelpers.TypeBehavior.ValueFactoryFromInstances
+  fullName: LaunchDarkly.TestHelpers.TypeBehavior.ValueFactoryFromInstances
+  nameWithType: TypeBehavior.ValueFactoryFromInstances
+- uid: LaunchDarkly.TestHelpers.TypeBehavior.ValueFactoryFromInstances``1(``0[])
+  name: ValueFactoryFromInstances<T>(T[])
+  href: api/LaunchDarkly.TestHelpers.TypeBehavior.html#LaunchDarkly_TestHelpers_TypeBehavior_ValueFactoryFromInstances__1___0___
+  commentId: M:LaunchDarkly.TestHelpers.TypeBehavior.ValueFactoryFromInstances``1(``0[])
+  name.vb: ValueFactoryFromInstances(Of T)(T())
+  fullName: LaunchDarkly.TestHelpers.TypeBehavior.ValueFactoryFromInstances<T>(T[])
+  fullName.vb: LaunchDarkly.TestHelpers.TypeBehavior.ValueFactoryFromInstances(Of T)(T())
+  nameWithType: TypeBehavior.ValueFactoryFromInstances<T>(T[])
+  nameWithType.vb: TypeBehavior.ValueFactoryFromInstances(Of T)(T())
