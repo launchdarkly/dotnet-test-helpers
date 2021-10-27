@@ -20,6 +20,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 var resp = await client.GetAsync(FakeUri);
                 Assert.Equal(419, (int)resp.StatusCode);
                 AssertNoHeader(resp, "content-type");
+                await AssertNoContent(resp);
             }
         }
 
