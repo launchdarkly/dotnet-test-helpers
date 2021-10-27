@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Net.Http;
+using System.Threading.Tasks;
 using Xunit;
 
 using static LaunchDarkly.TestHelpers.HttpTest.TestUtil;
@@ -62,6 +63,44 @@ namespace LaunchDarkly.TestHelpers.HttpTest
 
                 var resp2 = await client.GetAsync(FakeUri);
                 Assert.Equal(503, (int)resp2.StatusCode);
+            }
+        }
+
+        [Fact]
+        public async void Streaming()
+        {
+            // This verifies that AsMessageHandler() works correctly for streaming handlers,
+            // not just simple responses.
+
+            var contentType = "text/plain; charset=utf-8";
+            var didWriteChunk1 = new TaskCompletionSource<bool>();
+            var canWriteChunk2 = new TaskCompletionSource<bool>();
+            var didWriteChunk2 = new TaskCompletionSource<bool>();
+            var handler = Handlers.StartChunks(contentType)
+                .Then(Handlers.WriteChunkString("hello"))
+                .Then(Handlers.Sync(ctx => didWriteChunk1.SetResult(true)))
+                .Then(ctx => canWriteChunk2.Task)
+                .Then(Handlers.WriteChunkString("goodbye"))
+                .Then(Handlers.Sync(ctx => didWriteChunk2.SetResult(true)));
+
+            using (var client = new HttpClient(handler.AsMessageHandler()))
+            {
+                var req = new HttpRequestMessage(HttpMethod.Get, FakeUri);
+                var resp = await client.SendAsync(req, HttpCompletionOption.ResponseHeadersRead);
+                
+                Assert.Equal(200, (int)resp.StatusCode);
+                Assert.Equal(contentType, resp.Content.Headers.ContentType.ToString());
+
+                var stream = await resp.Content.ReadAsStreamAsync();
+
+                await didWriteChunk1.Task;
+
+                Assert.Equal("hello", await ReadAllAvailableStringAsync(stream, 100));
+
+                canWriteChunk2.SetResult(true);
+                await didWriteChunk2.Task;
+
+                Assert.Equal("goodbye", await ReadAllAvailableStringAsync(stream, 100));
             }
         }
 

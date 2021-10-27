@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -101,10 +102,8 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 {
                     await didWriteChunk[i].Task;
 
-                    var buf = new byte[100];
-                    int n = await stream.ReadAsync(buf, 0, buf.Length);
-                    string s = Encoding.UTF8.GetString(buf, 0, n);
-                    Assert.Equal(expectedChunks[i], s);
+                    string received = await ReadAllAvailableStringAsync(stream, 100);
+                    Assert.Equal(expectedChunks[i], received);
 
                     didReadChunk[i].SetResult(true);
                 }

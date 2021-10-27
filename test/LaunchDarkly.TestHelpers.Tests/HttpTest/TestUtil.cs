@@ -1,7 +1,9 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -18,6 +20,13 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                     await action(server, client);
                 }
             }
+        }
+
+        public static async Task<string> ReadAllAvailableStringAsync(Stream stream, int max)
+        {
+            var buf = new byte[max];
+            int n = await stream.ReadAsync(buf, 0, buf.Length);
+            return n == 0 ? null : Encoding.UTF8.GetString(buf, 0, n);
         }
 
         public static void AssertNoHeader(HttpResponseMessage resp, string headerName)
