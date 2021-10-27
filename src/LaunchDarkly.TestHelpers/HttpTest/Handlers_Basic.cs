@@ -134,8 +134,8 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         ///     // Verify the properties of the request that was made
         /// </code>
         /// </example>
-        /// <param name="handler"></param>
-        /// <returns></returns>
+        /// <param name="handler">the handler to execute</param>
+        /// <returns>an <c>HttpMessageHandler</c></returns>
         public static HttpMessageHandler AsMessageHandler(this Handler handler) =>
             new MessageHandlerFromHandler(handler);
 
