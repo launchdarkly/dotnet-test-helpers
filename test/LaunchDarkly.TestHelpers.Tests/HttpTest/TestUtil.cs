@@ -29,6 +29,20 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             return n == 0 ? null : Encoding.UTF8.GetString(buf, 0, n);
         }
 
+        public static async Task AssertNoContent(HttpResponseMessage resp)
+        {
+            if (resp.Content is null)
+            {
+                return;
+            }
+            // In .NET 5.0, there may be a zero-length content object instead of null.
+            var data = await resp.Content.ReadAsByteArrayAsync();
+            if (data != null)
+            {
+                Assert.Empty(data);
+            }
+        }
+
         public static void AssertNoHeader(HttpResponseMessage resp, string headerName)
         {
             var headers = HeadersFor(resp, headerName);
