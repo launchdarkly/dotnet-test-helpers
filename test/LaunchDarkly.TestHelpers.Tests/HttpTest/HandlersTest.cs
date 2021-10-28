@@ -57,7 +57,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 var resp = await client.GetAsync(server.Uri);
                 Assert.Equal(419, (int)resp.StatusCode);
                 AssertNoHeader(resp, "content-type");
-                Assert.Equal("", await resp.Content.ReadAsStringAsync());
+                await AssertNoContent(resp);
             });
 
         [Fact]
@@ -67,7 +67,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 var resp = await client.GetAsync(server.Uri);
                 Assert.Equal((int)HttpStatusCode.BadRequest, (int)resp.StatusCode);
                 AssertNoHeader(resp, "content-type");
-                Assert.Equal("", await resp.Content.ReadAsStringAsync());
+                await AssertNoContent(resp);
             });
 
         [Fact]

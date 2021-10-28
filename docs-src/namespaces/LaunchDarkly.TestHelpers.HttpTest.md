@@ -91,3 +91,13 @@ You configure the server with a single <xref:LaunchDarkly.TestHelpers.HttpTest.H
         // Now the server returns 500 for all requests
     }
 ```
+
+### Using a customized HttpClient instead of a server
+
+```csharp
+    var handler = Handlers.Record(out var recorder)
+        .Then(Handlers.BodyString("text/plain", "hello"));
+    var client = new HttpClient(handler.AsMessageHandler());
+    // Now all requests made with this client to any URI will receive the canned
+    // response, and can be inspected with the recorder.
+```
