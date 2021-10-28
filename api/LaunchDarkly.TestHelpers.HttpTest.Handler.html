@@ -73,7 +73,8 @@
   
   <h1 id="LaunchDarkly_TestHelpers_HttpTest_Handler" data-uid="LaunchDarkly.TestHelpers.HttpTest.Handler" class="text-break">Class Handler
   </h1>
-  <div class="markdown level0 summary"><p>An asynchronous function that handles HTTP requests for a <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.HttpServer.html">HttpServer</a>.</p>
+  <div class="markdown level0 summary"><p>An asynchronous function that handles HTTP requests to simulate the desired server
+behavior in tests.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -88,7 +89,30 @@
     <pre><code class="lang-csharp hljs">public sealed class Handler : MulticastDelegate</code></pre>
   </div>
   <h5 id="LaunchDarkly_TestHelpers_HttpTest_Handler_remarks"><strong>Remarks</strong></h5>
-  <div class="markdown level0 remarks"><p>Use the factory methods in <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handlers.html">Handlers</a> to create standard implementations.</p>
+  <div class="markdown level0 remarks"><p>
+Use the factory methods in <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handlers.html">Handlers</a> to create standard implementations.
+There are two ways to use these handlers:
+</p>
+<ol><li> In end-to-end HTTP testing against an <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.HttpServer.html">HttpServer</a>.
+This provides the most realistic operating conditions for your HTTP client test code,
+since it will do actual HTTP and can be accessed by an external client without any
+customization of the client other than specifying the target URI.
+</li><li> To simulate responses from an <code>HttpClient</code> using a custom
+<code>HttpMessageHandler</code> that does not make any network requests. In this case,
+you can configure your handler(s) just the same, but use
+<a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_AsMessageHandler_LaunchDarkly_TestHelpers_HttpTest_Handler_">AsMessageHandler(Handler)</a> to convert the result into an
+<code>HttpMessageHandler</code> that can be used in an <code>HttpClient</code>. This can be
+useful in testing code that makes requests to a real external URI, redirecting it
+to your internal fixture. It also allows simulating network errors; see
+<a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Error_System_Exception_">Error(Exception)</a>.
+</li></ol>
+<p>
+In either use case, there is always a single handler that represents the server as
+a whole. If you want to apply the effects of multiple handles to the same
+response, use <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Then_LaunchDarkly_TestHelpers_HttpTest_Handler_LaunchDarkly_TestHelpers_HttpTest_Handler_">Then(Handler, Handler)</a>. If you want the server
+to return different responses for different requests, use combinators such as
+<a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Sequential_LaunchDarkly_TestHelpers_HttpTest_Handler___">Sequential(Handler[])</a> or <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Router_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter__">Router(out SimpleRouter)</a>.
+</p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -255,6 +279,9 @@
     </tbody>
   </table>
   <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_AsMessageHandler_LaunchDarkly_TestHelpers_HttpTest_Handler_">Handlers.AsMessageHandler(Handler)</a>
+  </div>
   <div>
       <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Then_LaunchDarkly_TestHelpers_HttpTest_Handler_LaunchDarkly_TestHelpers_HttpTest_Handler_">Handlers.Then(Handler, Handler)</a>
   </div>

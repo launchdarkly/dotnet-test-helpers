@@ -170,6 +170,69 @@ any previous values.</p>
   <div class="seealso">
       <div><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Header_System_String_System_String_">Header(String, String)</a></div>
   </div>
+  <a id="LaunchDarkly_TestHelpers_HttpTest_Handlers_AsMessageHandler_" data-uid="LaunchDarkly.TestHelpers.HttpTest.Handlers.AsMessageHandler*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_HttpTest_Handlers_AsMessageHandler_LaunchDarkly_TestHelpers_HttpTest_Handler_" data-uid="LaunchDarkly.TestHelpers.HttpTest.Handlers.AsMessageHandler(LaunchDarkly.TestHelpers.HttpTest.Handler)">AsMessageHandler(Handler)</h4>
+  <div class="markdown level1 summary"><p>Converts a <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a> to a standard .NET <span class="xref">System.Net.Http.HttpMessageHandler</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HttpMessageHandler AsMessageHandler(this Handler handler)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a></td>
+        <td><span class="parametername">handler</span></td>
+        <td><p>the handler to execute</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Net.Http.HttpMessageHandler</span></td>
+        <td><p>an <code>HttpMessageHandler</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="LaunchDarkly_TestHelpers_HttpTest_Handlers_AsMessageHandler_LaunchDarkly_TestHelpers_HttpTest_Handler__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This allows the various handlers in this library to be used as a convenient,
+composable way to simulate responses from an <code>HttpClient</code> using a custom
+<code>HttpMessageHandler</code> that does not make any network requests. This can be
+useful in testing code that makes requests to a real external URI, redirecting it
+to your internal fixture. It also allows simulating network errors; see
+<a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Error_System_Exception_">Error(Exception)</a>.</p>
+</div>
+  <h5 id="LaunchDarkly_TestHelpers_HttpTest_Handlers_AsMessageHandler_LaunchDarkly_TestHelpers_HttpTest_Handler__examples">Examples</h5>
+  <pre><code>    // Here we will intercept any request from the configured HttpClient so it
+    // receives a 503 response, while also recording requests.
+    var messageHandler = Handlers.Record(out var recorder)
+        .Then(Handlers.Status(503)).AsMessageHandler();
+    var httpClient = new HttpClient(messageHandler);
+
+    // ...Do something that will cause a request to be made...
+
+    var request = recorder.RequireRequest();
+    // Verify the properties of the request that was made</code></pre>
+
   <a id="LaunchDarkly_TestHelpers_HttpTest_Handlers_Body_" data-uid="LaunchDarkly.TestHelpers.HttpTest.Handlers.Body*"></a>
   <h4 id="LaunchDarkly_TestHelpers_HttpTest_Handlers_Body_System_String_System_Byte___" data-uid="LaunchDarkly.TestHelpers.HttpTest.Handlers.Body(System.String,System.Byte[])">Body(String, Byte[])</h4>
   <div class="markdown level1 summary"><p>Creates a <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a> that sends the specified response body.</p>
@@ -382,6 +445,64 @@ in the Content-Type header, but UTF8 will be used to encode the string</p>
       </tr>
     </tbody>
   </table>
+  <a id="LaunchDarkly_TestHelpers_HttpTest_Handlers_Error_" data-uid="LaunchDarkly.TestHelpers.HttpTest.Handlers.Error*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_HttpTest_Handlers_Error_System_Exception_" data-uid="LaunchDarkly.TestHelpers.HttpTest.Handlers.Error(System.Exception)">Error(Exception)</h4>
+  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a> that throws an exception. The effect of this depends
+on how the handler is being used - see Remarks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Handler Error(Exception ex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Exception</span></td>
+        <td><span class="parametername">ex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="LaunchDarkly_TestHelpers_HttpTest_Handlers_Error_System_Exception__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+When used in a real end-to-end HTTP scenario with an <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.HttpServer.html">HttpServer</a>, this
+simply results in an HTTP 500 response. There is no way to simulate a network error
+in this framework.
+</p>
+<p>
+However, when used with <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_AsMessageHandler_LaunchDarkly_TestHelpers_HttpTest_Handler_">AsMessageHandler(Handler)</a>,
+this causes the exception to be thrown out of the <code>HttpClient</code>. Therefore, you can
+use this handler in test code that needs to simulate an I/O error from <code>HttpClient</code>.
+</p>
+</div>
+  <h5 id="LaunchDarkly_TestHelpers_HttpTest_Handlers_Error_System_Exception__examples">Examples</h5>
+  <pre><code>    var messageHandler = Handlers.Error(new IOException(&quot;bad hostname&quot;)).AsMessageHandler();
+    var httpClient = new HttpClient(messageHandler);</code></pre>
+
   <a id="LaunchDarkly_TestHelpers_HttpTest_Handlers_Hang_" data-uid="LaunchDarkly.TestHelpers.HttpTest.Handlers.Hang*"></a>
   <h4 id="LaunchDarkly_TestHelpers_HttpTest_Handlers_Hang" data-uid="LaunchDarkly.TestHelpers.HttpTest.Handlers.Hang">Hang()</h4>
   <div class="markdown level1 summary"><p>Creates a <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a> that sleeps indefinitely, holding the connection open,
@@ -516,6 +637,10 @@ requests.</p>
   <h5 id="LaunchDarkly_TestHelpers_HttpTest_Handlers_Record_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder___examples">Examples</h5>
   <pre><code>    var handler = Handlers.Record(out var recorder).Then(Handlers.Status(200));</code></pre>
 
+  <h5 id="LaunchDarkly_TestHelpers_HttpTest_Handlers_Record_LaunchDarkly_TestHelpers_HttpTest_RequestRecorder___seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html">RequestRecorder</a></div>
+  </div>
   <a id="LaunchDarkly_TestHelpers_HttpTest_Handlers_Router_" data-uid="LaunchDarkly.TestHelpers.HttpTest.Handlers.Router*"></a>
   <h4 id="LaunchDarkly_TestHelpers_HttpTest_Handlers_Router_LaunchDarkly_TestHelpers_HttpTest_SimpleRouter__" data-uid="LaunchDarkly.TestHelpers.HttpTest.Handlers.Router(LaunchDarkly.TestHelpers.HttpTest.SimpleRouter@)">Router(out SimpleRouter)</h4>
   <div class="markdown level1 summary"><p>Creates a <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html">SimpleRouter</a> for delegating to other handlers based on the

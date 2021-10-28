@@ -134,11 +134,18 @@
         switcher.Target = Handlers.Status(500);
         // Now the server returns 500 for all requests
     }
+</code></pre><h3 id="using-a-customized-httpclient-instead-of-a-server">Using a customized HttpClient instead of a server</h3>
+<pre><code class="lang-csharp">    var handler = Handlers.Record(out var recorder)
+        .Then(Handlers.BodyString(&quot;text/plain&quot;, &quot;hello&quot;));
+    var client = new HttpClient(handler.AsMessageHandler());
+    // Now all requests made with this client to any URI will receive the canned
+    // response, and can be inspected with the recorder.
 </code></pre></div>
     <h3 id="classes">Classes
   </h3>
       <h4><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a></h4>
-      <section><p>An asynchronous function that handles HTTP requests for a <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.HttpServer.html">HttpServer</a>.</p>
+      <section><p>An asynchronous function that handles HTTP requests to simulate the desired server
+behavior in tests.</p>
 </section>
       <h4><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handlers.html">Handlers</a></h4>
       <section><p>Factory methods for standard <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a> implementations.</p>

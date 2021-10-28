@@ -431,6 +431,18 @@ references:
   commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.AddHeader
   fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.AddHeader
   nameWithType: Handlers.AddHeader
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.AsMessageHandler(LaunchDarkly.TestHelpers.HttpTest.Handler)
+  name: AsMessageHandler(Handler)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_AsMessageHandler_LaunchDarkly_TestHelpers_HttpTest_Handler_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.AsMessageHandler(LaunchDarkly.TestHelpers.HttpTest.Handler)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.AsMessageHandler(LaunchDarkly.TestHelpers.HttpTest.Handler)
+  nameWithType: Handlers.AsMessageHandler(Handler)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.AsMessageHandler*
+  name: AsMessageHandler
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_AsMessageHandler_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.AsMessageHandler
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.AsMessageHandler
+  nameWithType: Handlers.AsMessageHandler
 - uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Body(System.String,System.Byte[])
   name: Body(String, Byte[])
   href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Body_System_String_System_Byte___
@@ -494,6 +506,18 @@ references:
   commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.Delay
   fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Delay
   nameWithType: Handlers.Delay
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Error(System.Exception)
+  name: Error(Exception)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Error_System_Exception_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.Error(System.Exception)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Error(System.Exception)
+  nameWithType: Handlers.Error(Exception)
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Error*
+  name: Error
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Error_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.Error
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Error
+  nameWithType: Handlers.Error
 - uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.Hang
   name: Hang()
   href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Hang
