@@ -737,6 +737,62 @@ as each request is received.</p>
   <div class="markdown level1 remarks"><p>Any requests that happen after the last handler in the list has been used will receive a
 500 error.</p>
 </div>
+  <h5 id="LaunchDarkly_TestHelpers_HttpTest_Handlers_Sequential_LaunchDarkly_TestHelpers_HttpTest_Handler____seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_SequentialWithLastRepeating_LaunchDarkly_TestHelpers_HttpTest_Handler___">SequentialWithLastRepeating(Handler[])</a></div>
+  </div>
+  <a id="LaunchDarkly_TestHelpers_HttpTest_Handlers_SequentialWithLastRepeating_" data-uid="LaunchDarkly.TestHelpers.HttpTest.Handlers.SequentialWithLastRepeating*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_HttpTest_Handlers_SequentialWithLastRepeating_LaunchDarkly_TestHelpers_HttpTest_Handler___" data-uid="LaunchDarkly.TestHelpers.HttpTest.Handlers.SequentialWithLastRepeating(LaunchDarkly.TestHelpers.HttpTest.Handler[])">SequentialWithLastRepeating(Handler[])</h4>
+  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a> that delegates to each of the specified handlers in sequence
+as each request is received.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Handler SequentialWithLastRepeating(params Handler[] handlers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a>[]</td>
+        <td><span class="parametername">handlers</span></td>
+        <td><p>a list of handlers</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a></td>
+        <td><p>a <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="LaunchDarkly_TestHelpers_HttpTest_Handlers_SequentialWithLastRepeating_LaunchDarkly_TestHelpers_HttpTest_Handler____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Any requests that happen after the last handler in the list has been used will continue to
+use the last handler.</p>
+</div>
+  <h5 id="LaunchDarkly_TestHelpers_HttpTest_Handlers_SequentialWithLastRepeating_LaunchDarkly_TestHelpers_HttpTest_Handler____seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_Sequential_LaunchDarkly_TestHelpers_HttpTest_Handler___">Sequential(Handler[])</a></div>
+  </div>
   <a id="LaunchDarkly_TestHelpers_HttpTest_Handlers_StartChunks_" data-uid="LaunchDarkly.TestHelpers.HttpTest.Handlers.StartChunks*"></a>
   <h4 id="LaunchDarkly_TestHelpers_HttpTest_Handlers_StartChunks_System_String_System_Text_Encoding_" data-uid="LaunchDarkly.TestHelpers.HttpTest.Handlers.StartChunks(System.String,System.Text.Encoding)">StartChunks(String, Encoding)</h4>
   <div class="markdown level1 summary"><p>Creates a <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.Handler.html">Handler</a> that starts writing a chunked response.</p>

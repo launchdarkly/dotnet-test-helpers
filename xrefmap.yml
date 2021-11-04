@@ -587,6 +587,21 @@ references:
   commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.Sequential
   fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.Sequential
   nameWithType: Handlers.Sequential
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.SequentialWithLastRepeating(LaunchDarkly.TestHelpers.HttpTest.Handler[])
+  name: SequentialWithLastRepeating(Handler[])
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_SequentialWithLastRepeating_LaunchDarkly_TestHelpers_HttpTest_Handler___
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.Handlers.SequentialWithLastRepeating(LaunchDarkly.TestHelpers.HttpTest.Handler[])
+  name.vb: SequentialWithLastRepeating(Handler())
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.SequentialWithLastRepeating(LaunchDarkly.TestHelpers.HttpTest.Handler[])
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.Handlers.SequentialWithLastRepeating(LaunchDarkly.TestHelpers.HttpTest.Handler())
+  nameWithType: Handlers.SequentialWithLastRepeating(Handler[])
+  nameWithType.vb: Handlers.SequentialWithLastRepeating(Handler())
+- uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.SequentialWithLastRepeating*
+  name: SequentialWithLastRepeating
+  href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.html#LaunchDarkly_TestHelpers_HttpTest_Handlers_SequentialWithLastRepeating_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.Handlers.SequentialWithLastRepeating
+  fullName: LaunchDarkly.TestHelpers.HttpTest.Handlers.SequentialWithLastRepeating
+  nameWithType: Handlers.SequentialWithLastRepeating
 - uid: LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE
   name: Handlers.SSE
   href: api/LaunchDarkly.TestHelpers.HttpTest.Handlers.SSE.html
