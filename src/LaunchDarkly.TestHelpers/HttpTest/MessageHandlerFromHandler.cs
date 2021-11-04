@@ -105,6 +105,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 if (_pipe is null)
                 {
                     _pipe = new SimplePipe();
+                    CancellationToken.Register(_pipe.Close);
                     _response.Content = new StreamContent(_pipe);
                     _response.Content.Headers.ContentEncoding.Add("chunked");
                     if (_deferredContentType != null)
