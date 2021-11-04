@@ -57,8 +57,23 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// </remarks>
         /// <param name="handlers">a list of handlers</param>
         /// <returns>a <see cref="Handler"/></returns>
+        /// <seealso cref="SequentialWithLastRepeating(Handler[])"/>
         public static Handler Sequential(params Handler[] handlers) =>
-            new SequentialHandler(handlers).Handler;
+            new SequentialHandler(false, handlers).Handler;
+
+        /// <summary>
+        /// Creates a <see cref="Handler"/> that delegates to each of the specified handlers in sequence
+        /// as each request is received.
+        /// </summary>
+        /// <remarks>
+        /// Any requests that happen after the last handler in the list has been used will continue to
+        /// use the last handler.
+        /// </remarks>
+        /// <param name="handlers">a list of handlers</param>
+        /// <returns>a <see cref="Handler"/></returns>
+        /// <seealso cref="Sequential(Handler[])"/>
+        public static Handler SequentialWithLastRepeating(params Handler[] handlers) =>
+            new SequentialHandler(true, handlers).Handler;
 
         /// <summary>
         /// Creates a <see cref="HandlerSwitcher"/> for changing handler behavior dynamically.

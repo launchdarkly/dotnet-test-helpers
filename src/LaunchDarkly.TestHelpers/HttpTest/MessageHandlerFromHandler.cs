@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Specialized;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -54,14 +56,14 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             return await ctx.Ready.Task;
         }
 
-        private class FakeRequestContext : IRequestContext
+        private sealed class FakeRequestContext : IRequestContext
         {
             public RequestInfo RequestInfo { get; set; }
             public CancellationToken CancellationToken { get; set; }
             public TaskCompletionSource<HttpResponseMessage> Ready = new TaskCompletionSource<HttpResponseMessage>();
 
             private readonly HttpResponseMessage _response = new HttpResponseMessage();
-            private System.IO.Pipes.AnonymousPipeServerStream _pipe;
+            private SimplePipe _pipe;
 
             private string _deferredContentType;
 
@@ -102,10 +104,8 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             {
                 if (_pipe is null)
                 {
-                    _pipe = new System.IO.Pipes.AnonymousPipeServerStream();
-                    _response.Content = new StreamContent(
-                        new System.IO.Pipes.AnonymousPipeClientStream(_pipe.GetClientHandleAsString())
-                    );
+                    _pipe = new SimplePipe();
+                    _response.Content = new StreamContent(_pipe);
                     _response.Content.Headers.ContentEncoding.Add("chunked");
                     if (_deferredContentType != null)
                     {
@@ -118,8 +118,9 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 }
                 else
                 {
-                    await _pipe.WriteAsync(data, 0, data.Length, CancellationToken);
+                    _pipe.Write(data, 0, data.Length);
                 }
+                await Task.Yield();
             }
 
             public async Task WriteFullResponseAsync(string contentType, byte[] data)
@@ -131,6 +132,75 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 }
                 MakeResponseAvailable();
                 await Task.Yield();
+            }
+        }
+
+        // HttpMessageHandler has to provide the response body as a stream, which we might be
+        // writing to in chunks. MemoryStream doesn't have blocking read behavior, so we simulate
+        // something more pipe-like by using a queue.
+        private sealed class SimplePipe : Stream
+        {
+            public Stream ReadStream { get; }
+
+            private readonly BlockingCollection<byte[]> _chunks = new BlockingCollection<byte[]>();
+            private readonly MemoryStream _availableData = new MemoryStream();
+
+            private long _readPosition = 0;
+            private bool _eof = false;
+
+            public override bool CanRead { get { return true; } }
+
+            public override bool CanSeek { get { return false; } }
+
+            public override bool CanWrite { get { return true; } }
+
+            public override void Flush() { }
+
+            public override long Length => _availableData.Position - _readPosition;
+
+            public override long Position
+            {
+                get { throw new NotSupportedException(); }
+                set { throw new NotSupportedException(); }
+            }
+
+            public override int Read(byte[] buffer, int offset, int count)
+            {
+                if (_eof)
+                {
+                    return 0;
+                }
+                var endPos = _availableData.Position;
+                if (endPos == _readPosition)
+                {
+                    var chunk = _chunks.Take();
+                    if (chunk == null)
+                    {
+                        return 0;
+                    }
+                    _availableData.Write(chunk, 0, chunk.Length);
+                    endPos = _availableData.Position;
+                }
+                _availableData.Position = _readPosition;
+                int numRead = _availableData.Read(buffer, offset, count);
+                _readPosition += numRead;
+                return numRead;
+            }
+
+            public override long Seek(long offset, SeekOrigin origin) =>
+                throw new NotSupportedException();
+
+            public override void SetLength(long value) =>
+                throw new NotImplementedException();
+
+            public override void Close() =>
+                _chunks.Add(null);
+
+            public override void Write(byte[] buffer, int offset, int count)
+            {
+                var chunk = new byte[count];
+                Buffer.BlockCopy(buffer, offset, chunk, 0, count);
+                _chunks.Add(chunk);
             }
         }
     }
