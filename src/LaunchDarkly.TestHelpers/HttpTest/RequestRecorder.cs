@@ -20,6 +20,8 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         public static readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(5);
 
         private readonly BlockingCollection<RequestInfo> _requests = new BlockingCollection<RequestInfo>();
+        private readonly object _lock = new object();
+        private volatile bool _enabled = true;
 
         /// <summary>
         /// Returns the stable <see cref="Handler"/> that is the external entry point to this
@@ -32,6 +34,27 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// The number of requests currently in the queue.
         /// </summary>
         public int Count => _requests.Count;
+
+        /// <summary>
+        /// Set this property to false to turn off recording of requests. It is true by default.
+        /// </summary>
+        public bool Enabled
+        {
+            get
+            {
+                lock (_lock)
+                {
+                    return _enabled;
+                }
+            }
+            set
+            {
+                lock (_lock)
+                {
+                    _enabled = value;
+                }
+            }
+        }
 
         /// <summary>
         /// Consumes and returns the first request in the queue, blocking until one is available.
@@ -73,7 +96,10 @@ namespace LaunchDarkly.TestHelpers.HttpTest
 #pragma warning disable CS1998 // async method with no awaits
         private async Task DoRequestAsync(IRequestContext ctx)
         {
-            _requests.Add(ctx.RequestInfo);
+            if (Enabled)
+            {
+                _requests.Add(ctx.RequestInfo);
+            }
         }
 #pragma warning restore CS1998
 
