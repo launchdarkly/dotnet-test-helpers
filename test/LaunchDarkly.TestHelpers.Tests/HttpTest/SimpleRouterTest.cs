@@ -91,5 +91,25 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 var resp4 = await client.DeleteAsync(new Uri(server.Uri, "/path3"));
                 Assert.Equal(404, (int)resp4.StatusCode);
             });
+
+        [Fact]
+        public async void PathRegexMatchCapturingParams() =>
+            await WithServerAndClient(Handlers.Router(out var router), async (server, client) =>
+            {
+                string param1 = null, param2 = null;
+                Handler handler = async ctx =>
+                {
+                    param1 = ctx.GetPathParam(0);
+                    param2 = ctx.GetPathParam(1);
+                    await Handlers.Status(200)(ctx);
+                };
+                router.AddRegex("/path/([^/]*)/(.*)", handler);
+
+                var resp = await client.GetAsync(new Uri(server.Uri, "/path/for/me"));
+                Assert.Equal(200, (int)resp.StatusCode);
+
+                Assert.Equal("for", param1);
+                Assert.Equal("me", param2);
+            });
     }
 }

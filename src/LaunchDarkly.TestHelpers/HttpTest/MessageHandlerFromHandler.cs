@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Net;
@@ -61,10 +62,11 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             public RequestInfo RequestInfo { get; set; }
             public CancellationToken CancellationToken { get; set; }
             public TaskCompletionSource<HttpResponseMessage> Ready = new TaskCompletionSource<HttpResponseMessage>();
+            public string[] PathParams { get; set; }
 
             private readonly HttpResponseMessage _response = new HttpResponseMessage();
             private SimplePipe _pipe;
-
+            
             private string _deferredContentType;
 
             internal void MakeResponseAvailable()
@@ -134,6 +136,18 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 MakeResponseAvailable();
                 await Task.Yield();
             }
+
+            public string GetPathParam(int index) =>
+                (PathParams != null && index >= 0 && index < PathParams.Length) ?
+                PathParams[index] : null;
+
+            public IRequestContext WithPathParams(string[] pathParams) =>
+                new FakeRequestContext
+                {
+                    RequestInfo = this.RequestInfo,
+                    CancellationToken = this.CancellationToken,
+                    PathParams = pathParams
+                };
         }
 
         // HttpMessageHandler has to provide the response body as a stream, which we might be

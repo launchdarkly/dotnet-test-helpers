@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 
 namespace LaunchDarkly.TestHelpers.HttpTest
@@ -75,5 +74,29 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// <param name="data">the data</param>
         /// <returns>an asynchronous task</returns>
         Task WriteFullResponseAsync(string contentType, byte[] data);
+
+        /// <summary>
+        /// Returns a path parameter, if any path parameters were captured.
+        /// </summary>
+        /// <remarks>
+        /// By default, this will always return null. It is non-null only if you used
+        /// <see cref="SimpleRouter"/> and matched a regex pattern that was added with
+        /// <see cref="SimpleRouter.AddRegex(System.Net.Http.HttpMethod, string, Handler)"/>,
+        /// and the pattern contained capture groups. For instance, if the pattern was
+        /// <code>/a/([^/]*)/c/(.*)</code> and the request path was <code>/a/b/c/d/e</code>,
+        /// <code>GetPathParam(0)</code> would return <code>"b"</code> and
+        /// <code>GetPathParam(1)</code> would return <code>"d/e"</code>.
+        /// </remarks>
+        /// <param name="index">a zero-based index</param>
+        /// <returns>the path parameter string; null if there were no path parameters, or if
+        /// the index is out of range</returns>
+        string GetPathParam(int index);
+
+        /// <summary>
+        /// Returns a copy of this context with path parameter information added.
+        /// </summary>
+        /// <param name="pathParams">an array of positional parameters</param>
+        /// <returns>a transformed context</returns>
+        IRequestContext WithPathParams(string[] pathParams);
     }
 }
