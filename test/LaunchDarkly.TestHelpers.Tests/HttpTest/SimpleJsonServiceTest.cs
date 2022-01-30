@@ -151,6 +151,24 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             });
         }
 
+        [Fact]
+        public async void EndpointGetsPathParam()
+        {
+            var received = new EventSink<string>();
+            var service = new SimpleJsonService();
+            service.Route(HttpMethod.Post, "/path/([^/]*)/please", context =>
+            {
+                received.Enqueue(context.GetPathParam(0));
+                return SimpleResponse.Of(202);
+            });
+            await WithServerAndClient(service, async (server, client) =>
+            {
+                var resp = await client.PostAsync(new Uri(server.Uri, "/path/thing/please"), null);
+                Assert.Equal(202, (int)resp.StatusCode);
+                Assert.Equal("thing", received.ExpectValue());
+            });
+        }
+
         sealed class JsonParams
         {
             [JsonPropertyName("number")] public int Number { get; set; }
