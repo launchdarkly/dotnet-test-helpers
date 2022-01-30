@@ -1,8 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>1.3.0</Version>
-    <TargetFrameworks>netstandard2.0;netcoreapp3.1;net452;net461</TargetFrameworks>
+    <Version>1.4.0-alpha.1</Version>
+    <!-- The BUILDFRAMEWORKS variable allows us to override the target frameworks with a
+         single framework that we are testing; this allows us to test with older SDK
+         versions that would error out if they saw any newer target frameworks listed
+         here, even if we weren't running those. -->
+    <BuildFrameworks Condition="'$(BUILDFRAMEWORKS)' == ''">netstandard2.0;netcoreapp3.1;net452;net461</BuildFrameworks>
+    <TargetFrameworks>$(BUILDFRAMEWORKS)</TargetFrameworks>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <AssemblyName>LaunchDarkly.TestHelpers</AssemblyName>
     <DebugType>portable</DebugType>

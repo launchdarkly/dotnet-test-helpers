@@ -10,23 +10,33 @@ workflows:
       - test-netcore:
           name: .NET Core 2.1
           docker-image: mcr.microsoft.com/dotnet/core/sdk:2.1-focal
+          build-target-framework: netstandard2.0
           test-target-framework: netcoreapp2.1
       - test-netcore:
           name: .NET Core 3.1
           docker-image: mcr.microsoft.com/dotnet/core/sdk:3.1-focal
+          build-target-framework: netcoreapp3.1
           test-target-framework: netcoreapp3.1
       - test-netcore:
           name: .NET 5.0
           docker-image: mcr.microsoft.com/dotnet/sdk:5.0-focal
+          build-target-framework: netstandard2.0
           test-target-framework: net5.0
       - test-windows-netframework:
           name: .NET Framework 4.5.2
+          build-target-framework: net452
           test-target-framework: net452
+      - test-windows-netframework:
+          name: .NET Framework 4.5.2
+          build-target-framework: net461
+          test-target-framework: net461
 
 jobs:
   test-netcore:
     parameters:
       docker-image:
+        type: string
+      build-target-framework:
         type: string
       test-target-framework:
         type: string
@@ -34,22 +44,26 @@ jobs:
       - image: <<parameters.docker-image>>
     environment:
       ASPNETCORE_SUPPRESSSTATUSMESSAGES: true
+      BUILDFRAMEWORKS: <<parameters.build-target-framework>>
       TESTFRAMEWORK: <<parameters.test-target-framework>>
     steps:
       - checkout
-      - run: dotnet build src/LaunchDarkly.TestHelpers -f netstandard2.0
+      - run: dotnet build src/LaunchDarkly.TestHelpers
       - run: dotnet test test/LaunchDarkly.TestHelpers.Tests/LaunchDarkly.TestHelpers.Tests.csproj
 
   test-windows-netframework:
     parameters:
+      build-target-framework:
+        type: string
       test-target-framework:
         type: string
     executor:
       name: win/vs2019
       shell: powershell.exe
     environment:
+      BUILDFRAMEWORKS: <<parameters.build-target-framework>>
       TESTFRAMEWORK: <<parameters.test-target-framework>>
     steps:
       - checkout
-      - run: dotnet build src/LaunchDarkly.TestHelpers -f net452
+      - run: dotnet build src/LaunchDarkly.TestHelpers
       - run: dotnet test test/LaunchDarkly.TestHelpers.Tests/LaunchDarkly.TestHelpers.Tests.csproj
