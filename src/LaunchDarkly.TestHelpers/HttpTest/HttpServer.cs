@@ -133,6 +133,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 }
                 Task.Run(async () =>
                 {
+                    
                     while (!cancellationToken.IsCancellationRequested && listener.IsListening)
                     {
                         try
@@ -140,16 +141,23 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                             var listenerCtx = await listener.GetContextAsync().ConfigureAwait(false);
                             var ctx = RequestContextImpl.FromHttpListenerContext(listenerCtx, cancellationToken);
 #pragma warning disable CS4014 // deliberately not awaiting this async task
-                        Task.Run(async () =>
-                            {
-                                await Dispatch(ctx, rootHandler);
-                                listenerCtx.Response.Close();
-                            });
+                            Task.Run(async () =>
+                                {
+                                    try
+                                    {
+                                        await Dispatch(ctx, rootHandler);
+                                    }
+                                    finally
+                                    {
+                                        listenerCtx.Response.OutputStream.Close();
+                                        listenerCtx.Response.Close();
+                                    }
+                                });
 #pragma warning restore CS4014
-
                         }
-                        catch
+                        catch(Exception e)
                         {
+                            System.Console.WriteLine("******* " + e);
                             // an exception almost certainly means the listener has been shut down
                             break;
                         }

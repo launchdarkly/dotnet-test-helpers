@@ -93,5 +93,19 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 Assert.Contains("deliberately broken", body);
             });
         }
+
+        [Fact]
+        public async Task ServerCanAcceptManyRequests()
+        {
+            await WithServerAndClient(Handlers.Status(200), async (server, client) =>
+            {
+                server.Recorder.Enabled = false;
+                for (var i = 0; i < 2000; i++)
+                {
+                    var resp = await client.GetAsync(server.Uri);
+                    Assert.Equal(200, (int)resp.StatusCode);
+                }
+            });
+        }
     }
 }
