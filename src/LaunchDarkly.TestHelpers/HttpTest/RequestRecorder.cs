@@ -20,7 +20,6 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         public static readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(5);
 
         private readonly BlockingCollection<RequestInfo> _requests = new BlockingCollection<RequestInfo>();
-        private readonly object _lock = new object();
         private volatile bool _enabled = true;
 
         /// <summary>
@@ -42,17 +41,11 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         {
             get
             {
-                lock (_lock)
-                {
-                    return _enabled;
-                }
+                return _enabled;
             }
             set
             {
-                lock (_lock)
-                {
-                    _enabled = value;
-                }
+                _enabled = value;
             }
         }
 
