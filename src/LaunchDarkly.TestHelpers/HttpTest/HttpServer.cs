@@ -157,7 +157,6 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                         }
                         catch(Exception e)
                         {
-                            System.Console.WriteLine("******* " + e);
                             // an exception almost certainly means the listener has been shut down
                             break;
                         }

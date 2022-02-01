@@ -66,7 +66,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
 
             private readonly HttpResponseMessage _response = new HttpResponseMessage();
             private SimplePipe _pipe;
-            
+
             private string _deferredContentType;
 
             internal void MakeResponseAvailable()
