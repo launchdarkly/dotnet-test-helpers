@@ -1,5 +1,4 @@
-﻿#if !NET452
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace LaunchDarkly.TestHelpers.HttpTest
 {
@@ -139,4 +138,3 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             new SimpleResponse<T>(Base.WithHeader(key, value), Body);
     }
 }
-#endif

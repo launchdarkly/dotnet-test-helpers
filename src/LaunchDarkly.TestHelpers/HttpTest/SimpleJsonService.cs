@@ -1,9 +1,7 @@
-﻿#if !NET452
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Net.Http;
-using System.Text.Json;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace LaunchDarkly.TestHelpers.HttpTest
 {   
@@ -32,8 +30,12 @@ namespace LaunchDarkly.TestHelpers.HttpTest
     /// containing parentheses is assumed to be a regex, otherwise it is taken as a literal.
     /// </para>
     /// <para>
-    /// Because this class uses <code>System.Text.Json</code>, it is not available in .NET
-    /// Framework 4.5.x.
+    /// This class uses <code>Newtonsoft.Json</code> for JSON conversions, rather than
+    /// <c>System.Text.Json</c>. This is because it needs to be usable from projects that support
+    /// .NET Framework 4.5.x, and <c>System.Text.Json</c> is not available in that framework.
+    /// Since the <code>Newtonsoft.Json</code> API uses static methods for configuration, it is
+    /// the host application's responsibility to make sure it has been configured to produce the
+    /// expected behavior for the types that are being used.
     /// </para>
     /// </remarks>
     public sealed class SimpleJsonService
@@ -208,7 +210,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 var result = await handler(context);
                 if (typeof(TOutput).IsValueType || !result.Body.Equals(default(TOutput)))
                 {
-                    await Handlers.BodyJson(JsonSerializer.Serialize(result.Body))(context);
+                    await Handlers.BodyJson(JsonConvert.SerializeObject(result.Body))(context);
                 }
                 return result.Base;
             });
@@ -221,7 +223,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                     return SimpleResponse.Of(400);
                 }
                 var result = await handler(context, input);
-                await Handlers.BodyJson(JsonSerializer.Serialize(result.Body))(context);
+                await Handlers.BodyJson(JsonConvert.SerializeObject(result.Body))(context);
                 return result.Base;
             });
 
@@ -229,7 +231,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         {
             try
             {
-                result = JsonSerializer.Deserialize<TInput>(context.RequestInfo.Body);
+                result = JsonConvert.DeserializeObject<TInput>(context.RequestInfo.Body);
                 return true;
             }
             catch (JsonException)
@@ -240,4 +242,3 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         }
     }
 }
-#endif

@@ -1,10 +1,8 @@
-﻿#if !NET452
-using System;
+﻿using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 using Xunit;
 
 using static LaunchDarkly.TestHelpers.HttpTest.TestUtil;
@@ -91,7 +89,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             {
                 var resp = await client.GetAsync(new Uri(server.Uri, "/path"));
                 Assert.Equal(200, (int)resp.StatusCode);
-                var p = JsonSerializer.Deserialize<JsonParams>(await resp.Content.ReadAsStringAsync());
+                var p = JsonConvert.DeserializeObject<JsonParams>(await resp.Content.ReadAsStringAsync());
                 Assert.Equal(1, p.Number);
                 Assert.Equal("a", p.Name);
             });
@@ -110,7 +108,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 var resp = await client.PostAsync(new Uri(server.Uri, "/path"),
                     new StringContent(@"{""number"":1,""name"":""a""}", Encoding.UTF8, "application/json"));
                 Assert.Equal(200, (int)resp.StatusCode);
-                var p = JsonSerializer.Deserialize<JsonParams>(await resp.Content.ReadAsStringAsync());
+                var p = JsonConvert.DeserializeObject<JsonParams>(await resp.Content.ReadAsStringAsync());
                 Assert.Equal(2, p.Number);
                 Assert.Equal("ab", p.Name);
             });
@@ -171,9 +169,8 @@ namespace LaunchDarkly.TestHelpers.HttpTest
 
         sealed class JsonParams
         {
-            [JsonPropertyName("number")] public int Number { get; set; }
-            [JsonPropertyName("name")] public string Name { get; set; }
+            public int Number { get; set; }
+            public string Name { get; set; }
         }
     }
 }
-#endif
