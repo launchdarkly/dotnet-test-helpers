@@ -89,7 +89,10 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             {
                 var resp = await client.GetAsync(new Uri(server.Uri, "/path"));
                 Assert.Equal(200, (int)resp.StatusCode);
-                var p = JsonConvert.DeserializeObject<JsonParams>(await resp.Content.ReadAsStringAsync());
+                var respJson = await resp.Content.ReadAsStringAsync();
+                Assert.Contains(@"""number"":", respJson);
+                Assert.Contains(@"""name"":", respJson);
+                var p = JsonConvert.DeserializeObject<JsonParams>(respJson);
                 Assert.Equal(1, p.Number);
                 Assert.Equal("a", p.Name);
             });
@@ -108,7 +111,10 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 var resp = await client.PostAsync(new Uri(server.Uri, "/path"),
                     new StringContent(@"{""number"":1,""name"":""a""}", Encoding.UTF8, "application/json"));
                 Assert.Equal(200, (int)resp.StatusCode);
-                var p = JsonConvert.DeserializeObject<JsonParams>(await resp.Content.ReadAsStringAsync());
+                var respJson = await resp.Content.ReadAsStringAsync();
+                Assert.Contains(@"""number"":", respJson);
+                Assert.Contains(@"""name"":", respJson);
+                var p = JsonConvert.DeserializeObject<JsonParams>(respJson);
                 Assert.Equal(2, p.Number);
                 Assert.Equal("ab", p.Name);
             });
@@ -167,10 +173,80 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             });
         }
 
+        [Fact]
+        public async void CustomJsonConverterForEndpointWithInput()
+        {
+            var received = new EventSink<JsonParams>();
+            var service = new SimpleJsonService();
+            service.SetJsonConverters(new ParamsNumberOnly());
+            service.Route<JsonParams>(HttpMethod.Post, "/", (context, value) =>
+            {
+                received.Enqueue(value);
+                return SimpleResponse.Of(202);
+            });
+            await WithServerAndClient(service, async (server, client) =>
+            {
+                var resp = await client.PostAsync(new Uri(server.Uri, "/"),
+                    new StringContent("100", Encoding.UTF8, "application/json"));
+                Assert.Equal(202, (int)resp.StatusCode);
+                Assert.Equal(100, received.ExpectValue().Number);
+            });
+        }
+
+        [Fact]
+        public async void CustomJsonConverterForEndpointWithOutput()
+        {
+            var service = new SimpleJsonService();
+            service.SetJsonConverters(new ParamsNumberOnly());
+            service.Route<JsonParams>(HttpMethod.Get, "/", context =>
+            {
+                return SimpleResponse.Of(200, new JsonParams { Number = 100 });
+            });
+            await WithServerAndClient(service, async (server, client) =>
+            {
+                var resp = await client.GetAsync(new Uri(server.Uri, "/"));
+                Assert.Equal(200, (int)resp.StatusCode);
+                Assert.Equal("100", await resp.Content.ReadAsStringAsync());
+            });
+        }
+
+        [Fact]
+        public async void CustomJsonConverterForEndpointWithInputAndOutput()
+        {
+            var received = new EventSink<JsonParams>();
+            var service = new SimpleJsonService();
+            service.SetJsonConverters(new ParamsNumberOnly());
+            service.Route<JsonParams, JsonParams>(HttpMethod.Post, "/", (context, p) =>
+            {
+                return SimpleResponse.Of(200, new JsonParams { Number = p.Number + 1, Name = p.Name });
+            });
+            await WithServerAndClient(service, async (server, client) =>
+            {
+                var resp = await client.PostAsync(new Uri(server.Uri, "/"),
+                    new StringContent("100", Encoding.UTF8, "application/json"));
+                Assert.Equal(200, (int)resp.StatusCode);
+                Assert.Equal("101", await resp.Content.ReadAsStringAsync());
+            });
+        }
+
         sealed class JsonParams
         {
             public int Number { get; set; }
             public string Name { get; set; }
+        }
+
+        sealed class ParamsNumberOnly : JsonConverter
+        {
+            public override bool CanConvert(Type objectType) => objectType == typeof(JsonParams);
+
+            public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+            {
+                var n = (long)reader.Value;
+                return new JsonParams { Number = (int)n };
+            }
+
+            public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer) =>
+                writer.WriteValue((value as JsonParams).Number);
         }
     }
 }

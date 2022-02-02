@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace LaunchDarkly.TestHelpers.HttpTest
 {   
@@ -53,6 +55,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
 
         private readonly Handler _handler;
         private readonly SimpleRouter _router;
+        private JsonSerializerSettings _jsonSerializerSettings;
 
         /// <summary>
         /// Creates a new instance.
@@ -60,6 +63,18 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         public SimpleJsonService()
         {
             _handler = Handlers.Router(out _router);
+            _jsonSerializerSettings = MakeJsonSerializerSettings(null);
+        }
+
+        /// <summary>
+        /// Specifies custom JSON serialization behavior for particular types.
+        /// </summary>
+        /// <param name="jsonConverters">the custom JSON converters to use</param>
+        public void SetJsonConverters(params JsonConverter[] jsonConverters)
+        {
+            _jsonSerializerSettings = MakeJsonSerializerSettings(
+                jsonConverters is null ? null : new List<JsonConverter>(jsonConverters)
+            );
         }
 
         /// <summary>
@@ -183,24 +198,29 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         private Handler Wrap(Func<IRequestContext, Task<SimpleResponse>> handler) =>
             async context =>
             {
-                var result = await handler(context);
-                await Handlers.Status(result.Status)(context);
-                foreach (var kv in result.Headers)
+                try
                 {
-                    foreach (var v in kv.Value)
+                    var result = await handler(context);
+                    await Handlers.Status(result.Status)(context);
+                    foreach (var kv in result.Headers)
                     {
-                        await Handlers.Header(kv.Key, v)(context);
+                        foreach (var v in kv.Value)
+                        {
+                            await Handlers.Header(kv.Key, v)(context);
+                        }
                     }
+                }
+                catch (BadRequestException e)
+                {
+                    await Handlers.Status(400)(context);
+                    await Handlers.BodyString("text/plain", e.Message)(context);
                 }
             };
 
         private Handler Wrap<TInput>(Func<IRequestContext, TInput, Task<SimpleResponse>> handler) =>
             Wrap(async context =>
             {
-                if (!ParseInput<TInput>(context, out var input))
-                {
-                    return SimpleResponse.Of(400);
-                }
+                var input = ParseInput<TInput>(context);
                 return await handler(context, input);
             });
 
@@ -210,7 +230,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 var result = await handler(context);
                 if (typeof(TOutput).IsValueType || !result.Body.Equals(default(TOutput)))
                 {
-                    await Handlers.BodyJson(JsonConvert.SerializeObject(result.Body))(context);
+                    await Handlers.BodyJson(JsonConvert.SerializeObject(result.Body, _jsonSerializerSettings))(context);
                 }
                 return result.Base;
             });
@@ -218,27 +238,36 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         private Handler Wrap<TInput, TOutput>(Func<IRequestContext, TInput, Task<SimpleResponse<TOutput>>> handler) =>
             Wrap(async context =>
             {
-                if (!ParseInput<TInput>(context, out var input))
-                {
-                    return SimpleResponse.Of(400);
-                }
+                var input = ParseInput<TInput>(context);
                 var result = await handler(context, input);
-                await Handlers.BodyJson(JsonConvert.SerializeObject(result.Body))(context);
+                await Handlers.BodyJson(JsonConvert.SerializeObject(result.Body, _jsonSerializerSettings))(context);
                 return result.Base;
             });
 
-        private bool ParseInput<TInput>(IRequestContext context, out TInput result)
+        private TInput ParseInput<TInput>(IRequestContext context)
         {
             try
             {
-                result = JsonConvert.DeserializeObject<TInput>(context.RequestInfo.Body);
-                return true;
+                return JsonConvert.DeserializeObject<TInput>(context.RequestInfo.Body, _jsonSerializerSettings);
             }
-            catch (JsonException)
+            catch (JsonException e)
             {
-                result = default(TInput);
-                return false;
+                throw new BadRequestException(e.Message);
             }
+        }
+
+        private static JsonSerializerSettings MakeJsonSerializerSettings(IList<JsonConverter> converters)
+        {
+            return new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                Converters = converters
+            };
+        }
+
+        private sealed class BadRequestException : Exception
+        {
+            public BadRequestException(string message) : base(message) { }
         }
     }
 }
