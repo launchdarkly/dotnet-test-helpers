@@ -19,6 +19,10 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// <summary>
         /// Returns the <see cref="RequestRecorder"/> that captures all requests to this server.
         /// </summary>
+        /// <remarks>
+        /// This is enabled by default. To turn off capturing of requests, set the
+        /// <see cref="RequestRecorder.Enabled"/> property of this object to false.
+        /// </remarks>
         public RequestRecorder Recorder => _recorder;
 
         private readonly HttpListener _listener;
@@ -53,7 +57,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         }
 
         /// <summary>
-        /// Starts a new test server.
+        /// Starts a new test server on an arbitrary available port.
         /// </summary>
         /// <remarks>
         /// Make sure to close this when done, by calling <c>Dispose</c> or with a <c>using</c>
@@ -64,27 +68,47 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         /// to change the behavior of the handler during the lifetime of the server, use
         /// <see cref="Handlers.Switchable(out HandlerSwitcher)"/>.</param>
         /// <returns>the started server instance</returns>
-        public static HttpServer Start(Handler handler)
+        public static HttpServer Start(Handler handler) =>
+            StartInternal(null, handler);
+
+        /// <summary>
+        /// Starts a new test server on a specific port.
+        /// </summary>
+        /// <remarks>
+        /// Make sure to close this when done, by calling <c>Dispose</c> or with a <c>using</c>
+        /// statement.
+        /// </remarks>
+        /// <param name="port">The port to listen on.</param>
+        /// <param name="handler">A function that will handle all requests to this server. Use
+        /// the factory methods in <see cref="Handlers"/> for standard handlers. If you will need
+        /// to change the behavior of the handler during the lifetime of the server, use
+        /// <see cref="Handlers.Switchable(out HandlerSwitcher)"/>.</param>
+        /// <returns>the started server instance</returns>
+        public static HttpServer Start(int port, Handler handler) =>
+            StartInternal(port, handler);
+
+        private static HttpServer StartInternal(int? port, Handler handler)
         {
             // HttpListener doesn't seem to have a per-request cancellation token, so we'll create
             // one for the entire server to ensure that handlers will exit if it's being stopped.
             var canceller = new CancellationTokenSource();
 
             var rootHandler = Handlers.Record(out var recorder).Then(handler);
-            var listener = StartWebServerOnAvailablePort(canceller.Token, rootHandler, out var uri);
+            var listener = StartWebServerOnAvailablePort(canceller.Token, port, rootHandler, out var uri);
 
             EnsureServerIsListening(uri);
-            
+
             return new HttpServer(listener, canceller, recorder, uri);
         }
 
         private static HttpListener StartWebServerOnAvailablePort(
             CancellationToken cancellationToken,
+            int? specificPort,
             Handler rootHandler,
             out Uri serverUriOut
             )
         {
-            var port = FindNextPort();
+            var port = specificPort ?? FindNextPort();
 
             while (true)
             {
@@ -96,7 +120,12 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 }
                 catch (HttpListenerException)
                 {
-                    // Ssometimes the logic used in FindNextPort will return a port that's not really available after
+                    if (specificPort.HasValue)
+                    {
+                        // If a specific port was requested, then we should fail if we can't get that one.
+                        throw;
+                    }
+                    // Sometimes the logic used in FindNextPort will return a port that's not really available after
                     // all-- possibly due to a delay in cleaning up the temporary listener that FindNextPort creates.
                     // There's not a great solution for this as far as I know, we just have to try another port.
                     port++;
@@ -104,6 +133,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 }
                 Task.Run(async () =>
                 {
+                    
                     while (!cancellationToken.IsCancellationRequested && listener.IsListening)
                     {
                         try
@@ -111,18 +141,24 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                             var listenerCtx = await listener.GetContextAsync().ConfigureAwait(false);
                             var ctx = RequestContextImpl.FromHttpListenerContext(listenerCtx, cancellationToken);
 #pragma warning disable CS4014 // deliberately not awaiting this async task
-                        Task.Run(async () =>
-                            {
-                                await Dispatch(ctx, rootHandler);
-                                listenerCtx.Response.Close();
-                            });
+                            Task.Run(async () =>
+                                {
+                                    try
+                                    {
+                                        await Dispatch(ctx, rootHandler);
+                                    }
+                                    finally
+                                    {
+                                        listenerCtx.Response.OutputStream.Close();
+                                        listenerCtx.Response.Close();
+                                    }
+                                });
 #pragma warning restore CS4014
-
-                    }
-                        catch
+                        }
+                        catch(Exception e)
                         {
-                        // an exception almost certainly means the listener has been shut down
-                        break;
+                            // an exception almost certainly means the listener has been shut down
+                            break;
                         }
                     }
                 });

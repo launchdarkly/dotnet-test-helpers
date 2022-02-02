@@ -55,7 +55,8 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         }
 
         /// <summary>
-        /// Adds a regex path pattern.
+        /// Adds a regex path pattern. If it contains any capture groups, the matched groups
+        /// will be available from <see cref="IRequestContext.GetPathParam(int)"/>.
         /// </summary>
         /// <param name="pattern">the regex to match</param>
         /// <param name="handler">the handler to call for a matching request</param>
@@ -67,7 +68,8 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         }
 
         /// <summary>
-        /// Adds a regex path pattern, specifying the HTTP method.
+        /// Adds a regex path pattern, specifying the HTTP method. If it contains any capture
+        /// groups, the matched groups will be available from <see cref="IRequestContext.GetPathParam(int)"/>.
         /// </summary>
         /// <param name="method">the desired method</param>
         /// <param name="pattern">the regex to match</param>
@@ -88,13 +90,35 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             var matchedPath = false;
             foreach (var route in _routes)
             {
-                if ((route.Path != null && route.Path == ctx.RequestInfo.Path) ||
-                    (route.PathPattern != null && route.PathPattern.IsMatch(ctx.RequestInfo.Path)))
+                var matchedRoute = false;
+                List<string> captures = null;
+                if (route.Path != null && route.Path == ctx.RequestInfo.Path)
+                {
+                    matchedRoute = true;
+                }
+                else if (route.PathPattern != null)
+                {
+                    var match = route.PathPattern.Match(ctx.RequestInfo.Path);
+                    if (match.Success)
+                    {
+                        matchedRoute = true;
+                        if (match.Groups != null && match.Groups.Count > 1)
+                        {
+                            captures = new List<string>();
+                            for (var i = 1; i < match.Groups.Count; i++)
+                            {
+                                captures.Add(match.Groups[i].Value);
+                            }
+                        }
+                    }
+                }
+                if (matchedRoute)
                 {
                     matchedPath = true;
+                    var ctx1 = captures == null ? ctx : ctx.WithPathParams(captures.ToArray());
                     if (route.Method is null || route.Method.ToString().ToUpper() == ctx.RequestInfo.Method)
                     {
-                        await route.Handler(ctx);
+                        await route.Handler(ctx1);
                         return;
                     }
                 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.IO;
 using System.Text;
@@ -10,6 +12,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
     internal sealed class RequestContextImpl : IRequestContext
     {
         private readonly HttpListenerContext _ctx;
+        private readonly string[] _pathParams;
         private bool _chunked;
 
         public RequestInfo RequestInfo { get; }
@@ -18,12 +21,14 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         internal RequestContextImpl(
             HttpListenerContext listenerCtx,
             RequestInfo requestInfo,
-            CancellationToken cancellationToken
+            CancellationToken cancellationToken,
+            string[] pathParams
             )
         {
             _ctx = listenerCtx;
             RequestInfo = requestInfo;
             CancellationToken = cancellationToken;
+            _pathParams = pathParams;
         }
 
         internal static RequestContextImpl FromHttpListenerContext(
@@ -54,7 +59,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
 
                 }
             }
-            return new RequestContextImpl(listenerCtx, requestInfo, cancellationToken);
+            return new RequestContextImpl(listenerCtx, requestInfo, cancellationToken, null);
         }
 
         public void SetStatus(int statusCode) =>
@@ -86,5 +91,12 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             _ctx.Response.ContentLength64 = data.Length;
             await _ctx.Response.OutputStream.WriteAsync(data, 0, data.Length, CancellationToken);
         }
+
+        public string GetPathParam(int index) =>
+            (_pathParams != null && index >= 0 && index < _pathParams.Length) ?
+            _pathParams[index] : null;
+
+        public IRequestContext WithPathParams(string[] pathParams) =>
+            new RequestContextImpl(_ctx, RequestInfo, CancellationToken, pathParams);
     }
 }

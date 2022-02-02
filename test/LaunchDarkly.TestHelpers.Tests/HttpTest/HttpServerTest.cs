@@ -62,5 +62,50 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 }
             }
         }
+
+        [Fact]
+        public async Task ServerOnSpecificPort()
+        {
+            int port = 18173;
+            using (var server = HttpServer.Start(port, Handlers.Status(419)))
+            {
+                Assert.Equal(port, server.Uri.Port);
+
+                using (var client = new HttpClient())
+                {
+                    var resp = await client.GetAsync(server.Uri);
+                    Assert.Equal(419, (int)resp.StatusCode);
+                }
+            }
+        }
+
+        [Fact]
+        public async Task UncaughtExceptionReturns500Error()
+        {
+            Handler handler = Handlers.Sync(ctx =>
+                throw new Exception("deliberately broken"));
+            await WithServerAndClient(handler, async (server, client) =>
+            {
+                var resp = await client.GetAsync(server.Uri);
+                Assert.Equal(500, (int)resp.StatusCode);
+                var body = await resp.Content.ReadAsStringAsync();
+                Assert.Contains("Internal error", body);
+                Assert.Contains("deliberately broken", body);
+            });
+        }
+
+        [Fact]
+        public async Task ServerCanAcceptManyRequests()
+        {
+            await WithServerAndClient(Handlers.Status(200), async (server, client) =>
+            {
+                server.Recorder.Enabled = false;
+                for (var i = 0; i < 2000; i++)
+                {
+                    var resp = await client.GetAsync(server.Uri);
+                    Assert.Equal(200, (int)resp.StatusCode);
+                }
+            });
+        }
     }
 }

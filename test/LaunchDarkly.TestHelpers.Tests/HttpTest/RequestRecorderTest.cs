@@ -71,5 +71,33 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 Assert.Equal("hello", received.Body);
             });
         }
+
+        [Fact]
+        public async Task RecordingCanBeDisabled()
+        {
+            await WithServerAndClient(Handlers.Status(200), async (server, client) =>
+            {
+                var req1 = new HttpRequestMessage(HttpMethod.Get, new Uri(server.Uri, "/path1"));
+                await client.SendAsync(req1);
+
+                server.Recorder.Enabled = false;
+
+                var req2 = new HttpRequestMessage(HttpMethod.Get, new Uri(server.Uri, "/path2"));
+                await client.SendAsync(req2);
+
+                server.Recorder.Enabled = true;
+
+                var req3 = new HttpRequestMessage(HttpMethod.Get, new Uri(server.Uri, "/path3"));
+                await client.SendAsync(req3);
+
+                var received1 = server.Recorder.RequireRequest();
+                Assert.Equal("/path1", received1.Path);
+
+                var received3 = server.Recorder.RequireRequest();
+                Assert.Equal("/path3", received3.Path);
+
+                server.Recorder.RequireNoRequests(TimeSpan.Zero);
+            });
+        }
     }
 }
