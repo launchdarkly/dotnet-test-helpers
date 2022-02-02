@@ -845,6 +845,12 @@ references:
   commentId: M:LaunchDarkly.TestHelpers.HttpTest.HttpServer.Start(LaunchDarkly.TestHelpers.HttpTest.Handler)
   fullName: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Start(LaunchDarkly.TestHelpers.HttpTest.Handler)
   nameWithType: HttpServer.Start(Handler)
+- uid: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Start(System.Int32,LaunchDarkly.TestHelpers.HttpTest.Handler)
+  name: Start(Int32, Handler)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.HttpServer.html#LaunchDarkly_TestHelpers_HttpTest_HttpServer_Start_System_Int32_LaunchDarkly_TestHelpers_HttpTest_Handler_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.HttpServer.Start(System.Int32,LaunchDarkly.TestHelpers.HttpTest.Handler)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Start(System.Int32, LaunchDarkly.TestHelpers.HttpTest.Handler)
+  nameWithType: HttpServer.Start(Int32, Handler)
 - uid: LaunchDarkly.TestHelpers.HttpTest.HttpServer.Start*
   name: Start
   href: api/LaunchDarkly.TestHelpers.HttpTest.HttpServer.html#LaunchDarkly_TestHelpers_HttpTest_HttpServer_Start_
@@ -893,6 +899,18 @@ references:
   commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.CancellationToken
   fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.CancellationToken
   nameWithType: IRequestContext.CancellationToken
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.GetPathParam(System.Int32)
+  name: GetPathParam(Int32)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_GetPathParam_System_Int32_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.GetPathParam(System.Int32)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.GetPathParam(System.Int32)
+  nameWithType: IRequestContext.GetPathParam(Int32)
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.GetPathParam*
+  name: GetPathParam
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_GetPathParam_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.GetPathParam
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.GetPathParam
+  nameWithType: IRequestContext.GetPathParam
 - uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.RequestInfo
   name: RequestInfo
   href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_RequestInfo
@@ -929,6 +947,21 @@ references:
   commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.SetStatus
   fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.SetStatus
   nameWithType: IRequestContext.SetStatus
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WithPathParams(System.String[])
+  name: WithPathParams(String[])
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_WithPathParams_System_String___
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WithPathParams(System.String[])
+  name.vb: WithPathParams(String())
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WithPathParams(System.String[])
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WithPathParams(System.String())
+  nameWithType: IRequestContext.WithPathParams(String[])
+  nameWithType.vb: IRequestContext.WithPathParams(String())
+- uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WithPathParams*
+  name: WithPathParams
+  href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_WithPathParams_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WithPathParams
+  fullName: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WithPathParams
+  nameWithType: IRequestContext.WithPathParams
 - uid: LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WriteChunkedDataAsync(System.Byte[])
   name: WriteChunkedDataAsync(Byte[])
   href: api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html#LaunchDarkly_TestHelpers_HttpTest_IRequestContext_WriteChunkedDataAsync_System_Byte___
@@ -1073,6 +1106,18 @@ references:
   commentId: F:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.DefaultTimeout
   fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.DefaultTimeout
   nameWithType: RequestRecorder.DefaultTimeout
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Enabled
+  name: Enabled
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Enabled
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Enabled
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Enabled
+  nameWithType: RequestRecorder.Enabled
+- uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Enabled*
+  name: Enabled
+  href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Enabled_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Enabled
+  fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Enabled
+  nameWithType: RequestRecorder.Enabled
 - uid: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.Handler
   name: Handler
   href: api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html#LaunchDarkly_TestHelpers_HttpTest_RequestRecorder_Handler
@@ -1133,6 +1178,268 @@ references:
   commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireRequest
   fullName: LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.RequireRequest
   nameWithType: RequestRecorder.RequireRequest
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService
+  name: SimpleJsonService
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html
+  commentId: T:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService
+  nameWithType: SimpleJsonService
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.#ctor
+  name: SimpleJsonService()
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService__ctor
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.#ctor
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.SimpleJsonService()
+  nameWithType: SimpleJsonService.SimpleJsonService()
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.#ctor*
+  name: SimpleJsonService
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService__ctor_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.#ctor
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.SimpleJsonService
+  nameWithType: SimpleJsonService.SimpleJsonService
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Handler
+  name: Handler
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_Handler
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Handler
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Handler
+  nameWithType: SimpleJsonService.Handler
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Handler*
+  name: Handler
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_Handler_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Handler
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Handler
+  nameWithType: SimpleJsonService.Handler
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.op_Implicit(LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService)~LaunchDarkly.TestHelpers.HttpTest.Handler
+  name: Implicit(SimpleJsonService to Handler)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_op_Implicit_LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService__LaunchDarkly_TestHelpers_HttpTest_Handler
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.op_Implicit(LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService)~LaunchDarkly.TestHelpers.HttpTest.Handler
+  name.vb: Widening(SimpleJsonService to Handler)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Implicit(LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService to LaunchDarkly.TestHelpers.HttpTest.Handler)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Widening(LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService to LaunchDarkly.TestHelpers.HttpTest.Handler)
+  nameWithType: SimpleJsonService.Implicit(SimpleJsonService to Handler)
+  nameWithType.vb: SimpleJsonService.Widening(SimpleJsonService to Handler)
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.op_Implicit*
+  name: Implicit
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_op_Implicit_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.op_Implicit
+  name.vb: Widening
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Implicit
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Widening
+  nameWithType: SimpleJsonService.Implicit
+  nameWithType.vb: SimpleJsonService.Widening
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route(System.Net.Http.HttpMethod,System.String,System.Func{LaunchDarkly.TestHelpers.HttpTest.IRequestContext,LaunchDarkly.TestHelpers.HttpTest.SimpleResponse})
+  name: Route(HttpMethod, String, Func<IRequestContext, SimpleResponse>)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_Route_System_Net_Http_HttpMethod_System_String_System_Func_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_LaunchDarkly_TestHelpers_HttpTest_SimpleResponse__
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route(System.Net.Http.HttpMethod,System.String,System.Func{LaunchDarkly.TestHelpers.HttpTest.IRequestContext,LaunchDarkly.TestHelpers.HttpTest.SimpleResponse})
+  name.vb: Route(HttpMethod, String, Func(Of IRequestContext, SimpleResponse))
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route(System.Net.Http.HttpMethod, System.String, System.Func<LaunchDarkly.TestHelpers.HttpTest.IRequestContext, LaunchDarkly.TestHelpers.HttpTest.SimpleResponse>)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route(System.Net.Http.HttpMethod, System.String, System.Func(Of LaunchDarkly.TestHelpers.HttpTest.IRequestContext, LaunchDarkly.TestHelpers.HttpTest.SimpleResponse))
+  nameWithType: SimpleJsonService.Route(HttpMethod, String, Func<IRequestContext, SimpleResponse>)
+  nameWithType.vb: SimpleJsonService.Route(HttpMethod, String, Func(Of IRequestContext, SimpleResponse))
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route(System.Net.Http.HttpMethod,System.String,System.Func{LaunchDarkly.TestHelpers.HttpTest.IRequestContext,System.Threading.Tasks.Task{LaunchDarkly.TestHelpers.HttpTest.SimpleResponse}})
+  name: Route(HttpMethod, String, Func<IRequestContext, Task<SimpleResponse>>)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_Route_System_Net_Http_HttpMethod_System_String_System_Func_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_System_Threading_Tasks_Task_LaunchDarkly_TestHelpers_HttpTest_SimpleResponse___
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route(System.Net.Http.HttpMethod,System.String,System.Func{LaunchDarkly.TestHelpers.HttpTest.IRequestContext,System.Threading.Tasks.Task{LaunchDarkly.TestHelpers.HttpTest.SimpleResponse}})
+  name.vb: Route(HttpMethod, String, Func(Of IRequestContext, Task(Of SimpleResponse)))
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route(System.Net.Http.HttpMethod, System.String, System.Func<LaunchDarkly.TestHelpers.HttpTest.IRequestContext, System.Threading.Tasks.Task<LaunchDarkly.TestHelpers.HttpTest.SimpleResponse>>)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route(System.Net.Http.HttpMethod, System.String, System.Func(Of LaunchDarkly.TestHelpers.HttpTest.IRequestContext, System.Threading.Tasks.Task(Of LaunchDarkly.TestHelpers.HttpTest.SimpleResponse)))
+  nameWithType: SimpleJsonService.Route(HttpMethod, String, Func<IRequestContext, Task<SimpleResponse>>)
+  nameWithType.vb: SimpleJsonService.Route(HttpMethod, String, Func(Of IRequestContext, Task(Of SimpleResponse)))
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route*
+  name: Route
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_Route_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route
+  nameWithType: SimpleJsonService.Route
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route``1(System.Net.Http.HttpMethod,System.String,System.Func{LaunchDarkly.TestHelpers.HttpTest.IRequestContext,``0,LaunchDarkly.TestHelpers.HttpTest.SimpleResponse})
+  name: Route<TInput>(HttpMethod, String, Func<IRequestContext, TInput, SimpleResponse>)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_Route__1_System_Net_Http_HttpMethod_System_String_System_Func_LaunchDarkly_TestHelpers_HttpTest_IRequestContext___0_LaunchDarkly_TestHelpers_HttpTest_SimpleResponse__
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route``1(System.Net.Http.HttpMethod,System.String,System.Func{LaunchDarkly.TestHelpers.HttpTest.IRequestContext,``0,LaunchDarkly.TestHelpers.HttpTest.SimpleResponse})
+  name.vb: Route(Of TInput)(HttpMethod, String, Func(Of IRequestContext, TInput, SimpleResponse))
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route<TInput>(System.Net.Http.HttpMethod, System.String, System.Func<LaunchDarkly.TestHelpers.HttpTest.IRequestContext, TInput, LaunchDarkly.TestHelpers.HttpTest.SimpleResponse>)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route(Of TInput)(System.Net.Http.HttpMethod, System.String, System.Func(Of LaunchDarkly.TestHelpers.HttpTest.IRequestContext, TInput, LaunchDarkly.TestHelpers.HttpTest.SimpleResponse))
+  nameWithType: SimpleJsonService.Route<TInput>(HttpMethod, String, Func<IRequestContext, TInput, SimpleResponse>)
+  nameWithType.vb: SimpleJsonService.Route(Of TInput)(HttpMethod, String, Func(Of IRequestContext, TInput, SimpleResponse))
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route``1(System.Net.Http.HttpMethod,System.String,System.Func{LaunchDarkly.TestHelpers.HttpTest.IRequestContext,``0,System.Threading.Tasks.Task{LaunchDarkly.TestHelpers.HttpTest.SimpleResponse}})
+  name: Route<TInput>(HttpMethod, String, Func<IRequestContext, TInput, Task<SimpleResponse>>)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_Route__1_System_Net_Http_HttpMethod_System_String_System_Func_LaunchDarkly_TestHelpers_HttpTest_IRequestContext___0_System_Threading_Tasks_Task_LaunchDarkly_TestHelpers_HttpTest_SimpleResponse___
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route``1(System.Net.Http.HttpMethod,System.String,System.Func{LaunchDarkly.TestHelpers.HttpTest.IRequestContext,``0,System.Threading.Tasks.Task{LaunchDarkly.TestHelpers.HttpTest.SimpleResponse}})
+  name.vb: Route(Of TInput)(HttpMethod, String, Func(Of IRequestContext, TInput, Task(Of SimpleResponse)))
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route<TInput>(System.Net.Http.HttpMethod, System.String, System.Func<LaunchDarkly.TestHelpers.HttpTest.IRequestContext, TInput, System.Threading.Tasks.Task<LaunchDarkly.TestHelpers.HttpTest.SimpleResponse>>)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route(Of TInput)(System.Net.Http.HttpMethod, System.String, System.Func(Of LaunchDarkly.TestHelpers.HttpTest.IRequestContext, TInput, System.Threading.Tasks.Task(Of LaunchDarkly.TestHelpers.HttpTest.SimpleResponse)))
+  nameWithType: SimpleJsonService.Route<TInput>(HttpMethod, String, Func<IRequestContext, TInput, Task<SimpleResponse>>)
+  nameWithType.vb: SimpleJsonService.Route(Of TInput)(HttpMethod, String, Func(Of IRequestContext, TInput, Task(Of SimpleResponse)))
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route``1(System.Net.Http.HttpMethod,System.String,System.Func{LaunchDarkly.TestHelpers.HttpTest.IRequestContext,LaunchDarkly.TestHelpers.HttpTest.SimpleResponse{``0}})
+  name: Route<TOutput>(HttpMethod, String, Func<IRequestContext, SimpleResponse<TOutput>>)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_Route__1_System_Net_Http_HttpMethod_System_String_System_Func_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_LaunchDarkly_TestHelpers_HttpTest_SimpleResponse___0___
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route``1(System.Net.Http.HttpMethod,System.String,System.Func{LaunchDarkly.TestHelpers.HttpTest.IRequestContext,LaunchDarkly.TestHelpers.HttpTest.SimpleResponse{``0}})
+  name.vb: Route(Of TOutput)(HttpMethod, String, Func(Of IRequestContext, SimpleResponse(Of TOutput)))
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route<TOutput>(System.Net.Http.HttpMethod, System.String, System.Func<LaunchDarkly.TestHelpers.HttpTest.IRequestContext, LaunchDarkly.TestHelpers.HttpTest.SimpleResponse<TOutput>>)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route(Of TOutput)(System.Net.Http.HttpMethod, System.String, System.Func(Of LaunchDarkly.TestHelpers.HttpTest.IRequestContext, LaunchDarkly.TestHelpers.HttpTest.SimpleResponse(Of TOutput)))
+  nameWithType: SimpleJsonService.Route<TOutput>(HttpMethod, String, Func<IRequestContext, SimpleResponse<TOutput>>)
+  nameWithType.vb: SimpleJsonService.Route(Of TOutput)(HttpMethod, String, Func(Of IRequestContext, SimpleResponse(Of TOutput)))
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route``1(System.Net.Http.HttpMethod,System.String,System.Func{LaunchDarkly.TestHelpers.HttpTest.IRequestContext,System.Threading.Tasks.Task{LaunchDarkly.TestHelpers.HttpTest.SimpleResponse{``0}}})
+  name: Route<TOutput>(HttpMethod, String, Func<IRequestContext, Task<SimpleResponse<TOutput>>>)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_Route__1_System_Net_Http_HttpMethod_System_String_System_Func_LaunchDarkly_TestHelpers_HttpTest_IRequestContext_System_Threading_Tasks_Task_LaunchDarkly_TestHelpers_HttpTest_SimpleResponse___0____
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route``1(System.Net.Http.HttpMethod,System.String,System.Func{LaunchDarkly.TestHelpers.HttpTest.IRequestContext,System.Threading.Tasks.Task{LaunchDarkly.TestHelpers.HttpTest.SimpleResponse{``0}}})
+  name.vb: Route(Of TOutput)(HttpMethod, String, Func(Of IRequestContext, Task(Of SimpleResponse(Of TOutput))))
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route<TOutput>(System.Net.Http.HttpMethod, System.String, System.Func<LaunchDarkly.TestHelpers.HttpTest.IRequestContext, System.Threading.Tasks.Task<LaunchDarkly.TestHelpers.HttpTest.SimpleResponse<TOutput>>>)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route(Of TOutput)(System.Net.Http.HttpMethod, System.String, System.Func(Of LaunchDarkly.TestHelpers.HttpTest.IRequestContext, System.Threading.Tasks.Task(Of LaunchDarkly.TestHelpers.HttpTest.SimpleResponse(Of TOutput))))
+  nameWithType: SimpleJsonService.Route<TOutput>(HttpMethod, String, Func<IRequestContext, Task<SimpleResponse<TOutput>>>)
+  nameWithType.vb: SimpleJsonService.Route(Of TOutput)(HttpMethod, String, Func(Of IRequestContext, Task(Of SimpleResponse(Of TOutput))))
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route``2(System.Net.Http.HttpMethod,System.String,System.Func{LaunchDarkly.TestHelpers.HttpTest.IRequestContext,``0,LaunchDarkly.TestHelpers.HttpTest.SimpleResponse{``1}})
+  name: Route<TInput, TOutput>(HttpMethod, String, Func<IRequestContext, TInput, SimpleResponse<TOutput>>)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_Route__2_System_Net_Http_HttpMethod_System_String_System_Func_LaunchDarkly_TestHelpers_HttpTest_IRequestContext___0_LaunchDarkly_TestHelpers_HttpTest_SimpleResponse___1___
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route``2(System.Net.Http.HttpMethod,System.String,System.Func{LaunchDarkly.TestHelpers.HttpTest.IRequestContext,``0,LaunchDarkly.TestHelpers.HttpTest.SimpleResponse{``1}})
+  name.vb: Route(Of TInput, TOutput)(HttpMethod, String, Func(Of IRequestContext, TInput, SimpleResponse(Of TOutput)))
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route<TInput, TOutput>(System.Net.Http.HttpMethod, System.String, System.Func<LaunchDarkly.TestHelpers.HttpTest.IRequestContext, TInput, LaunchDarkly.TestHelpers.HttpTest.SimpleResponse<TOutput>>)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route(Of TInput, TOutput)(System.Net.Http.HttpMethod, System.String, System.Func(Of LaunchDarkly.TestHelpers.HttpTest.IRequestContext, TInput, LaunchDarkly.TestHelpers.HttpTest.SimpleResponse(Of TOutput)))
+  nameWithType: SimpleJsonService.Route<TInput, TOutput>(HttpMethod, String, Func<IRequestContext, TInput, SimpleResponse<TOutput>>)
+  nameWithType.vb: SimpleJsonService.Route(Of TInput, TOutput)(HttpMethod, String, Func(Of IRequestContext, TInput, SimpleResponse(Of TOutput)))
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route``2(System.Net.Http.HttpMethod,System.String,System.Func{LaunchDarkly.TestHelpers.HttpTest.IRequestContext,``0,System.Threading.Tasks.Task{LaunchDarkly.TestHelpers.HttpTest.SimpleResponse{``1}}})
+  name: Route<TInput, TOutput>(HttpMethod, String, Func<IRequestContext, TInput, Task<SimpleResponse<TOutput>>>)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_Route__2_System_Net_Http_HttpMethod_System_String_System_Func_LaunchDarkly_TestHelpers_HttpTest_IRequestContext___0_System_Threading_Tasks_Task_LaunchDarkly_TestHelpers_HttpTest_SimpleResponse___1____
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route``2(System.Net.Http.HttpMethod,System.String,System.Func{LaunchDarkly.TestHelpers.HttpTest.IRequestContext,``0,System.Threading.Tasks.Task{LaunchDarkly.TestHelpers.HttpTest.SimpleResponse{``1}}})
+  name.vb: Route(Of TInput, TOutput)(HttpMethod, String, Func(Of IRequestContext, TInput, Task(Of SimpleResponse(Of TOutput))))
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route<TInput, TOutput>(System.Net.Http.HttpMethod, System.String, System.Func<LaunchDarkly.TestHelpers.HttpTest.IRequestContext, TInput, System.Threading.Tasks.Task<LaunchDarkly.TestHelpers.HttpTest.SimpleResponse<TOutput>>>)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route(Of TInput, TOutput)(System.Net.Http.HttpMethod, System.String, System.Func(Of LaunchDarkly.TestHelpers.HttpTest.IRequestContext, TInput, System.Threading.Tasks.Task(Of LaunchDarkly.TestHelpers.HttpTest.SimpleResponse(Of TOutput))))
+  nameWithType: SimpleJsonService.Route<TInput, TOutput>(HttpMethod, String, Func<IRequestContext, TInput, Task<SimpleResponse<TOutput>>>)
+  nameWithType.vb: SimpleJsonService.Route(Of TInput, TOutput)(HttpMethod, String, Func(Of IRequestContext, TInput, Task(Of SimpleResponse(Of TOutput))))
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse
+  name: SimpleResponse
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.html
+  commentId: T:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse
+  nameWithType: SimpleResponse
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Headers
+  name: Headers
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.html#LaunchDarkly_TestHelpers_HttpTest_SimpleResponse_Headers
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Headers
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Headers
+  nameWithType: SimpleResponse.Headers
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Headers*
+  name: Headers
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.html#LaunchDarkly_TestHelpers_HttpTest_SimpleResponse_Headers_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Headers
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Headers
+  nameWithType: SimpleResponse.Headers
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Of(System.Int32)
+  name: Of(Int32)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.html#LaunchDarkly_TestHelpers_HttpTest_SimpleResponse_Of_System_Int32_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Of(System.Int32)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Of(System.Int32)
+  nameWithType: SimpleResponse.Of(Int32)
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Of*
+  name: Of
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.html#LaunchDarkly_TestHelpers_HttpTest_SimpleResponse_Of_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Of
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Of
+  nameWithType: SimpleResponse.Of
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Of``1(System.Int32,``0)
+  name: Of<T>(Int32, T)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.html#LaunchDarkly_TestHelpers_HttpTest_SimpleResponse_Of__1_System_Int32___0_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Of``1(System.Int32,``0)
+  name.vb: Of(Of T)(Int32, T)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Of<T>(System.Int32, T)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Of(Of T)(System.Int32, T)
+  nameWithType: SimpleResponse.Of<T>(Int32, T)
+  nameWithType.vb: SimpleResponse.Of(Of T)(Int32, T)
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Status
+  name: Status
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.html#LaunchDarkly_TestHelpers_HttpTest_SimpleResponse_Status
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Status
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Status
+  nameWithType: SimpleResponse.Status
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Status*
+  name: Status
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.html#LaunchDarkly_TestHelpers_HttpTest_SimpleResponse_Status_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Status
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.Status
+  nameWithType: SimpleResponse.Status
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.WithHeader(System.String,System.String)
+  name: WithHeader(String, String)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.html#LaunchDarkly_TestHelpers_HttpTest_SimpleResponse_WithHeader_System_String_System_String_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.WithHeader(System.String,System.String)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.WithHeader(System.String, System.String)
+  nameWithType: SimpleResponse.WithHeader(String, String)
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.WithHeader*
+  name: WithHeader
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.html#LaunchDarkly_TestHelpers_HttpTest_SimpleResponse_WithHeader_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.WithHeader
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.WithHeader
+  nameWithType: SimpleResponse.WithHeader
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1
+  name: SimpleResponse<T>
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse-1.html
+  commentId: T:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1
+  name.vb: SimpleResponse(Of T)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse<T>
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse(Of T)
+  nameWithType: SimpleResponse<T>
+  nameWithType.vb: SimpleResponse(Of T)
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1.Base
+  name: Base
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse-1.html#LaunchDarkly_TestHelpers_HttpTest_SimpleResponse_1_Base
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1.Base
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse<T>.Base
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse(Of T).Base
+  nameWithType: SimpleResponse<T>.Base
+  nameWithType.vb: SimpleResponse(Of T).Base
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1.Base*
+  name: Base
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse-1.html#LaunchDarkly_TestHelpers_HttpTest_SimpleResponse_1_Base_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1.Base
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse<T>.Base
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse(Of T).Base
+  nameWithType: SimpleResponse<T>.Base
+  nameWithType.vb: SimpleResponse(Of T).Base
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1.Body
+  name: Body
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse-1.html#LaunchDarkly_TestHelpers_HttpTest_SimpleResponse_1_Body
+  commentId: P:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1.Body
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse<T>.Body
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse(Of T).Body
+  nameWithType: SimpleResponse<T>.Body
+  nameWithType.vb: SimpleResponse(Of T).Body
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1.Body*
+  name: Body
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse-1.html#LaunchDarkly_TestHelpers_HttpTest_SimpleResponse_1_Body_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1.Body
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse<T>.Body
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse(Of T).Body
+  nameWithType: SimpleResponse<T>.Body
+  nameWithType.vb: SimpleResponse(Of T).Body
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1.Of(System.Int32,`0)
+  name: Of(Int32, T)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse-1.html#LaunchDarkly_TestHelpers_HttpTest_SimpleResponse_1_Of_System_Int32__0_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1.Of(System.Int32,`0)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse<T>.Of(System.Int32, T)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse(Of T).Of(System.Int32, T)
+  nameWithType: SimpleResponse<T>.Of(Int32, T)
+  nameWithType.vb: SimpleResponse(Of T).Of(Int32, T)
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1.Of*
+  name: Of
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse-1.html#LaunchDarkly_TestHelpers_HttpTest_SimpleResponse_1_Of_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1.Of
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse<T>.Of
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse(Of T).Of
+  nameWithType: SimpleResponse<T>.Of
+  nameWithType.vb: SimpleResponse(Of T).Of
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1.WithHeader(System.String,System.String)
+  name: WithHeader(String, String)
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse-1.html#LaunchDarkly_TestHelpers_HttpTest_SimpleResponse_1_WithHeader_System_String_System_String_
+  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1.WithHeader(System.String,System.String)
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse<T>.WithHeader(System.String, System.String)
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse(Of T).WithHeader(System.String, System.String)
+  nameWithType: SimpleResponse<T>.WithHeader(String, String)
+  nameWithType.vb: SimpleResponse(Of T).WithHeader(String, String)
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1.WithHeader*
+  name: WithHeader
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse-1.html#LaunchDarkly_TestHelpers_HttpTest_SimpleResponse_1_WithHeader_
+  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleResponse`1.WithHeader
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse<T>.WithHeader
+  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse(Of T).WithHeader
+  nameWithType: SimpleResponse<T>.WithHeader
+  nameWithType.vb: SimpleResponse(Of T).WithHeader
 - uid: LaunchDarkly.TestHelpers.HttpTest.SimpleRouter
   name: SimpleRouter
   href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html

@@ -169,6 +169,59 @@ or if the server is stopped.</p>
       </tr>
     </tbody>
   </table>
+  <a id="LaunchDarkly_TestHelpers_HttpTest_IRequestContext_GetPathParam_" data-uid="LaunchDarkly.TestHelpers.HttpTest.IRequestContext.GetPathParam*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_HttpTest_IRequestContext_GetPathParam_System_Int32_" data-uid="LaunchDarkly.TestHelpers.HttpTest.IRequestContext.GetPathParam(System.Int32)">GetPathParam(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns a path parameter, if any path parameters were captured.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string GetPathParam(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>a zero-based index</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>the path parameter string; null if there were no path parameters, or if
+the index is out of range</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="LaunchDarkly_TestHelpers_HttpTest_IRequestContext_GetPathParam_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>By default, this will always return null. It is non-null only if you used
+<a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html">SimpleRouter</a> and matched a regex pattern that was added with
+<a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html#LaunchDarkly_TestHelpers_HttpTest_SimpleRouter_AddRegex_System_Net_Http_HttpMethod_System_String_LaunchDarkly_TestHelpers_HttpTest_Handler_">AddRegex(HttpMethod, String, Handler)</a>,
+and the pattern contained capture groups. For instance, if the pattern was</p>
+<pre><code>/a/([^/]*)/c/(.*)</code></pre> and the request path was <pre><code>/a/b/c/d/e</code></pre>,
+<pre><code>GetPathParam(0)</code></pre> would return <pre><code>&quot;b&quot;</code></pre> and
+<pre><code>GetPathParam(1)</code></pre> would return <pre><code>&quot;d/e&quot;</code></pre>.
+</div>
   <a id="LaunchDarkly_TestHelpers_HttpTest_IRequestContext_SetHeader_" data-uid="LaunchDarkly.TestHelpers.HttpTest.IRequestContext.SetHeader*"></a>
   <h4 id="LaunchDarkly_TestHelpers_HttpTest_IRequestContext_SetHeader_System_String_System_String_" data-uid="LaunchDarkly.TestHelpers.HttpTest.IRequestContext.SetHeader(System.String,System.String)">SetHeader(String, String)</h4>
   <div class="markdown level1 summary"><p>Sets a response header.</p>
@@ -232,6 +285,49 @@ or if the server is stopped.</p>
   <h5 id="LaunchDarkly_TestHelpers_HttpTest_IRequestContext_SetStatus_System_Int32__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>This should be done before sending body content; otherwise the result is undefined.</p>
 </div>
+  <a id="LaunchDarkly_TestHelpers_HttpTest_IRequestContext_WithPathParams_" data-uid="LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WithPathParams*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_HttpTest_IRequestContext_WithPathParams_System_String___" data-uid="LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WithPathParams(System.String[])">WithPathParams(String[])</h4>
+  <div class="markdown level1 summary"><p>Returns a copy of this context with path parameter information added.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IRequestContext WithPathParams(string[] pathParams)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><span class="parametername">pathParams</span></td>
+        <td><p>an array of positional parameters</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html">IRequestContext</a></td>
+        <td><p>a transformed context</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="LaunchDarkly_TestHelpers_HttpTest_IRequestContext_WriteChunkedDataAsync_" data-uid="LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WriteChunkedDataAsync*"></a>
   <h4 id="LaunchDarkly_TestHelpers_HttpTest_IRequestContext_WriteChunkedDataAsync_System_Byte___" data-uid="LaunchDarkly.TestHelpers.HttpTest.IRequestContext.WriteChunkedDataAsync(System.Byte[])">WriteChunkedDataAsync(Byte[])</h4>
   <div class="markdown level1 summary"><p>Writes a chunk of data in a chunked response.</p>

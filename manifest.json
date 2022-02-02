@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.HttpServer.html",
-          "hash": "sWPeyVVbfvNGXI8MDqLhKLNIhzgwFxbIVJm46z4M3BQ="
+          "hash": "a8gSsRtiirLZyN6Zsw0ZczL/mfL3dRbjmozlsoe392Y="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.IRequestContext.html",
-          "hash": "uElgfEfFihd8SajyTNCe3EKCHNoveb6xmoLcwVjQmXA="
+          "hash": "93XwH0JsEP7qYwjkL6Qj/xHh2fO68aqrC2HSbELK12o="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,43 @@
       "output": {
         ".html": {
           "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.RequestRecorder.html",
-          "hash": "kJldaaO/E/rbnJQ8kfxee1sOx0pyXgIW72VxFAXd8qM="
+          "hash": "YnOPJLPFoldQoFjjAXxzNcbz9w+SCcmNGMFjzzN5e7I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html",
+          "hash": "BFp0BDnYfVLvjZI35qSnpjwYRsedfoTTdOOFcUZ46Vk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse-1.html",
+          "hash": "oJLbxin05XbXo1+2NF92OMNiPZAeM8Ad4OlwHzH3siQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "build/api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.html",
+          "hash": "Y/YagG2c0UgqiIchfKAFwdS9GCjE7ri4eKijAV9lV4s="
         }
       },
       "is_incremental": false,
@@ -177,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.SimpleRouter.html",
-          "hash": "jYc6i3R3qBDEf9lg59q9U+jGImb1lrSI9Niu+vUDAsg="
+          "hash": "pZXrUU+JVu8lCcwtiZGLBbp5mNW3Cag/dFgEBw9izhA="
         }
       },
       "is_incremental": false,
@@ -189,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LaunchDarkly.TestHelpers.HttpTest.html",
-          "hash": "PM2eVnDp/cTfS8NXBubjqTkvyBhohOpzW4jqdfm287g="
+          "hash": "IYv/0h7T6YGNSOEexy+GnH61Yvxd8YbeZl/9mB8dPHU="
         }
       },
       "is_incremental": false,
@@ -249,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "c3DDheBxreKc9/L9XUP7nnVJGH0Efsi2QRy3dQQlJrk="
+          "hash": "ftAKSxHiPgh0dBSiwx6NyxdVMgIOpp95SSedO4lkq88="
         }
       },
       "is_incremental": false,
@@ -261,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "Fq+hE6goI9h1/G4x4fIR3KR+0uaXP5yCEOvYX65eY0k="
+          "hash": "dM7qAVGAHkghsV4Og4r2U7T1uu7GcMRCbbVV+U3HEk0="
         }
       },
       "is_incremental": false,
@@ -300,7 +336,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 21,
+          "total_file_count": 24,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
