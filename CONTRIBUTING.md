@@ -14,7 +14,7 @@ We encourage pull requests and other contributions from the community. Before su
  
 ### Prerequisites
 
-To set up your SDK build time environment, you must [download .NET development tools and follow the instructions](https://dotnet.microsoft.com/download). .NET 5.0 is preferred, since the .NET 5.0 tools are able to build for all supported target platforms.
+To set up your SDK build time environment, you must [download .NET development tools and follow the instructions](https://dotnet.microsoft.com/download). .NET 6.0 is preferred, since the .NET 6.0 tools are able to build for all supported target platforms.
 
 ### Building
  
@@ -44,8 +44,8 @@ To run all unit tests, for all targets:
 dotnet test test/LaunchDarkly.TestHelpers.Tests
 ```
 
-Or, to run tests only for the .NET Standard 2.0 target (using the .NET Core 2.1 runtime):
+Or, to run tests only for the .NET Standard 2.0 target (using the .NET Core 3.1 runtime):
 
 ```
-dotnet test test/LaunchDarkly.TestHelpers.Tests -f netcoreapp2.1
+dotnet test test/LaunchDarkly.TestHelpers.Tests -f netcoreapp3.1
 ```

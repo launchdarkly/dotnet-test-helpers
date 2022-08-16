@@ -12,8 +12,10 @@ See [API documentation](https://launchdarkly.github.io/dotnet-test-helpers) for 
 
 This version of the project is built for two target frameworks:
 
-* .NET Standard 2.0: Usable in .NET Core 2+, .NET 5+, and Xamarin.
-* .NET Framework 4.5.2: Usable in .NET Framework 4.5.2 and above.
+* .NET Standard 2.0 (usable in Xamarin).
+* .NET Core 3.1.
+* .NET Framework 4.6.2 (usable in all higher versions of .NET Framework).
+* .NET 6.0 (usable in all higher versions of .NET).
 
 ## Contributing
 
