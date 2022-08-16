@@ -39,8 +39,17 @@ jobs:
       TESTFRAMEWORK: <<parameters.test-target-framework>>
     steps:
       - checkout
-      - run: dotnet build src/LaunchDarkly.TestHelpers
-      - run: dotnet test test/LaunchDarkly.TestHelpers.Tests/LaunchDarkly.TestHelpers.Tests.csproj
+      - run:
+          name: build
+          command: dotnet build src/LaunchDarkly.TestHelpers
+      - run:
+          name: run tests
+          command: |
+            dotnet test \
+              --logger:"junit;LogFilePath=/tmp/circle-reports/unit-tests.xml" \
+              test/LaunchDarkly.TestHelpers.Tests/LaunchDarkly.TestHelpers.Tests.csproj
+      - store_test_results:
+          path: /tmp/circle-reports
 
   test_windows:
     parameters:
@@ -56,5 +65,14 @@ jobs:
       TESTFRAMEWORK: <<parameters.test-target-framework>>
     steps:
       - checkout
-      - run: dotnet build src/LaunchDarkly.TestHelpers
-      - run: dotnet test test/LaunchDarkly.TestHelpers.Tests/LaunchDarkly.TestHelpers.Tests.csproj
+      - run:
+          name: build
+          command: dotnet build src/LaunchDarkly.TestHelpers
+      - run:
+          name: run tests
+          command: |
+            dotnet test \
+              --logger:"junit;LogFilePath=/tmp/circle-reports/unit-tests.xml" \
+              test/LaunchDarkly.TestHelpers.Tests/LaunchDarkly.TestHelpers.Tests.csproj
+      - store_test_results:
+          path: /tmp/circle-reports
