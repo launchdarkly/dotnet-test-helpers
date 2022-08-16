@@ -78,7 +78,7 @@ namespace LaunchDarkly.TestHelpers
                 var jsonActual = JsonTestValue.JsonOf(actual);
                 Assert.NotEqual(jsonExpected, jsonActual);
             }
-            catch (FormatException e)
+            catch (FormatException)
             {
                 // if this was a test of deliberately malformed JSON, then skip the Assert.NotEqual test
             }
