@@ -10,7 +10,7 @@ See [API documentation](https://launchdarkly.github.io/dotnet-test-helpers) for 
 
 ## Compatibility
 
-This version of the project is built for two target frameworks:
+This version of the project is built for the following target frameworks:
 
 * .NET Standard 2.0 (usable in Xamarin).
 * .NET Core 3.1.
