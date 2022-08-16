@@ -7,24 +7,23 @@ workflows:
   version: 2
   test:
     jobs:
-      - test-netcore:
-      - test-netcore:
+      - test_linux:
           name: .NET Core 3.1
           docker-image: mcr.microsoft.com/dotnet/core/sdk:3.1-focal
           build-target-framework: netcoreapp3.1
           test-target-framework: netcoreapp3.1
-      - test-netcore:
+      - test_linux:
           name: .NET 6.0
           docker-image: mcr.microsoft.com/dotnet/sdk:6.0-focal
           build-target-framework: net6.0
           test-target-framework: net5.0
-      - test-windows-netframework:
+      - test_windows:
           name: .NET Framework 4.6.2
           build-target-framework: net462
           test-target-framework: net462
 
 jobs:
-  test-netcore:
+  test_linux:
     parameters:
       docker-image:
         type: string
@@ -43,7 +42,7 @@ jobs:
       - run: dotnet build src/LaunchDarkly.TestHelpers
       - run: dotnet test test/LaunchDarkly.TestHelpers.Tests/LaunchDarkly.TestHelpers.Tests.csproj
 
-  test-windows-netframework:
+  test_windows:
     parameters:
       build-target-framework:
         type: string
