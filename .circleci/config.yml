@@ -72,7 +72,7 @@ jobs:
           name: run tests
           command: |
             dotnet test \
-              --logger:"junit;LogFilePath=/tmp/circle-reports/unit-tests.xml" \
+              -l "junit;LogFilePath=/tmp/circle-reports/unit-tests.xml" \
               test/LaunchDarkly.TestHelpers.Tests/LaunchDarkly.TestHelpers.Tests.csproj
       - store_test_results:
           path: /tmp/circle-reports
