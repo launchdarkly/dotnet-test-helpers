@@ -81,11 +81,15 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">JsonTestValue</span></div>
   </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="LaunchDarkly.TestHelpers.JsonTestValue.html">JsonTestValue</a>&gt;</div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="LaunchDarkly.TestHelpers.html">LaunchDarkly.TestHelpers</a></h6>
   <h6><strong>Assembly</strong>: LaunchDarkly.TestHelpers.dll</h6>
   <h5 id="LaunchDarkly_TestHelpers_JsonTestValue_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class JsonTestValue : ValueType</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class JsonTestValue : ValueType, IEquatable&lt;JsonTestValue&gt;</code></pre>
   </div>
   <h5 id="LaunchDarkly_TestHelpers_JsonTestValue_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>This type provides strong typing so that it is clear when test matchers apply to JSON
@@ -144,6 +148,49 @@ which are not relevant to the test logic.</p>
   </table>
   <h3 id="methods">Methods
   </h3>
+  <a id="LaunchDarkly_TestHelpers_JsonTestValue_Equals_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.Equals*"></a>
+  <h4 id="LaunchDarkly_TestHelpers_JsonTestValue_Equals_LaunchDarkly_TestHelpers_JsonTestValue_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.Equals(LaunchDarkly.TestHelpers.JsonTestValue)">Equals(JsonTestValue)</h4>
+  <div class="markdown level1 summary"><p>Compares two values for deep equality.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(JsonTestValue other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LaunchDarkly.TestHelpers.JsonTestValue.html">JsonTestValue</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>another JSON value</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if the values are deeply equal, or are both undefined</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="LaunchDarkly_TestHelpers_JsonTestValue_Equals_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.Equals*"></a>
   <h4 id="LaunchDarkly_TestHelpers_JsonTestValue_Equals_System_Object_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.Equals(System.Object)">Equals(Object)</h4>
   <div class="markdown level1 summary"><p>Compares two values for deep equality.</p>
@@ -255,7 +302,7 @@ which are not relevant to the test logic.</p>
   </table>
   <h5 id="LaunchDarkly_TestHelpers_JsonTestValue_JsonFromValue_System_Object__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>For instance, <code>JsonFromValue(true)</code> is equivalent to <code>JsonOf(&quot;true&quot;)</code>.
-This only works for types that are supported by Newtonsoft.Json&apos;s default
+This only works for types that are supported by <code>System.Text.Json</code>&apos;s default
 reflection-based serialization mechanism.</p>
 </div>
   <a id="LaunchDarkly_TestHelpers_JsonTestValue_JsonOf_" data-uid="LaunchDarkly.TestHelpers.JsonTestValue.JsonOf*"></a>
@@ -466,6 +513,10 @@ or it has no such property </p>
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IEquatable&lt;&gt;</span>
+  </div>
   <h3 id="seealso">See Also</h3>
   <div class="seealso">
       <div><a class="xref" href="LaunchDarkly.TestHelpers.JsonAssertions.html">JsonAssertions</a></div>

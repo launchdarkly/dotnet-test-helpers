@@ -1304,21 +1304,12 @@ references:
   fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Route(Of TInput, TOutput)(System.Net.Http.HttpMethod, System.String, System.Func(Of LaunchDarkly.TestHelpers.HttpTest.IRequestContext, TInput, System.Threading.Tasks.Task(Of LaunchDarkly.TestHelpers.HttpTest.SimpleResponse(Of TOutput))))
   nameWithType: SimpleJsonService.Route<TInput, TOutput>(HttpMethod, String, Func<IRequestContext, TInput, Task<SimpleResponse<TOutput>>>)
   nameWithType.vb: SimpleJsonService.Route(Of TInput, TOutput)(HttpMethod, String, Func(Of IRequestContext, TInput, Task(Of SimpleResponse(Of TOutput))))
-- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.SetJsonConverters(Newtonsoft.Json.JsonConverter[])
-  name: SetJsonConverters(JsonConverter[])
-  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_SetJsonConverters_Newtonsoft_Json_JsonConverter___
-  commentId: M:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.SetJsonConverters(Newtonsoft.Json.JsonConverter[])
-  name.vb: SetJsonConverters(JsonConverter())
-  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.SetJsonConverters(Newtonsoft.Json.JsonConverter[])
-  fullName.vb: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.SetJsonConverters(Newtonsoft.Json.JsonConverter())
-  nameWithType: SimpleJsonService.SetJsonConverters(JsonConverter[])
-  nameWithType.vb: SimpleJsonService.SetJsonConverters(JsonConverter())
-- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.SetJsonConverters*
-  name: SetJsonConverters
-  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_SetJsonConverters_
-  commentId: Overload:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.SetJsonConverters
-  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.SetJsonConverters
-  nameWithType: SimpleJsonService.SetJsonConverters
+- uid: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.SerializerOptions
+  name: SerializerOptions
+  href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html#LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_SerializerOptions
+  commentId: F:LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.SerializerOptions
+  fullName: LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.SerializerOptions
+  nameWithType: SimpleJsonService.SerializerOptions
 - uid: LaunchDarkly.TestHelpers.HttpTest.SimpleResponse
   name: SimpleResponse
   href: api/LaunchDarkly.TestHelpers.HttpTest.SimpleResponse.html
@@ -1599,6 +1590,12 @@ references:
   commentId: T:LaunchDarkly.TestHelpers.JsonTestValue
   fullName: LaunchDarkly.TestHelpers.JsonTestValue
   nameWithType: JsonTestValue
+- uid: LaunchDarkly.TestHelpers.JsonTestValue.Equals(LaunchDarkly.TestHelpers.JsonTestValue)
+  name: Equals(JsonTestValue)
+  href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_Equals_LaunchDarkly_TestHelpers_JsonTestValue_
+  commentId: M:LaunchDarkly.TestHelpers.JsonTestValue.Equals(LaunchDarkly.TestHelpers.JsonTestValue)
+  fullName: LaunchDarkly.TestHelpers.JsonTestValue.Equals(LaunchDarkly.TestHelpers.JsonTestValue)
+  nameWithType: JsonTestValue.Equals(JsonTestValue)
 - uid: LaunchDarkly.TestHelpers.JsonTestValue.Equals(System.Object)
   name: Equals(Object)
   href: api/LaunchDarkly.TestHelpers.JsonTestValue.html#LaunchDarkly_TestHelpers_JsonTestValue_Equals_System_Object_

@@ -109,12 +109,7 @@ and then call <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.IRequestCo
 containing parentheses is assumed to be a regex, otherwise it is taken as a literal.
 </p>
 <p>
-This class uses <pre><code>Newtonsoft.Json</code></pre> for JSON conversions, rather than
-<code>System.Text.Json</code>. This is because it needs to be usable from projects that support
-.NET Framework 4.5.x, and <code>System.Text.Json</code> is not available in that framework.
-Since the <pre><code>Newtonsoft.Json</code></pre> API uses static methods for configuration, it is
-the host application&apos;s responsibility to make sure it has been configured to produce the
-expected behavior for the types that are being used.
+This class uses <code>System.Text.Json</code> for JSON conversions.
 </p>
 </div>
   <h3 id="constructors">Constructors
@@ -128,6 +123,31 @@ expected behavior for the types that are being used.
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public SimpleJsonService()</code></pre>
   </div>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_SerializerOptions" data-uid="LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.SerializerOptions">SerializerOptions</h4>
+  <div class="markdown level1 summary"><p>Options for System.Text.Json to enable the standard behavior of camelcasing property names.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static JsonSerializerOptions SerializerOptions</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Json.JsonSerializerOptions</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="properties">Properties
   </h3>
   <a id="LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_Handler_" data-uid="LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.Handler*"></a>
@@ -565,33 +585,6 @@ a <a class="xref" href="LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.html
       <tr>
         <td><span class="parametername">TOutput</span></td>
         <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_SetJsonConverters_" data-uid="LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.SetJsonConverters*"></a>
-  <h4 id="LaunchDarkly_TestHelpers_HttpTest_SimpleJsonService_SetJsonConverters_Newtonsoft_Json_JsonConverter___" data-uid="LaunchDarkly.TestHelpers.HttpTest.SimpleJsonService.SetJsonConverters(Newtonsoft.Json.JsonConverter[])">SetJsonConverters(JsonConverter[])</h4>
-  <div class="markdown level1 summary"><p>Specifies custom JSON serialization behavior for particular types.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetJsonConverters(params JsonConverter[] jsonConverters)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Newtonsoft.Json.JsonConverter</span>[]</td>
-        <td><span class="parametername">jsonConverters</span></td>
-        <td><p>the custom JSON converters to use</p>
-</td>
       </tr>
     </tbody>
   </table>
