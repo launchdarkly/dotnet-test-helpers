@@ -6,7 +6,7 @@
          single framework that we are testing; this allows us to test with older SDK
          versions that would error out if they saw any newer target frameworks listed
          here, even if we weren't running those. -->
-    <BuildFrameworks Condition="'$(BUILDFRAMEWORKS)' == ''">netstandard2.0;netcoreapp3.1;net452;net461</BuildFrameworks>
+    <BuildFrameworks Condition="'$(BUILDFRAMEWORKS)' == ''">netstandard2.0;netcoreapp3.1;net462;net6.0</BuildFrameworks>
     <TargetFrameworks>$(BUILDFRAMEWORKS)</TargetFrameworks>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <AssemblyName>LaunchDarkly.TestHelpers</AssemblyName>
@@ -30,8 +30,7 @@
     <WarningsAsErrors>1570,1571,1572,1573,1574,1580,1581,1584,1591,1710,1711,1712</WarningsAsErrors>
   </PropertyGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' or
-                         '$(TargetFramework)' == 'net461' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Net.Http" />
@@ -39,14 +38,18 @@
 
   <ItemGroup>
     <None Remove="xunit" />
-    <None Remove="Newtonsoft.Json" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="xunit" Version="2.3.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'
+                       or '$(TargetFramework)' == 'net462'">
+    <PackageReference Include="System.Text.Json" Version="6.0.0" />
+    <!-- it's a built-in package in netcoreapp3.1 and net6.0 -->
+  </ItemGroup>
+  
   <PropertyGroup>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\LaunchDarkly.TestHelpers.xml</DocumentationFile>
   </PropertyGroup>

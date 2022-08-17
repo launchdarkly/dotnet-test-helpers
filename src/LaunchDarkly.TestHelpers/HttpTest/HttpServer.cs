@@ -155,7 +155,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                                 });
 #pragma warning restore CS4014
                         }
-                        catch(Exception e)
+                        catch (Exception)
                         {
                             // an exception almost certainly means the listener has been shut down
                             break;

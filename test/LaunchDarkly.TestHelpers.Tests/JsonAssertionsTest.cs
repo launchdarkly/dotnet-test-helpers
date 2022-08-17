@@ -22,6 +22,8 @@ namespace LaunchDarkly.TestHelpers
             JsonAssertions.AssertJsonEqual(expected, actual);
             JsonAssertions.AssertJsonEqual(actual, expected);
             JsonAssertions.AssertJsonEqual(JsonTestValue.JsonOf(expected), JsonTestValue.JsonOf(actual));
+
+            Assert.Equal(JsonTestValue.JsonOf(expected), JsonTestValue.JsonOf(actual));
         }
 
         [Fact]
@@ -69,6 +71,17 @@ namespace LaunchDarkly.TestHelpers
             ShouldFailWithMessage(expectedMessage, () => JsonAssertions.AssertJsonEqual(expected, actual));
             ShouldFailWithMessage(expectedMessage, () => JsonAssertions.AssertJsonEqual(
                 JsonTestValue.JsonOf(expected), JsonTestValue.JsonOf(actual)));
+
+            try
+            {
+                var jsonExpected = JsonTestValue.JsonOf(expected);
+                var jsonActual = JsonTestValue.JsonOf(actual);
+                Assert.NotEqual(jsonExpected, jsonActual);
+            }
+            catch (FormatException)
+            {
+                // if this was a test of deliberately malformed JSON, then skip the Assert.NotEqual test
+            }
         }
 
         [Fact]

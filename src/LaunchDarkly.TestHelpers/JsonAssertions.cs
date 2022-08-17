@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
 using Xunit.Sdk;
 
 namespace LaunchDarkly.TestHelpers
@@ -16,22 +15,22 @@ namespace LaunchDarkly.TestHelpers
     /// which are not relevant to the test logic.
     /// </remarks>
     /// <seealso cref="JsonAssertions"/>
-    public struct JsonTestValue
+    public struct JsonTestValue : IEquatable<JsonTestValue>
     {
         internal readonly string Raw;
-        internal readonly JToken Parsed;
+        internal readonly JsonElement? Parsed;
 
         /// <summary>
         /// True if there is a value (that is, the original string was not a null reference).
         /// </summary>
-        public bool IsDefined => Parsed != null;
+        public bool IsDefined => Parsed.HasValue;
 
         /// <summary>
         /// Shortcut for creating an undefined value, equivalent to <c>JsonOf(null)</c>.
         /// </summary>
         public static JsonTestValue NoValue => JsonOf(null);
 
-        private JsonTestValue(string raw, JToken parsed)
+        private JsonTestValue(string raw, JsonElement? parsed)
         {
             Raw = raw;
             Parsed = parsed;
@@ -56,7 +55,7 @@ namespace LaunchDarkly.TestHelpers
             }
             try
             {
-                return new JsonTestValue(raw, JToken.Parse(raw));
+                return new JsonTestValue(raw, JsonSerializer.Deserialize<JsonElement>(raw));
             }
             catch (Exception e)
             {
@@ -64,9 +63,9 @@ namespace LaunchDarkly.TestHelpers
             }
         }
 
-        internal static JsonTestValue OfParsed(JToken parsed)
+        internal static JsonTestValue OfParsed(JsonElement parsed)
         {
-            return new JsonTestValue(parsed is null ? null : parsed.ToString(Formatting.None), parsed);
+            return new JsonTestValue(JsonSerializer.Serialize(parsed), parsed);
         }
 
         /// <summary>
@@ -74,13 +73,13 @@ namespace LaunchDarkly.TestHelpers
         /// </summary>
         /// <remarks>
         /// For instance, <c>JsonFromValue(true)</c> is equivalent to <c>JsonOf("true")</c>.
-        /// This only works for types that are supported by Newtonsoft.Json's default
+        /// This only works for types that are supported by <c>System.Text.Json</c>'s default
         /// reflection-based serialization mechanism.
         /// </remarks>
         /// <param name="value">an arbitrary value</param>
         /// <returns>a <c>JsonTestValue</c></returns>
         public static JsonTestValue JsonFromValue(object value) =>
-            OfParsed(JToken.FromObject(value));
+            OfParsed(JsonSerializer.Deserialize<JsonElement>(JsonSerializer.Serialize(value)));
 
         /// <summary>
         /// If this value is a JSON object, return the value of the specified property or
@@ -91,9 +90,9 @@ namespace LaunchDarkly.TestHelpers
         /// <exception cref="XunitException">if the current value is not an object</exception>
         public JsonTestValue Property(string name)
         {
-            if (Parsed is JObject o)
+            if (Parsed.HasValue && Parsed.Value.ValueKind == JsonValueKind.Object)
             {
-                return o.TryGetValue(name, out var v) ? OfParsed(v) : JsonOf(null);
+                return Parsed.Value.TryGetProperty(name, out var v) ? OfParsed(v) : JsonOf(null);
             }
             throw new XunitException(string.Format("Expected a JSON object but got {0}", this));
         }
@@ -107,9 +106,9 @@ namespace LaunchDarkly.TestHelpers
         /// or it has no such property </exception>
         public JsonTestValue RequiredProperty(string name)
         {
-            if (Parsed is JObject o)
+            if (Parsed.HasValue && Parsed.Value.ValueKind == JsonValueKind.Object)
             {
-                if (o.TryGetValue(name, out var v))
+                if (Parsed.Value.TryGetProperty(name, out var v))
                 {
                     return OfParsed(v);
                 }
@@ -132,13 +131,65 @@ namespace LaunchDarkly.TestHelpers
         /// <param name="obj">another JSON value</param>
         /// <returns>true if the values are deeply equal, or are both undefined</returns>
         public override bool Equals(object obj) =>
-            obj is JsonTestValue other &&
-            ((!other.IsDefined && !this.IsDefined) ||
-             (other.IsDefined && this.IsDefined && JToken.DeepEquals(other.Parsed, this.Parsed)));
+            obj is JsonTestValue other && Equals(other);
+
+        /// <summary>
+        /// Compares two values for deep equality.
+        /// </summary>
+        /// <param name="other">another JSON value</param>
+        /// <returns>true if the values are deeply equal, or are both undefined</returns>
+        public bool Equals(JsonTestValue other) =>
+            IsDefined ? (other.IsDefined && DeepEqualJson(Parsed.Value, other.Parsed.Value)) : !other.IsDefined;
 
         /// <inheritdoc/>
         public override int GetHashCode() =>
             IsDefined ? Parsed.GetHashCode() : 0;
+
+        internal static bool DeepEqualJson(JsonElement a, JsonElement b)
+        {
+            if (a.ValueKind != b.ValueKind)
+            {
+                return false;
+            }
+            switch (a.ValueKind)
+            {
+                case JsonValueKind.Number:
+                    return a.GetDouble() == b.GetDouble();
+                case JsonValueKind.String:
+                    return a.GetString() == b.GetString();
+                case JsonValueKind.Array:
+                    List<JsonElement> aList = a.EnumerateArray().ToList(), bList = b.EnumerateArray().ToList();
+                    if (aList.Count != bList.Count)
+                    {
+                        return false;
+                    }
+                    for (int i = 0; i < aList.Count; i++)
+                    {
+                        if (!DeepEqualJson(aList[i], bList[i]))
+                        {
+                            return false;
+                        }
+                    }
+                    return true;
+                case JsonValueKind.Object:
+                    var aProps = a.EnumerateObject().ToList();
+                    var bProps = b.EnumerateObject().ToList();
+                    if (aProps.Count != bProps.Count)
+                    {
+                        return false;
+                    }
+                    foreach (var ap in aProps)
+                    {
+                        if (!b.TryGetProperty(ap.Name, out var bv) || !DeepEqualJson(ap.Value, bv))
+                        {
+                            return false;
+                        }
+                    }
+                    return true;
+                default:
+                    return true;
+            }
+        }
     }
 
     /// <summary>
@@ -193,7 +244,7 @@ namespace LaunchDarkly.TestHelpers
             {
                 return;
             }
-            var diff = DescribeJsonDifference(expected.Parsed, actual.Parsed, "", false);
+            var diff = DescribeJsonDifference(expected.Parsed.Value, actual.Parsed.Value, "", false);
             if (diff is null)
             {
                 throw new AssertActualExpectedException(expected, actual, "AssertJsonEqual failed");
@@ -235,11 +286,11 @@ namespace LaunchDarkly.TestHelpers
             {
                 throw new AssertActualExpectedException(expected, actual, "AssertJsonIncludes failed");
             }
-            if (IsJsonSubset(expected.Parsed, actual.Parsed))
+            if (IsJsonSubset(expected.Parsed.Value, actual.Parsed.Value))
             {
                 return;
             }
-            var diff = DescribeJsonDifference(expected.Parsed, actual.Parsed, "", true);
+            var diff = DescribeJsonDifference(expected.Parsed.Value, actual.Parsed.Value, "", true);
             if (diff is null)
             {
                 throw new AssertActualExpectedException(expected, actual, "AssertJsonIncludes failed");
@@ -248,23 +299,23 @@ namespace LaunchDarkly.TestHelpers
                 "AssertJsonIncludes failed:{0}{1}{0}full JSON was: {2}", Environment.NewLine, diff, actual));
         }
 
-        private static bool IsJsonSubset(JToken expected, JToken actual)
+        private static bool IsJsonSubset(JsonElement expected, JsonElement actual)
         {
-            if (expected is JObject eo && actual is JObject ao) {
-                foreach (var e in eo)
+            if (expected.ValueKind == JsonValueKind.Object && actual.ValueKind == JsonValueKind.Object) {
+                foreach (var e in expected.EnumerateObject())
                 {
-                    if (!ao.TryGetValue(e.Key, out var av) || !IsJsonSubset(e.Value, av))
+                    if (!actual.TryGetProperty(e.Name, out var av) || !IsJsonSubset(e.Value, av))
                     {
                         return false;
                     }
                 }
                 return true;
             }
-            if (expected is JArray ea && actual is JArray aa) {
-                foreach (var ev in ea)
+            if (expected.ValueKind == JsonValueKind.Array && actual.ValueKind == JsonValueKind.Array) {
+                foreach (var ev in expected.EnumerateArray())
                 {
                     bool found = false;
-                    foreach (var av in aa)
+                    foreach (var av in actual.EnumerateArray())
                     {
                         if (IsJsonSubset(ev, av))
                         {
@@ -279,34 +330,34 @@ namespace LaunchDarkly.TestHelpers
                 }
                 return true;
             }
-            return JToken.DeepEquals(expected, actual);
+            return JsonTestValue.DeepEqualJson(expected, actual);
         }
 
-        private static string DescribeJsonDifference(JToken expected, JToken actual, string prefix, bool allowExtraProps)
+        private static string DescribeJsonDifference(JsonElement expected, JsonElement actual, string prefix, bool allowExtraProps)
         {
-            if (actual is JObject ao && expected is JObject eo)
+            if (actual.ValueKind == JsonValueKind.Object && expected.ValueKind == JsonValueKind.Object)
             {
-                return DescribeJsonObjectDifference(eo, ao, prefix, allowExtraProps);
+                return DescribeJsonObjectDifference(expected, actual, prefix, allowExtraProps);
             }
-            if (actual is JArray aa && expected is JArray ea)
+            if (actual.ValueKind == JsonValueKind.Array && expected.ValueKind == JsonValueKind.Array)
             {
-                return DescribeJsonArrayDifference(ea, aa, prefix, allowExtraProps);
+                return DescribeJsonArrayDifference(expected, actual, prefix, allowExtraProps);
             }
             return null;
         }
 
-        private static string DescribeJsonObjectDifference(JObject expected, JObject actual, string prefix, bool allowExtraProps)
+        private static string DescribeJsonObjectDifference(JsonElement expected, JsonElement actual, string prefix, bool allowExtraProps)
         {
             var diffs = new List<string>();
-            foreach (var key in expected.Properties().Select(p => p.Name).Union(actual.Properties().Select(p => p.Name)))
+            foreach (var key in expected.EnumerateObject().Select(p => p.Name).Union(actual.EnumerateObject().Select(p => p.Name)))
             {
                 var prefixedKey = prefix + (prefix == "" ? "" : ".") + key;
                 string expectedDesc = null, actualDesc = null, detailDiff = null;
-                if (expected.TryGetValue(key, out var expectedValue))
+                if (expected.TryGetProperty(key, out var expectedValue))
                 {
-                    if (actual.TryGetValue(key, out var actualValue))
+                    if (actual.TryGetProperty(key, out var actualValue))
                     {
-                        if (!JToken.DeepEquals(actualValue, expectedValue))
+                        if (!JsonTestValue.DeepEqualJson(actualValue, expectedValue))
                         {
                             expectedDesc = expectedValue.ToString();
                             actualDesc = actualValue.ToString();
@@ -315,13 +366,13 @@ namespace LaunchDarkly.TestHelpers
                     }
                     else
                     {
-                        expectedDesc = expectedValue.ToString();
+                        expectedDesc = JsonSerializer.Serialize(expectedValue);
                         actualDesc = "<absent>";
                     }
                 }
                 else if (!allowExtraProps)
                 {
-                    actualDesc = actual[key].ToString();
+                    actualDesc = JsonSerializer.Serialize(actual.GetProperty(key));
                     expectedDesc = "<absent>";
                 }
                 if (expectedDesc != null || actualDesc != null)
@@ -340,18 +391,19 @@ namespace LaunchDarkly.TestHelpers
             return string.Join(Environment.NewLine, diffs);
         }
 
-        private static string DescribeJsonArrayDifference(JArray expected, JArray actual, string prefix, bool allowExtraProps)
+        private static string DescribeJsonArrayDifference(JsonElement expected, JsonElement actual, string prefix, bool allowExtraProps)
         {
-            if (expected.Count != actual.Count)
+            List<JsonElement> eList = expected.EnumerateArray().ToList(), aList = actual.EnumerateArray().ToList();
+            if (eList.Count != aList.Count)
             {
                 return null; // can't provide a detailed diff, just show the whole values
             }
             var diffs = new List<string>();
-            for (int i = 0; i < expected.Count; i++)
+            for (int i = 0; i < eList.Count; i++)
             {
                 var prefixedIndex = string.Format("{0}[{1}]", prefix, i);
-                JToken actualValue = actual[i], expectedValue = expected[i];
-                if (!JToken.DeepEquals(actualValue, expectedValue))
+                JsonElement actualValue = actual[i], expectedValue = expected[i];
+                if (!JsonTestValue.DeepEqualJson(actualValue, expectedValue))
                 {
                     var detailDiff = DescribeJsonDifference(expectedValue, actualValue, prefixedIndex, allowExtraProps);
                     if (detailDiff != null)

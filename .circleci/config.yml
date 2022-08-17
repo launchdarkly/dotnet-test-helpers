@@ -7,32 +7,23 @@ workflows:
   version: 2
   test:
     jobs:
-      - test-netcore:
-          name: .NET Core 2.1
-          docker-image: mcr.microsoft.com/dotnet/core/sdk:2.1-focal
-          build-target-framework: netstandard2.0
-          test-target-framework: netcoreapp2.1
-      - test-netcore:
+      - test_linux:
           name: .NET Core 3.1
           docker-image: mcr.microsoft.com/dotnet/core/sdk:3.1-focal
           build-target-framework: netcoreapp3.1
           test-target-framework: netcoreapp3.1
-      - test-netcore:
-          name: .NET 5.0
-          docker-image: mcr.microsoft.com/dotnet/sdk:5.0-focal
-          build-target-framework: netstandard2.0
-          test-target-framework: net5.0
-      - test-windows-netframework:
-          name: .NET Framework 4.5.2
-          build-target-framework: net452
-          test-target-framework: net452
-      - test-windows-netframework:
-          name: .NET Framework 4.6.1
-          build-target-framework: net461
-          test-target-framework: net461
+      - test_linux:
+          name: .NET 6.0
+          docker-image: mcr.microsoft.com/dotnet/sdk:6.0-focal
+          build-target-framework: net6.0
+          test-target-framework: net6.0
+      - test_windows:
+          name: .NET Framework 4.6.2
+          build-target-framework: net462
+          test-target-framework: net462
 
 jobs:
-  test-netcore:
+  test_linux:
     parameters:
       docker-image:
         type: string
@@ -48,10 +39,19 @@ jobs:
       TESTFRAMEWORK: <<parameters.test-target-framework>>
     steps:
       - checkout
-      - run: dotnet build src/LaunchDarkly.TestHelpers
-      - run: dotnet test test/LaunchDarkly.TestHelpers.Tests/LaunchDarkly.TestHelpers.Tests.csproj
+      - run:
+          name: build
+          command: dotnet build src/LaunchDarkly.TestHelpers
+      - run:
+          name: run tests
+          command: |
+            dotnet test \
+              --logger:"junit;LogFilePath=/tmp/circle-reports/unit-tests.xml" \
+              test/LaunchDarkly.TestHelpers.Tests/LaunchDarkly.TestHelpers.Tests.csproj
+      - store_test_results:
+          path: /tmp/circle-reports
 
-  test-windows-netframework:
+  test_windows:
     parameters:
       build-target-framework:
         type: string
@@ -65,5 +65,14 @@ jobs:
       TESTFRAMEWORK: <<parameters.test-target-framework>>
     steps:
       - checkout
-      - run: dotnet build src/LaunchDarkly.TestHelpers
-      - run: dotnet test test/LaunchDarkly.TestHelpers.Tests/LaunchDarkly.TestHelpers.Tests.csproj
+      - run:
+          name: build
+          command: dotnet build src/LaunchDarkly.TestHelpers
+      - run:
+          name: run tests
+          command: |
+            dotnet test \
+              -l "junit;LogFilePath=/tmp/circle-reports/unit-tests.xml" \
+              test/LaunchDarkly.TestHelpers.Tests/LaunchDarkly.TestHelpers.Tests.csproj
+      - store_test_results:
+          path: /tmp/circle-reports

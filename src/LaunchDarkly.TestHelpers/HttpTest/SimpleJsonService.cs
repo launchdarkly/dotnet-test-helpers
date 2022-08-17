@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace LaunchDarkly.TestHelpers.HttpTest
 {   
@@ -32,12 +32,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
     /// containing parentheses is assumed to be a regex, otherwise it is taken as a literal.
     /// </para>
     /// <para>
-    /// This class uses <code>Newtonsoft.Json</code> for JSON conversions, rather than
-    /// <c>System.Text.Json</c>. This is because it needs to be usable from projects that support
-    /// .NET Framework 4.5.x, and <c>System.Text.Json</c> is not available in that framework.
-    /// Since the <code>Newtonsoft.Json</code> API uses static methods for configuration, it is
-    /// the host application's responsibility to make sure it has been configured to produce the
-    /// expected behavior for the types that are being used.
+    /// This class uses <c>System.Text.Json</c> for JSON conversions.
     /// </para>
     /// </remarks>
     public sealed class SimpleJsonService
@@ -53,9 +48,16 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         public static implicit operator Handler(SimpleJsonService me) => me.Handler;
 #pragma warning restore CS1591
 
+        /// <summary>
+        /// Options for System.Text.Json to enable the standard behavior of camelcasing property names.
+        /// </summary>
+        public static JsonSerializerOptions SerializerOptions = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+        };
+
         private readonly Handler _handler;
         private readonly SimpleRouter _router;
-        private JsonSerializerSettings _jsonSerializerSettings;
 
         /// <summary>
         /// Creates a new instance.
@@ -63,18 +65,6 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         public SimpleJsonService()
         {
             _handler = Handlers.Router(out _router);
-            _jsonSerializerSettings = MakeJsonSerializerSettings(null);
-        }
-
-        /// <summary>
-        /// Specifies custom JSON serialization behavior for particular types.
-        /// </summary>
-        /// <param name="jsonConverters">the custom JSON converters to use</param>
-        public void SetJsonConverters(params JsonConverter[] jsonConverters)
-        {
-            _jsonSerializerSettings = MakeJsonSerializerSettings(
-                jsonConverters is null ? null : new List<JsonConverter>(jsonConverters)
-            );
         }
 
         /// <summary>
@@ -230,7 +220,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
                 var result = await handler(context);
                 if (typeof(TOutput).IsValueType || !result.Body.Equals(default(TOutput)))
                 {
-                    await Handlers.BodyJson(JsonConvert.SerializeObject(result.Body, _jsonSerializerSettings))(context);
+                    await Handlers.BodyJson(JsonSerializer.Serialize(result.Body, SerializerOptions))(context);
                 }
                 return result.Base;
             });
@@ -240,7 +230,7 @@ namespace LaunchDarkly.TestHelpers.HttpTest
             {
                 var input = ParseInput<TInput>(context);
                 var result = await handler(context, input);
-                await Handlers.BodyJson(JsonConvert.SerializeObject(result.Body, _jsonSerializerSettings))(context);
+                await Handlers.BodyJson(JsonSerializer.Serialize(result.Body, SerializerOptions))(context);
                 return result.Base;
             });
 
@@ -248,23 +238,14 @@ namespace LaunchDarkly.TestHelpers.HttpTest
         {
             try
             {
-                return JsonConvert.DeserializeObject<TInput>(context.RequestInfo.Body, _jsonSerializerSettings);
+                return JsonSerializer.Deserialize<TInput>(context.RequestInfo.Body, SerializerOptions);
             }
             catch (JsonException e)
             {
                 throw new BadRequestException(e.Message);
             }
         }
-
-        private static JsonSerializerSettings MakeJsonSerializerSettings(IList<JsonConverter> converters)
-        {
-            return new JsonSerializerSettings
-            {
-                ContractResolver = new CamelCasePropertyNamesContractResolver(),
-                Converters = converters
-            };
-        }
-
+        
         private sealed class BadRequestException : Exception
         {
             public BadRequestException(string message) : base(message) { }
