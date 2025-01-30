@@ -1,7 +1,7 @@
 # LaunchDarkly .NET Test Helpers
 
 [![NuGet](https://img.shields.io/nuget/v/LaunchDarkly.TestHelpers.svg?style=flat-square)](https://www.nuget.org/packages/LaunchDarkly.TestHelpers/)
-[![CircleCI](https://circleci.com/gh/launchdarkly/dotnet-test-helpers.svg?style=shield)](https://circleci.com/gh/launchdarkly/dotnet-test-helpers)
+[![Quality control](https://github.com/launchdarkly/dotnet-test-helpers/actions/workflows/ci.yml/badge.svg)](https://github.com/launchdarkly/dotnet-test-helpers/actions/workflows/ci.yml)
 [![Documentation](https://img.shields.io/static/v1?label=GitHub+Pages&message=API+reference&color=00add8)](https://launchdarkly.github.io/dotnet-test-helpers)
 
 This project centralizes some test support code that is used by LaunchDarkly's .NET and Xamarin SDKs and related components, and that may be useful in other .NET projects.
