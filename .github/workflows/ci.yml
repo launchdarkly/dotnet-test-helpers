@@ -1,0 +1,46 @@
+name: Quality control
+
+on:
+  push:
+    branches: [ main, 'feat/**' ]
+    paths-ignore:
+      - '**.md' # Do not need to run CI for markdown changes.
+  pull_request:
+    branches: [ main, 'feat/**' ]
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup dotnet build tools
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 6.0
+
+      - run: dotnet restore
+      - run: dotnet build src/LaunchDarkly.TestHelpers -f netstandard2.0
+      - run: dotnet test test/LaunchDarkly.TestHelpers.Tests -f net6.0
+
+  windows:
+    runs-on: windows-latest
+
+    defaults:
+      run:
+        shell: powershell
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup dotnet build tools
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 6.0
+
+      - run: dotnet restore
+      - run: dotnet build src/LaunchDarkly.TestHelpers -f net462
+      - run: dotnet test test/LaunchDarkly.TestHelpers.Tests -f net462
